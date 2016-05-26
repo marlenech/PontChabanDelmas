@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity
 
         //How to change elements in the header programatically
         View headerView = navigationView.getHeaderView(0);
-        TextView emailText = (TextView) headerView.findViewById(R.id.email);
+        TextView emailText = (TextView) headerView.findViewById(R.id.subnav);
         emailText.setText("newemail@email.com");
 
         navigationView.setNavigationItemSelectedListener(this);
