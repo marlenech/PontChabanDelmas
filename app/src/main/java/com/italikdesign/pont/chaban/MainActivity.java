@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.nav_agenda) {
             //Set the fragment initially
             MainFragment fragment = new MainFragment();
             android.support.v4.app.FragmentTransaction fragmentTransaction =
@@ -103,7 +103,7 @@ public class MainActivity extends AppCompatActivity
             fragmentTransaction.replace(R.id.fragment_container, fragment);
             fragmentTransaction.commit();
             // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        } else if (id == R.id.nav_notification) {
             //Set the fragment initially
             AproposFragment fragment = new AproposFragment();
             android.support.v4.app.FragmentTransaction fragmentTransaction =
@@ -111,13 +111,13 @@ public class MainActivity extends AppCompatActivity
             fragmentTransaction.replace(R.id.fragment_container, fragment);
             fragmentTransaction.commit();
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_cadena) {
 
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.nav_apropos) {
 
         } else if (id == R.id.nav_share) {
 
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.nav_github) {
 
         }
 
