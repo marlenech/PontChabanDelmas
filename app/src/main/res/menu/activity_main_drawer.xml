@@ -20,7 +20,7 @@
             android:title="A propos" />
     </group>
 
-    <item android:title="L'appli">
+    <item android:title="Version 5.5   @ItalikDesign">
         <menu>
             <item
                 android:id="@+id/nav_share"
@@ -29,7 +29,7 @@
             <item
                 android:id="@+id/nav_github"
                 android:icon="@drawable/ic_github"
-                android:title="Github" />
+                android:title="Open Source" />
         </menu>
     </item>
 
