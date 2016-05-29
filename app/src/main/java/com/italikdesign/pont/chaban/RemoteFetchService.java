@@ -25,7 +25,7 @@ public class RemoteFetchService extends Service {
 
     private int appWidgetId = AppWidgetManager.INVALID_APPWIDGET_ID;
     private AQuery aquery;
-    private String remoteJsonUrl = getResources().getString(R.string.address_json);
+    private String remoteJsonUrl = App.getContext().getString(R.string.address_json);
 
     public static ArrayList<ListItem> listItemList;
 

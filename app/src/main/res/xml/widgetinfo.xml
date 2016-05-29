@@ -2,7 +2,7 @@
 <appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
     android:configure="com.italikdesign.pont.chaban.ConfigActivity"
     android:initialLayout="@layout/widget_layout"
-    android:minHeight="50.0dip"
+    android:minHeight="100.0dip"
     android:minWidth="294.0dip"
     android:previewImage="@drawable/logo"
     android:resizeMode="vertical|horizontal"  
