@@ -1,19 +1,58 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:ads="http://schemas.android.com/apk/lib/com.google.android.gms.ads"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.italikdesign.pont.chaban.MainFragment">
 
-    <Button
-        android:layout_width="wrap_content"
+    <LinearLayout
+
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:background="@drawable/background"
+        android:id="@+id/linear_layout" >
+
+
+
+
+        <ListView
+            android:id="@+id/listFeed"
+
+            android:layout_width="match_parent"
+            android:layout_height="0.0dip"
+            android:layout_weight="0.48"
+            android:background="@xml/view_list"
+            android:clickable="false"
+            android:divider="@drawable/ligne"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:longClickable="false"
+            android:paddingBottom="2.0dip"
+            android:paddingTop="2.0dip">
+
+        </ListView>
+
+
+
+    </LinearLayout>
+
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adViewCardItem"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="MAIN"
-        android:padding="8dp"
-        android:textColor="#fff"
-        android:background="@color/colorPrimary"
-        android:textSize="28sp"
-        android:id="@+id/main_button"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignParentBottom="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/ad_unit_id">
+    </com.google.android.gms.ads.AdView>
+
 
 
 </RelativeLayout>

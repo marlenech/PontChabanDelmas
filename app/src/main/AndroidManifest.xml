@@ -9,6 +9,7 @@
 
     <application
         android:allowBackup="true"
+        android:name=".App"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
@@ -22,7 +23,73 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            <receiver android:name=".WidgetProvider" >
+                <intent-filter>
+
+                    <!-- This widget provider receives broadcast with following action name or simply onUpdate of AppWidgetProvider is called -->
+                    <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                    <!-- To receive broadcast with this string name -->
+                    <action android:name="com.italikdesign.pont.chaban.DATA_FETCHED" />
+                </intent-filter>
+                <!-- linking up xml file of appwidget-provider to AppWidgetProvider -->
+                <!-- linking up xml file of appwidget-provider to AppWidgetProvider -->
+                <meta-data
+                    android:name="android.appwidget.provider"
+                    android:resource="@xml/widgetinfo" />
+
+            </receiver>
+
+            <service
+                android:name=".WidgetService"
+                android:permission="android.permission.BIND_REMOTEVIEWS" />
+
+
+
+
+            <intent-filter>
+                <action android:name="com.italikdesign.pont.chaban.MESSAGE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
+        <service
+            android:name=".WidgetService"
+            android:permission="android.permission.BIND_REMOTEVIEWS" />
+
+        <!--
+            Configuration activity which gets launched  on widget being
+            placed on homescreen for first time
+        -->
+        <activity android:name=".ConfigActivity" >
+
+            <!--
+                 This intent is required to be recognized
+                 this activity as appwidget configuration activity
+            -->
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
+            </intent-filter>
+
+
+        </activity>
+        <service android:name=".RemoteFetchService" />
+        <!-- Broadcast receiver that responds when phone successfully boots -->
+        <receiver android:name=".PhoneBootCompleteReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version"
+            />
+        <activity
+            android:name="com.google.android.gms.ads.AdActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:theme="@android:style/Theme.Translucent"
+            />
+
     </application>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
 
 </manifest>

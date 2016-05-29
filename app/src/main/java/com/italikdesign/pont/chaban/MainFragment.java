@@ -3,7 +3,9 @@ package com.italikdesign.pont.chaban;
 /**
  * Created by italikdesign on 25/05/2016.
  */
+import android.os.Build;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -11,13 +13,21 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.TextView;
+
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
+import java.util.ArrayList;
 
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class MainFragment extends Fragment {
+
+    private AdView adView;
 
 
     public MainFragment() {
@@ -30,14 +40,26 @@ public class MainFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_main, container, false);
 
-        final Button mainButton = (Button) rootView.findViewById(R.id.main_button);
-        mainButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        if (Build.VERSION.SDK_INT > 9) {
+            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+            StrictMode.setThreadPolicy(policy);
+        }
 
-                mainButton.setBackgroundColor(getContext().getResources().getColor(R.color.colorAccent));
-            }
-        });
+
+
+        ArrayList<Feed> feeds = ContainerData.getFeeds();
+        for (Feed feed : feeds) {
+            Log.e("MainActivity", feed.toString());
+        }
+        ListFeedAdapter lfa = new ListFeedAdapter(getActivity(), feeds);
+        ((ListView) rootView.findViewById(R.id.listFeed)).setAdapter(lfa);
+
+        adView = (AdView) rootView.findViewById(R.id.adViewCardItem);
+
+
+        AdRequest adRequest = new AdRequest.Builder().build();
+        adView.loadAd(adRequest);
+
         // Inflate the layout for this fragment
         return rootView;
     }
