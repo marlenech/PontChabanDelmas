@@ -41,7 +41,7 @@ public class ContainerData extends AppCompatActivity {
         SAXParser parseur = null;
         ArrayList<Feed> feeds = null;
         try {
-            // On "fabrique" une instance de SAXParser
+            // Factory an instance of SAXParser
             parseur = fabrique.newSAXParser();
         } catch (ParserConfigurationException e) {
             e.printStackTrace();
@@ -49,7 +49,7 @@ public class ContainerData extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        // On d�fini l'url du fichier XML
+        // We define the URL of the XML file
         URL url = null;
 
         try {
@@ -59,15 +59,15 @@ public class ContainerData extends AppCompatActivity {
         }
 
 		/*
-		 * Le handler sera gestionnaire du fichier XML c'est � dire que c'est lui qui sera charg�
-		 * des op�rations de parsing. On vera cette classe en d�tails ci apr�s.
+		 * The handler will manage the XML file that is that it is he who will be responsible
+         * Parsing of operations. this class is vera in detail below after .
 		*/
         DefaultHandler handler = new ParserXMLHandler();
         try {
-            // On parse le fichier XML
+            //We parse the XML file
             parseur.parse(url.openConnection().getInputStream(), handler);
 
-            // On r�cup�re directement la liste des feeds
+            //directly recovering the list of feeds
             feeds = ((ParserXMLHandler) handler).getData();
         } catch (SAXException e) {
             e.printStackTrace();
@@ -94,7 +94,7 @@ public class ContainerData extends AppCompatActivity {
             feed.setImageBitmap(bitmap);
         }
 
-        // On la retourne l'array list
+        //It returns the array list
         return feeds;
     }
 
