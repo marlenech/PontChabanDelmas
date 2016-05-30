@@ -8,6 +8,9 @@ import android.os.Bundle;
 import android.os.StrictMode;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,12 +25,17 @@ import com.google.android.gms.ads.AdView;
 import java.util.ArrayList;
 
 
+
 /**
  * A simple {@link Fragment} subclass.
  */
 public class MainFragment extends Fragment {
 
+
     private AdView adView;
+    private RecyclerView recyclerView;
+    public static ListFeedAdapter lfa;
+
 
 
     public MainFragment() {
@@ -51,8 +59,14 @@ public class MainFragment extends Fragment {
         for (Feed feed : feeds) {
             Log.e("MainActivity", feed.toString());
         }
-        ListFeedAdapter lfa = new ListFeedAdapter(getActivity(), feeds);
-        ((ListView) rootView.findViewById(R.id.listFeed)).setAdapter(lfa);
+
+        //RecyclerView
+        lfa = new ListFeedAdapter(getActivity(), feeds);
+        recyclerView = (RecyclerView) rootView.findViewById(R.id.listFeed);
+        recyclerView.setAdapter(lfa);
+        final LinearLayoutManager llm = new LinearLayoutManager(getActivity());
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
+        recyclerView.setLayoutManager(llm);
 
         adView = (AdView) rootView.findViewById(R.id.adViewCardItem);
 

@@ -1,89 +1,67 @@
 package com.italikdesign.pont.chaban;
 
 import android.content.Context;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by italikdesign on 29/05/2016.
  */
-public class ListFeedAdapter extends BaseAdapter {
+public class ListFeedAdapter extends RecyclerView.Adapter<ListFeedAdapter.MyViewHolder> {
 
-    // the data to display
     ImageView thumbnail;
-    private ArrayList<Feed> feeds;
 
-    // LayoutInflater for parse layout XML in IHM Android.
 
     private LayoutInflater inflater;
+    private Context context;
+    private ArrayList<Feed> data;
 
-
-    public ListFeedAdapter(Context context, ArrayList<Feed> feeds) {
+    public ListFeedAdapter(Context context, ArrayList<Feed> objects) {
+        this.context = context;
         inflater = LayoutInflater.from(context);
-        this.feeds = feeds;
+        this.data = objects;
+    }
+
+    public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View view = inflater.inflate(R.layout.feed_view, parent, false);
+        MyViewHolder holder = new MyViewHolder(view);
+        return holder;
 
     }
 
-    // * Must specified Method "count()".
-    // * Number of items in list
-
-    @Override
-    public int getCount() {
-        return feeds.size();
-
-        //TODO
+    public void onBindViewHolder(MyViewHolder holder, int position) {
+        Feed feeds = data.get(position);
+        holder.imageView.setImageBitmap(feeds.getImageBitmap());
+        holder.title.setText(feeds.getTitle());
+        holder.heure.setText(feeds.getHeure());
+        holder.description.setText(feeds.getDescription());
     }
 
-
-    // Return object of list
-
-    @Override
-    public Object getItem(int index) {
-        return feeds.get(index);
+    public int getItemCount() {
+        return data.size();
     }
 
-    @Override
-    public long getItemId(int index) {
-        return this.feeds.get(index).getId();
+    class MyViewHolder extends RecyclerView.ViewHolder {
+        TextView title;
+        TextView heure;
+        TextView description;
+        ImageView imageView;
 
-    }
+        public MyViewHolder(View itemView) {
+            super(itemView);
+            title = (TextView) itemView.findViewById(R.id.title);
+            heure = (TextView) itemView.findViewById(R.id.heure);
+            description = (TextView) itemView.findViewById(R.id.description);
+            imageView = (ImageView) itemView.findViewById(R.id.thumbnail);
 
-
-    // * Part complex
-
-    @Override
-    public View getView(int position, View convertView, ViewGroup parent){
-        // * "convertView" for recycler items
-
-        FeedView fv;
-
-        if (convertView == null) {
-            fv = new FeedView();
-            convertView = inflater.inflate(R.layout.feed_view, null);
-
-            fv.imageView = (ImageView)convertView.findViewById(R.id.thumbnail);
-            fv.title = (TextView)convertView.findViewById(R.id.title);
-            fv.description = (TextView)convertView.findViewById(R.id.description);
-            fv.heure = (TextView)convertView.findViewById(R.id.heure);
-
-            convertView.setTag(fv);
-
-        } else {
-            fv = (FeedView) convertView.getTag();
         }
-        fv.imageView.setImageBitmap(feeds.get(position).getImageBitmap());
-        fv.description.setText(feeds.get(position).getDescription());
-        fv.title.setText(feeds.get(position).getTitle());
-        fv.heure.setText(feeds.get(position).getTitle());
-
-        return convertView;
-
     }
 
 }

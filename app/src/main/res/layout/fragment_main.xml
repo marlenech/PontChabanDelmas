@@ -22,22 +22,13 @@
 
 
 
-        <ListView
+        <android.support.v7.widget.RecyclerView
             android:id="@+id/listFeed"
-
             android:layout_width="match_parent"
-            android:layout_height="0.0dip"
-            android:layout_weight="0.48"
-            android:background="@xml/view_list"
-            android:clickable="false"
-            android:divider="@drawable/ligne"
-            android:focusable="false"
-            android:focusableInTouchMode="false"
-            android:longClickable="false"
-            android:paddingBottom="2.0dip"
-            android:paddingTop="2.0dip">
+            android:layout_height="wrap_content"
+            android:scrollbars="vertical" >
 
-        </ListView>
+        </android.support.v7.widget.RecyclerView>
 
 
 
