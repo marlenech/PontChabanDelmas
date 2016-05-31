@@ -2,15 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:focusable="true"
-    android:paddingLeft="16dp"
-    android:paddingRight="16dp"
-    android:paddingTop="10dp"
-    android:paddingBottom="10dp"
-    android:clickable="true"
-    android:background="?android:attr/selectableItemBackground"
-    android:orientation="vertical"
-     >
+    android:orientation="horizontal"
+    android:background="@drawable/image_widget" >
 
     <ImageView
         android:id="@+id/imageView"
@@ -28,9 +21,9 @@
         android:layout_alignParentLeft="true"
         android:layout_toRightOf="@id/imageView"
         android:singleLine="true"
-        android:textColor="@color/colorAccent"
+        android:textColor="#3399CC"
         android:paddingLeft="8px"
-        android:textSize="14sp"
+        android:textSize="12sp"
         android:layout_marginTop="5dip"
         android:layout_marginBottom="2dip"
         android:text="Heading"/>
@@ -47,7 +40,7 @@
         android:layout_marginBottom="5dip"
         android:layout_toRightOf="@id/imageView"
         android:textColor="#666666"
-        android:textSize="14sp"
+        android:textSize="12sp"
         android:text="Content"/>
 
 </RelativeLayout>

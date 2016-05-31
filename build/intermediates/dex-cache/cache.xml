@@ -1,2 +1,138 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
+
+    <item
+        jar="/Users/italikdesign/AndroidStudioProjects/PontChabanDelmas/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="2ac60427d7d1cfb30d2f2f2cf66897047bc6add3">
+        <dex dex="/Users/italikdesign/AndroidStudioProjects/PontChabanDelmas/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_711d5610f2416e281ac99714a056700fde756c35/classes.dex" />
+    </item>
+    <item
+        jar="/Users/italikdesign/AndroidStudioProjects/PontChabanDelmas/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="fef2b3e4b6b1b0e5fe7b69fa137a5fa55a3182ab">
+        <dex dex="/Users/italikdesign/AndroidStudioProjects/PontChabanDelmas/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-base-8.4.0_79f3a8804e937772ce49dc393d3cb3e6f5701ee1/classes.dex" />
+    </item>
+    <item
+        jar="/Users/italikdesign/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/24.0.0-beta1/support-annotations-24.0.0-beta1.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="04705c19cdec60364bc04e2e928c274da1ba301b">
+        <dex dex="/Users/italikdesign/AndroidStudioProjects/PontChabanDelmas/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-24.0.0-beta1_74a1560db18df76eda5c1c5413bc1bdb1a8e83b0/classes.dex" />
+    </item>
+    <item
+        jar="/Users/italikdesign/AndroidStudioProjects/PontChabanDelmas/app/libs/android-support-v7-cardview.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="bdbfbed86ac095461c12c8e35c72ad72421eee56">
+        <dex dex="/Users/italikdesign/AndroidStudioProjects/PontChabanDelmas/app/build/intermediates/transforms/dex/debug/folders/1000/2/android-support-v7-cardview_9ff5a88255b568251b4591b7f189792c061e817f/classes.dex" />
+    </item>
+    <item
+        jar="/Users/italikdesign/AndroidStudioProjects/PontChabanDelmas/app/build/intermediates/exploded-aar/com.android.support/design/23.4.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="5326d9a850d491714fef8cbfaa9ea3416f0bf0d2">
+        <dex dex="/Users/italikdesign/AndroidStudioProjects/PontChabanDelmas/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-23.4.0_2f5b41a5840cbbe068197d8ae5c16316b53b46d5/classes.dex" />
+    </item>
+    <item
+        jar="/Users/italikdesign/AndroidStudioProjects/PontChabanDelmas/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.4.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="de4db3785756bfb0915a9f59a9b3f2fea7407be4">
+        <dex dex="/Users/italikdesign/AndroidStudioProjects/PontChabanDelmas/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-23.4.0_d5cb245f195677fec9f846136ec6265d5229aceb/classes.dex" />
+    </item>
+    <item
+        jar="/Users/italikdesign/AndroidStudioProjects/PontChabanDelmas/app/build/intermediates/exploded-aar/com.android.support/support-v13/23.4.0/jars/libs/internal_impl-23.4.0.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="be09545b7e6ff322c7286d2e80bed3b75b76c529">
+        <dex dex="/Users/italikdesign/AndroidStudioProjects/PontChabanDelmas/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-23.4.0_8c20bdcfebf4c1aaadfd8b03625dc3a7d9b9b9b2/classes.dex" />
+    </item>
+    <item
+        jar="/Users/italikdesign/AndroidStudioProjects/PontChabanDelmas/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="548f06de403a9409f00554b3ee12a9fdea0e236c">
+        <dex dex="/Users/italikdesign/AndroidStudioProjects/PontChabanDelmas/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-23.4.0_3f85e368e19cfb91480e7e8244480a6b0d523487/classes.dex" />
+    </item>
+    <item
+        jar="/Users/italikdesign/AndroidStudioProjects/PontChabanDelmas/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/8.4.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="65d086ee9daaf87b5af62ad24471edafa433354c">
+        <dex dex="/Users/italikdesign/AndroidStudioProjects/PontChabanDelmas/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-appindexing-8.4.0_0cb4a3fc1c3a61030b8988b0264811cf29f99710/classes.dex" />
+    </item>
+    <item
+        jar="/Users/italikdesign/AndroidStudioProjects/PontChabanDelmas/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.4.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="ec75036c3c52e451d0cde50a5aedaf5fd32354a0">
+        <dex dex="/Users/italikdesign/AndroidStudioProjects/PontChabanDelmas/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-23.4.0_a8a049b17cc15ebf0c5df86503b397b4cedc581d/classes.dex" />
+    </item>
+    <item
+        jar="/Users/italikdesign/AndroidStudioProjects/PontChabanDelmas/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.4.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="8e673cdfadd8f2d98fdb2fda2285c30f6e449782">
+        <dex dex="/Users/italikdesign/AndroidStudioProjects/PontChabanDelmas/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-basement-8.4.0_fae551b155814669c3d4af8fe772917f309d006e/classes.dex" />
+    </item>
+    <item
+        jar="/Users/italikdesign/AndroidStudioProjects/PontChabanDelmas/app/build/intermediates/exploded-aar/com.android.support/support-v13/23.4.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="2bf893856577f5038c0b8007a43fda3b3c5beb23">
+        <dex dex="/Users/italikdesign/AndroidStudioProjects/PontChabanDelmas/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v13-23.4.0_2b95ef0fbc7c0969631d0394e82f8395c0958eaf/classes.dex" />
+    </item>
+    <item
+        jar="/Users/italikdesign/AndroidStudioProjects/PontChabanDelmas/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.0.0-beta1/jars/libs/internal_impl-24.0.0-beta1.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="23d564c059873f398dc5d967f56791a66472ce76">
+        <dex dex="/Users/italikdesign/AndroidStudioProjects/PontChabanDelmas/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.0.0-beta1_c7cb06a406c7b1a522ceb695390d4e923452ea11/classes.dex" />
+    </item>
+    <item
+        jar="/Users/italikdesign/AndroidStudioProjects/PontChabanDelmas/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.4.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="c2c594cace5d83a3227b2b6e658ecbfd586d3ed9">
+        <dex dex="/Users/italikdesign/AndroidStudioProjects/PontChabanDelmas/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-23.4.0_e7b4400be7660c8f00c2e1c4d6fd847ecc2f954c/classes.dex" />
+    </item>
+    <item
+        jar="/Users/italikdesign/AndroidStudioProjects/PontChabanDelmas/app/libs/android-query.0.25.10.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="a60258ce3d38031f3e2ab3afeb38c65f3516fe5a">
+        <dex dex="/Users/italikdesign/AndroidStudioProjects/PontChabanDelmas/app/build/intermediates/transforms/dex/debug/folders/1000/2/android-query.0.25.10_623b56aef381be8fcec757f2d6844e758528774c/classes.dex" />
+    </item>
+    <item
+        jar="/Users/italikdesign/AndroidStudioProjects/PontChabanDelmas/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="9d31a556238d154b35452879f5faf7ecbf4b7851">
+        <dex dex="/Users/italikdesign/AndroidStudioProjects/PontChabanDelmas/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_70fa38339d431f92c144e2c9bbd6272f3cda65c0/classes.dex" />
+    </item>
+    <item
+        jar="/Users/italikdesign/AndroidStudioProjects/PontChabanDelmas/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/23.4.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="d9ecde39b460470e655de6e47c05573d2d5a8bfb">
+        <dex dex="/Users/italikdesign/AndroidStudioProjects/PontChabanDelmas/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-cardview-v7-23.4.0_2638d66db0b80934eb00e541b45537135f0b6867/classes.dex" />
+    </item>
+    <item
+        jar="/Users/italikdesign/AndroidStudioProjects/PontChabanDelmas/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/8.4.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="b5e7892fb0708e792e0e933c4c0a0ca0ac7831fb">
+        <dex dex="/Users/italikdesign/AndroidStudioProjects/PontChabanDelmas/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-ads-8.4.0_2ccaa8c71a32752d54ee31eede73d37485f76e79/classes.dex" />
+    </item>
+    <item
+        jar="/Users/italikdesign/AndroidStudioProjects/PontChabanDelmas/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.0.0-beta1/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="f81eecb8d5e9e548f75f277830a94a9b37fbb987">
+        <dex dex="/Users/italikdesign/AndroidStudioProjects/PontChabanDelmas/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-24.0.0-beta1_c4ebbda1f2055f8244bcda116af18e8a19cd63f3/classes.dex" />
+    </item>
+
+</items>

@@ -22,6 +22,7 @@ import android.widget.TextView;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 
+
 import java.util.ArrayList;
 
 
@@ -52,6 +53,8 @@ public class MainFragment extends Fragment {
             StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
             StrictMode.setThreadPolicy(policy);
         }
+
+
 
 
 
