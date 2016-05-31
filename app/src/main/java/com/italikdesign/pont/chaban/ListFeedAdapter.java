@@ -16,6 +16,7 @@ import java.util.List;
  */
 public class ListFeedAdapter extends RecyclerView.Adapter<ListFeedAdapter.MyViewHolder> {
 
+
     ImageView thumbnail;
 
 

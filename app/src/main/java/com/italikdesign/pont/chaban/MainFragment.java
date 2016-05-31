@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.os.StrictMode;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -17,7 +18,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
@@ -63,6 +66,7 @@ public class MainFragment extends Fragment {
             Log.e("MainActivity", feed.toString());
         }
 
+
         //RecyclerView
         lfa = new ListFeedAdapter(getActivity(), feeds);
         recyclerView = (RecyclerView) rootView.findViewById(R.id.listFeed);
@@ -71,16 +75,21 @@ public class MainFragment extends Fragment {
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setLayoutManager(llm);
 
+
         adView = (AdView) rootView.findViewById(R.id.adViewCardItem);
 
 
         AdRequest adRequest = new AdRequest.Builder().build();
         adView.loadAd(adRequest);
 
+
         // Inflate the layout for this fragment
         return rootView;
     }
 
 
-}
+
+    }
+
+
 

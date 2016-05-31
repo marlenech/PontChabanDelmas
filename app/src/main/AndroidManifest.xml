@@ -33,7 +33,6 @@
                     <action android:name="com.italikdesign.pont.chaban.DATA_FETCHED" />
                 </intent-filter>
                 <!-- linking up xml file of appwidget-provider to AppWidgetProvider -->
-                <!-- linking up xml file of appwidget-provider to AppWidgetProvider -->
 
             </receiver>
 

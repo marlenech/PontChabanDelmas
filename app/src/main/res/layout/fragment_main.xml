@@ -16,7 +16,11 @@
         android:background="@drawable/background"
         android:id="@+id/linear_layout" >
 
-
+        <android.support.v4.widget.SwipeRefreshLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/swipeContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
 
         <android.support.v7.widget.RecyclerView
@@ -31,7 +35,7 @@
         </android.support.v7.widget.RecyclerView>
 
 
-
+        </android.support.v4.widget.SwipeRefreshLayout>
     </LinearLayout>
 
     <com.google.android.gms.ads.AdView
@@ -43,6 +47,7 @@
         ads:adSize="BANNER"
         ads:adUnitId="@string/ad_unit_id">
     </com.google.android.gms.ads.AdView>
+
 
 
 
