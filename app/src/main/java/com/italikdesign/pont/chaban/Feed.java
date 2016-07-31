@@ -1,5 +1,6 @@
 package com.italikdesign.pont.chaban;
 
+import android.content.pm.ResolveInfo;
 import android.graphics.Bitmap;
 
 /**
@@ -15,7 +16,7 @@ public class Feed {
     private String heure;
 
 
-    public Feed(long id, String imageURL, String title,  String description, String heure) {
+    public Feed() {
         super();
         this.id = id;
         this.imageURL = imageURL;
@@ -27,7 +28,7 @@ public class Feed {
 
 
 
-    public Feed() {
+    public Feed(MainFragment mainFragment, ResolveInfo ri) {
         super();
     }
 

@@ -51,4 +51,6 @@
     <string name="chargement">données en cours de chargement</string>
     <string name="configwidget">Vous êtes sur le point d\'installer le widget des levées du Pont Chaban Delmas. Vous avez la possibilité de redimensionner ce widget simplement en faisant un appui long dessus. Les levées seront mises à jour toutes les 30 minutes.</string>
     <string name="bouton">Installer le widget</string>
+    <string name="dialog_processinganduploading">En cours de chargement</string>
+    <string name="dialog_nointernet">Aucune connexion n\'a été trouvée</string>
 </resources>
