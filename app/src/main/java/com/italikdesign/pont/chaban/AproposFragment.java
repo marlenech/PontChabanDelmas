@@ -8,6 +8,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 
 
 /**
@@ -15,6 +16,8 @@ import android.view.ViewGroup;
  */
 public class AproposFragment extends Fragment {
 
+    private View rootView;
+    private ProgressBar progressBar;
 
     public AproposFragment() {
         // Required empty public constructor
@@ -24,9 +27,14 @@ public class AproposFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
 
-        return inflater.inflate(R.layout.fragment_apropos, container, false);
+        rootView = inflater.inflate(R.layout.fragment_apropos, container, false);
+        // Inflate the layout for this fragment
+        progressBar = (ProgressBar) rootView.findViewById(R.id.progress_bar);
+        progressBar.setVisibility(View.VISIBLE);
+
+        return rootView;
+
     }
 
 
