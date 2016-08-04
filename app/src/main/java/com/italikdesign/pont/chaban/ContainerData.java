@@ -75,24 +75,7 @@ public class ContainerData extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        for (Feed feed : feeds) {
-            String imageURL = feed.getImageURL();
-            Bitmap bitmap = null;
-            BitmapFactory.Options bmOptions = new BitmapFactory.Options();
-            bmOptions.inSampleSize = 1;
 
-            try {
-                bitmap = BitmapFactory
-                        .decodeStream(new
-                                        URL(imageURL).openStream(),
-                                null, bmOptions);
-            } catch (MalformedURLException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            feed.setImageBitmap(bitmap);
-        }
 
         //It returns the array list
         return feeds;

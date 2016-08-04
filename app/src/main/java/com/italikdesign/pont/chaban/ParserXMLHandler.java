@@ -13,7 +13,6 @@ public class ParserXMLHandler extends DefaultHandler {
 
     // name of tags XML
     private final String ITEM = "item";
-    private final String IMAGE = "image-url";
     private final String TITLE = "title";
     private final String DESCRIPTION = "description";
     private final String HEURE = "heure";
@@ -68,10 +67,7 @@ public class ParserXMLHandler extends DefaultHandler {
             this.currentFeed = new Feed();
             inItem = true;
         }
-        // action
-        if (localName.equalsIgnoreCase(IMAGE)){
-            // Nothing to do
-        }
+
 
         if (localName.equalsIgnoreCase(TITLE)){
             // Nothing to do
@@ -92,14 +88,9 @@ public class ParserXMLHandler extends DefaultHandler {
     @Override
     public void endElement(String uri, String localName, String name) throws SAXException {
 
-        if (localName.equalsIgnoreCase(IMAGE)){
-            if(inItem){
-               // The characters are in the buffer object
-                this.currentFeed.setImageURL(buffer.toString());
-                buffer = null;
-            }
 
-        }
+
+
 
         if (localName.equalsIgnoreCase(TITLE)){
             if(inItem){

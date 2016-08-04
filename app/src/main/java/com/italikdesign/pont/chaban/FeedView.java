@@ -12,6 +12,6 @@ public class FeedView {
     public TextView description;
     public TextView heure;
 
-    public ImageView imageView;
+
 
 }

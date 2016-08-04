@@ -8,8 +8,7 @@ import android.graphics.Bitmap;
  */
 public class Feed {
     private long id;
-    private String imageURL;
-    private Bitmap imageBitmap;
+
     private String title;
 
     private String description;
@@ -19,7 +18,7 @@ public class Feed {
     public Feed() {
         super();
         this.id = id;
-        this.imageURL = imageURL;
+
         this.title = title;
         this.description = description;
         this.heure = heure;
@@ -39,18 +38,7 @@ public class Feed {
     public void setId(long id) {
         this.id = id;
     }
-    public String getImageURL() {
-        return imageURL;
-    }
-    public void setImageURL(String imageURL) {
-        this.imageURL = imageURL;
-    }
-    public Bitmap getImageBitmap() {
-        return imageBitmap;
-    }
-    public void setImageBitmap(Bitmap imageBitmap) {
-        this.imageBitmap = imageBitmap;
-    }
+
 
     public String getTitle() {
         return title;

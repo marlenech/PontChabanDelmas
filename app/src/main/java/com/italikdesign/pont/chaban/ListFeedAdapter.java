@@ -17,7 +17,6 @@ import java.util.List;
 public class ListFeedAdapter extends RecyclerView.Adapter<ListFeedAdapter.MyViewHolder> {
 
 
-    ImageView thumbnail;
 
 
     private LayoutInflater inflater;
@@ -39,7 +38,7 @@ public class ListFeedAdapter extends RecyclerView.Adapter<ListFeedAdapter.MyView
 
     public void onBindViewHolder(MyViewHolder holder, int position) {
         Feed feeds = data.get(position);
-        holder.imageView.setImageBitmap(feeds.getImageBitmap());
+
         holder.title.setText(feeds.getTitle());
         holder.heure.setText(feeds.getHeure());
         holder.description.setText(feeds.getDescription());
@@ -53,14 +52,14 @@ public class ListFeedAdapter extends RecyclerView.Adapter<ListFeedAdapter.MyView
         TextView title;
         TextView heure;
         TextView description;
-        ImageView imageView;
+
 
         public MyViewHolder(View itemView) {
             super(itemView);
             title = (TextView) itemView.findViewById(R.id.title);
             heure = (TextView) itemView.findViewById(R.id.heure);
             description = (TextView) itemView.findViewById(R.id.description);
-            imageView = (ImageView) itemView.findViewById(R.id.thumbnail);
+
 
         }
     }
