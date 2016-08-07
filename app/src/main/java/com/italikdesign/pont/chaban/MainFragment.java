@@ -83,7 +83,7 @@ public class MainFragment extends Fragment implements SwipeRefreshLayout.OnRefre
 
 
         AdRequest adRequest = new AdRequest.Builder().build();
-        adView.loadAd(adRequest);
+
 
         swipeLayout = (SwipeRefreshLayout) rootView.findViewById(R.id.swipe_container);
         swipeLayout.setOnRefreshListener(this);
@@ -115,7 +115,7 @@ public class MainFragment extends Fragment implements SwipeRefreshLayout.OnRefre
                 recyclerView.setLayoutManager(llm);
                 swipeLayout.setRefreshing(false);
             }
-        }, 5000);
+        }, 2000);
 
 
     }
@@ -141,8 +141,8 @@ public class MainFragment extends Fragment implements SwipeRefreshLayout.OnRefre
 
         @Override
         protected Void doInBackground(Void... params) {
-            //Tu mets un sleep de 4s pour ta progressbar
-            SystemClock.sleep(4000);
+            //duration of progressbar
+            SystemClock.sleep(1000);
 
             return null;
         }

@@ -1,51 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/card_view"
     android:layout_width="match_parent"
-    android:layout_height="80dp"
+    android:layout_height="wrap_content"
     android:layout_marginBottom="8dp"
     android:layout_marginLeft="16dp"
     android:layout_marginRight="16dp"
-    android:foreground="?attr/selectableItemBackground"
-    >
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:gravity="center"
-        android:layout_height="match_parent">
+    app:cardCornerRadius="3dp"
+    app:cardElevation="5dp"
+    app:cardPreventCornerOverlap="false"
+    app:contentPadding="0dp">
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
 
+        android:padding="8dp" >
 
+        <ImageView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_date_range_black_24dp"/>
 
+        <!-- Title -->
 
         <TextView
             android:id="@+id/title"
-            android:layout_centerVertical="true"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:textColor="@color/dates"
-            android:textStyle="bold"
-            android:textAppearance="?attr/textAppearanceListItem"
-            android:textSize="16sp"
-            />
-        <TextView
-            android:id="@+id/description"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:textColor="@color/colorAccent"
-            android:ellipsize="end"
-            android:singleLine="true"
-            android:textAppearance="?attr/textAppearanceListItem"
-            android:textSize="14sp" />
-        <TextView
-            android:id="@+id/heure"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="12.0dip"
-            android:textColor="@color/footer"
-            android:paddingLeft="20dp"
-            android:paddingRight="5dp"/>
+            android:paddingLeft="35.0dp"
+            android:paddingTop="2dp"
+            android:textSize="14.0sp"
+            android:textStyle="bold"
+            android:textColor="@color/footer"/>
+
+        <!-- Description -->
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="35.0dp"
+            android:paddingTop="2dp"
+            android:layout_below="@id/title"
+            android:layout_marginTop="1dip"
+            android:textSize="12.0sp"
+            android:textColor="@color/colorPrimaryDark"/>
+
+
+        <!-- Heures -->
+
+        <ImageView
+            android:id="@+id/horloge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:src="@drawable/ic_alarm_black_24dp"/>
+
+        <TextView
+            android:id="@+id/heure"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="184.0dp"
+            android:layout_below="@id/description"
+            android:textColor="@color/colorAccent"
+            android:paddingTop="3dp"
+            android:textSize="12.0sp"
+            android:textStyle="italic"/>
+
+
+
 
     </RelativeLayout>
+
+
+
+
 </android.support.v7.widget.CardView>
