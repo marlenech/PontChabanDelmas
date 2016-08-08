@@ -3,9 +3,11 @@
     package="com.italikdesign.pont.chaban">
 
     <uses-permission android:name="android.permission.INTERNET" />
-
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="com.android.vending.BILLING" />
 
     <application
         android:allowBackup="true"
@@ -24,29 +26,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            <receiver android:name=".WidgetProvider" >
-                <intent-filter>
 
-                    <!-- This widget provider receives broadcast with following action name or simply onUpdate of AppWidgetProvider is called -->
-                    <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-                    <!-- To receive broadcast with this string name -->
-                    <action android:name="com.italikdesign.pont.chaban.DATA_FETCHED" />
-                </intent-filter>
-                <!-- linking up xml file of appwidget-provider to AppWidgetProvider -->
-
-            </receiver>
-
-            <service
-                android:name=".WidgetService"
-                android:permission="android.permission.BIND_REMOTEVIEWS" />
-
-
-
-
-            <intent-filter>
-                <action android:name="com.italikdesign.pont.chaban.MESSAGE" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
         </activity>
         <receiver android:name=".WidgetProvider" >
             <intent-filter>
@@ -100,7 +80,6 @@
 
 
     </application>
-    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
 
 </manifest>
