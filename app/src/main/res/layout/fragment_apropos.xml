@@ -1,23 +1,181 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_view_apropos"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.italikdesign.pont.chaban.AproposFragment">
+    android:layout_marginBottom="8dp"
+    android:layout_marginTop="65dp"
+    android:layout_marginLeft="8dp"
+    android:layout_marginRight="8dp"
+    app:cardCornerRadius="3dp"
+    app:cardElevation="5dp"
+    app:cardPreventCornerOverlap="false"
+    app:contentPadding="0dp"
+    >
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="GALLERY"
-        android:padding="8dp"
-        android:textColor="#fff"
-        android:background="@color/colorPrimary"
-        android:textSize="28sp"
-        android:id="@+id/textView"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
-    <ProgressBar
-        android:id="@+id/progress_bar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
 
-</RelativeLayout>
+
+
+            >
+
+            <!-- Mentions -->
+
+            <ImageView
+                android:id="@+id/developer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_contact_mail_black_24dp"
+                android:paddingLeft="8dp"
+                android:paddingTop="8dp"/>
+
+
+            <TextView android:id="@+id/mentions"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/devlop"
+                android:paddingLeft="40.0dp"
+                android:paddingTop="10dp"
+                android:textSize="14.0sp"
+                android:textStyle="bold"
+                android:textColor="@color/marronclair">
+                </TextView>
+
+            <TextView android:id="@+id/indep"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/indep"
+                android:paddingLeft="40.0dp"
+                android:paddingTop="4dp"
+                android:textSize="13.0sp"
+                android:textColor="@color/colorPrimary"
+                android:layout_below="@id/mentions"
+                ></TextView>
+
+
+
+
+            <TextView android:id="@+id/contact"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/contact1"
+                android:paddingLeft="40.0dp"
+                android:paddingTop="4dp"
+                android:paddingBottom="12.0dp"
+                android:textSize="13.0sp"
+                android:textColor="@color/colorPrimary"
+                android:layout_below="@id/indep"
+
+                ></TextView>
+
+            <View
+                android:id="@+id/ligne"
+                android:layout_height="1dp"
+                android:background="@color/gris"
+                android:layout_width="match_parent"
+                android:paddingTop="5dp"
+                android:layout_below="@id/contact"
+                />
+
+            <!-- Informations -->
+
+            <ImageView
+                android:id="@+id/informations"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_help_black_24dp"
+                android:paddingLeft="8dp"
+                android:paddingTop="8dp"
+                android:layout_below="@id/ligne"/>
+
+            <TextView android:id="@+id/info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/info"
+                android:paddingLeft="40.0dp"
+                android:paddingTop="10dp"
+                android:textSize="14.0sp"
+                android:textStyle="bold"
+                android:textColor="@color/marronclair"
+                android:layout_below="@id/ligne">
+            </TextView>
+
+            <TextView android:id="@+id/info1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/info1"
+                android:paddingLeft="40.0dp"
+                android:paddingRight="8dp"
+                android:paddingTop="4dp"
+                android:paddingBottom="12dp"
+                android:textSize="13.0sp"
+                android:textColor="@color/colorPrimary"
+                android:layout_below="@id/info">
+            </TextView>
+
+            <View
+                android:id="@+id/ligne3"
+                android:layout_height="1dp"
+                android:background="@color/gris"
+                android:layout_width="match_parent"
+                android:paddingTop="5dp"
+                android:layout_below="@id/info1"
+                />
+
+            <!-- Liens officiels -->
+
+            <ImageView
+                android:id="@+id/liens"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_language_black_24dp"
+                android:paddingLeft="8dp"
+                android:paddingTop="8dp"
+                android:layout_below="@id/ligne3"/>
+
+            <TextView android:id="@+id/site1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/site1"
+                android:paddingLeft="40.0dp"
+                android:paddingTop="10dp"
+                android:textSize="14.0sp"
+                android:textStyle="bold"
+                android:textColor="@color/marronclair"
+                android:layout_below="@id/ligne3">
+            </TextView>
+
+            <TextView android:id="@+id/lien_site1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/lien_site1"
+                android:paddingLeft="40.0dp"
+                android:paddingTop="4dp"
+                android:textSize="13.0sp"
+                android:textColor="@color/marronclair"
+                android:layout_below="@id/liens">
+            </TextView>
+
+            <TextView android:id="@+id/lien_opendata"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/lien_opendata"
+                android:paddingLeft="40.0dp"
+                android:paddingRight="8dp"
+                android:paddingTop="4dp"
+                android:paddingBottom="12dp"
+                android:textSize="13.0sp"
+                android:textColor="@color/colorPrimary"
+                android:layout_below="@id/lien_site1"
+                ></TextView>
+
+
+
+
+
+
+        </RelativeLayout></android.support.v7.widget.CardView>
+

@@ -15,10 +15,8 @@
     <string name="titre2">Les Levées du Pont JCD</string>
     <string name="hello_world">Hello world!</string>
     <string name="menu_settings">Vous aimez cette application? notez la sur le Google Play</string>
-    <string name="mention"><u>Mentions Légales</u></string>
-    <string name="creation">Création</string>
-    <string name="indep">ItalikDesign (Développeur Indépendant)<p></p></string>
-
+    <string name="indep">Marlène Charlet (autodidacte passionnée)<p></p></string>
+    <string name="devlop"><u>Développement</u></string>
     <string name="info"><u>Informations</u></string>
     <string name="info1">Les dates de fermetures sont indiquées sous réserve de confirmation de la Capitainerie.</string>
     <string name="info2">Cette application est développée de manière indépendante, sur du temps personnel. Vous souhaitez apporter votre aide, proposer des idées de développement? N\'hésitez pas à me contacter (Adresse mail en bas de page).</string>
@@ -38,7 +36,7 @@
 
     <string name="parametre">Paramètres</string>
 
-    <string name="promo">Suivez l\'actualité et l\'évolution de l\'application sur Twitter</string>
+    <string name="promo">\@ItalikDesign</string>
     <string name="notif">Désactivez les notifications</string>
     <string name="explic">Pour désactivez les notifications, allez dans le menu \"parametres\" de votre téléphone, puis dans \"Gestionnaire d\'applications\", séléctionnez l\'application du Pont Chaban Delmas, et décochez la case \"Afficher notifications\"</string>
     <string name="suite">Lancez ensuite l\'application du Pont Chaban Delmas afin que les modifications soient bien prises en compte</string>
@@ -53,4 +51,7 @@
     <string name="bouton">Installer le widget</string>
     <string name="dialog_processinganduploading">En cours de chargement</string>
     <string name="dialog_nointernet">Aucune connexion n\'a été trouvée</string>
+    <string name="site1"><u>Liens Officiels</u> </string>
+    <string name="lien_site1">Bordeaux Métropole</string>
+    <string name="lien_opendata">OpenData</string>
 </resources>
