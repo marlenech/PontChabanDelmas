@@ -11,15 +11,20 @@ android {
         applicationId "com.italikdesign.pont.chaban"
         minSdkVersion 15
         targetSdkVersion 24
-        versionCode 25
+        versionCode 38
         versionName "4.0.1"
 
             multiDexEnabled true
+
+        manifestPlaceholders = [manifestApplicationId: "${applicationId}",
+                                onesignal_app_id: "eae45a57-c846-4e5f-9080-326e3b1c4922",
+                                onesignal_google_project_number: "277319102390"]
 
     }
     buildTypes {
         release {
             minifyEnabled false
+            zipAlignEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
@@ -41,7 +46,19 @@ dependencies {
     compile 'com.android.support:support-v13:24.1.1'
     compile files('libs/android-query.0.25.10.jar')
     compile 'com.android.support:support-v4:24.1.1'
-    compile 'com.google.android.gms:play-services-ads:9.2.1'
-    compile 'com.google.android.gms:play-services-appindexing:9.2.1'
+    compile 'com.google.android.gms:play-services-ads:9.4.0'
+    compile 'com.google.android.gms:play-services-appindexing:9.4.0'
     compile 'io.realm:realm-android:0.81.1'
+
+    //notifs
+    compile 'com.onesignal:OneSignal:3.+@aar'
+
+    // Required for OneSignal, even if you have added FCM.
+    compile 'com.google.android.gms:play-services-gcm:+'
+
+    // Required for geotagging
+    compile "com.google.android.gms:play-services-location:+"
+
+    // play-services-analytics is only needed when using 8.1.0 or older.
+    // compile 'com.google.android.gms:play-services-analytics:+'
 }

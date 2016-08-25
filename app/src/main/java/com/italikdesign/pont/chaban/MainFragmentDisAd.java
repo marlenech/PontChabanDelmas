@@ -49,18 +49,18 @@ import java.util.ArrayList;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class MainFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener {
+public class MainFragmentDisAd extends Fragment implements SwipeRefreshLayout.OnRefreshListener {
 
     SwipeRefreshLayout swipeLayout;
 
 
-    private AdView adView;
+
     private RecyclerView recyclerView;
     public static ListFeedAdapter lfa;
     private View rootView;
 
 
-    public MainFragment() {
+    public MainFragmentDisAd() {
         // Required empty public constructor
     }
 
@@ -88,11 +88,6 @@ public class MainFragment extends Fragment implements SwipeRefreshLayout.OnRefre
     public void onViewCreated(View view, Bundle savedInstanceState) {
 
 
-        adView = (AdView) rootView.findViewById(R.id.adViewCardItem);
-
-
-        AdRequest adRequest = new AdRequest.Builder().build();
-        adView.loadAd(adRequest);
 
 
         swipeLayout = (SwipeRefreshLayout) rootView.findViewById(R.id.swipe_container);
