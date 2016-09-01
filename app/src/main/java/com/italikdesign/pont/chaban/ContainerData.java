@@ -1,17 +1,32 @@
 package com.italikdesign.pont.chaban;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.support.v7.app.AppCompatActivity;
 
+import android.net.Uri;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
+
+import com.google.android.gms.appindexing.Action;
+import com.google.android.gms.appindexing.AppIndex;
+import com.google.android.gms.common.api.GoogleApiClient;
+
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.NodeList;
+
+
+import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
 import java.io.IOException;
+import java.io.StringReader;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
+
 
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
@@ -24,17 +39,15 @@ public class ContainerData extends AppCompatActivity {
 
     static public Context context;
 
+
     public ContainerData() {
 
 
     }
 
 
+    public static ArrayList<Feed> getFeeds() {
 
-
-
-
-    public static ArrayList<Feed> getFeeds(){
 
         // Class factory to get instance of sax
         SAXParserFactory fabrique = SAXParserFactory.newInstance();
@@ -53,19 +66,24 @@ public class ContainerData extends AppCompatActivity {
         URL url = null;
 
         try {
-            url = new URL (App.getContext().getString(R.string.address_xml));
+            url = new URL(App.getContext().getString(R.string.address_xml));
         } catch (MalformedURLException e1) {
             e1.printStackTrace();
         }
 
+
 		/*
-		 * The handler will manage the XML file that is that it is he who will be responsible
+         * The handler will manage the XML file that is that it is he who will be responsible
          * Parsing of operations. this class is vera in detail below after .
 		*/
+
         DefaultHandler handler = new ParserXMLHandler();
+
+
         try {
             //We parse the XML file
             parseur.parse(url.openConnection().getInputStream(), handler);
+
 
             //directly recovering the list of feeds
             feeds = ((ParserXMLHandler) handler).getData();
@@ -76,12 +94,9 @@ public class ContainerData extends AppCompatActivity {
         }
 
 
-
         //It returns the array list
         return feeds;
     }
-
-
 
 
 }

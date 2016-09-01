@@ -4,6 +4,7 @@
 
 # Adress and Id
 codes.xml
+pushbots.xml
 
 
 # Local configuration file (sdk path, etc)

@@ -28,6 +28,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 
 import com.google.android.gms.ads.AdRequest;
@@ -111,6 +112,7 @@ public class MainFragment extends Fragment implements SwipeRefreshLayout.OnRefre
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
+                if(Utils.connectivity(getActivity())) {
 
                 ArrayList<Feed> feeds = ContainerData.getFeeds();
                 for (Feed feed : feeds) {
@@ -123,12 +125,19 @@ public class MainFragment extends Fragment implements SwipeRefreshLayout.OnRefre
                 final LinearLayoutManager llm = new LinearLayoutManager(getActivity());
                 recyclerView.setItemAnimator(new DefaultItemAnimator());
                 recyclerView.setLayoutManager(llm);
+
+                }
+                else
+                {
+                    Toast.makeText(getActivity(), "Vous devez être connecté à internet pour recevoir les données.", Toast.LENGTH_SHORT).show();
+                }
                 swipeLayout.setRefreshing(false);
             }
         }, 2000);
 
 
     }
+
 
     public void StartProgress() {
         new AsyncProgressBar().execute();
@@ -143,10 +152,12 @@ public class MainFragment extends Fragment implements SwipeRefreshLayout.OnRefre
 
         @Override
         protected void onPreExecute() {
+
             dialog = new ProgressDialog(getActivity());
             dialog.setMessage("Chargement des données...");
             dialog.setCancelable(false);
             dialog.show();
+
         }
 
         @Override
@@ -161,21 +172,29 @@ public class MainFragment extends Fragment implements SwipeRefreshLayout.OnRefre
 
         @Override
         protected void onPostExecute(Void useless) {
-            ArrayList<Feed> feeds = ContainerData.getFeeds();
-            for (Feed feed : feeds) {
-                Log.e("MainActivity", feed.toString());
+
+            if(Utils.connectivity(getActivity())) {
+
+                ArrayList<Feed> feeds = ContainerData.getFeeds();
+                for (Feed feed : feeds) {
+                    Log.e("MainActivity", feed.toString());
+                }
+                //RecyclerView
+                lfa = new ListFeedAdapter(getActivity(), feeds);
+                recyclerView = (RecyclerView) getActivity().findViewById(R.id.listFeed);
+                recyclerView.setHasFixedSize(true);
+                recyclerView.setAdapter(lfa);
+                final LinearLayoutManager llm = new LinearLayoutManager(getActivity());
+                recyclerView.setItemAnimator(new DefaultItemAnimator());
+                recyclerView.setLayoutManager(llm);
             }
-            //RecyclerView
-            lfa = new ListFeedAdapter(getActivity(), feeds);
-            recyclerView = (RecyclerView) getActivity().findViewById(R.id.listFeed);
-            recyclerView.setHasFixedSize(true);
-            recyclerView.setAdapter(lfa);
-            final LinearLayoutManager llm = new LinearLayoutManager(getActivity());
-            recyclerView.setItemAnimator(new DefaultItemAnimator());
-            recyclerView.setLayoutManager(llm);
+            else
+            {
+                Toast.makeText(getActivity(), "Vous devez être connecté à internet pour recevoir les données.", Toast.LENGTH_SHORT).show();
+            }
+                dialog.dismiss();
 
 
-            dialog.dismiss();
         }
     }
 

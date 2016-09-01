@@ -1,10 +1,23 @@
 package com.italikdesign.pont.chaban;
 
+import android.util.Log;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 import org.xml.sax.Attributes;
+import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
+import java.io.IOException;
+import java.io.StringReader;
 import java.util.ArrayList;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
 
 /**
  * Created by italikdesign on 29/05/2016.
@@ -16,6 +29,7 @@ public class ParserXMLHandler extends DefaultHandler {
     private final String TITLE = "title";
     private final String DESCRIPTION = "description";
     private final String HEURE = "heure";
+    String xml = null;
 
 
     // Array list of feeds
@@ -56,39 +70,84 @@ public class ParserXMLHandler extends DefaultHandler {
      * New instance of feed
      */
     @Override
-    public void startElement(String uri, String localName, String name,	Attributes attributes) throws SAXException {
-       // We reset the buffer every time it encounters an item
+    public void startElement(String uri, String localName, String name, Attributes attributes) throws SAXException {
+        // We reset the buffer every time it encounters an item
         buffer = new StringBuffer();
 
         // localName contain the name of tag encounter
 
         // Encounters a tag ITEM, must instance a new feed
-        if (localName.equalsIgnoreCase(ITEM)){
+        if (localName.equalsIgnoreCase(ITEM)) {
             this.currentFeed = new Feed();
             inItem = true;
         }
 
 
-        if (localName.equalsIgnoreCase(TITLE)){
+        if (localName.equalsIgnoreCase(TITLE)) {
             // Nothing to do
         }
 
-        if(localName.equalsIgnoreCase(DESCRIPTION)){
+        if (localName.equalsIgnoreCase(DESCRIPTION)) {
             // Nothing to do
         }
 
-        if(localName.equalsIgnoreCase(HEURE)){
+        if (localName.equalsIgnoreCase(HEURE)) {
             // Nothing to do
         }
 
     }
 
+    // Retrive DOM element
 
+    public Document getDomElement(String xml) {
+        Document doc = null;
+        DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+        try {
+
+            DocumentBuilder db = dbf.newDocumentBuilder();
+
+            InputSource is = new InputSource();
+            is.setCharacterStream(new StringReader(xml));
+            doc = db.parse(is);
+
+        } catch (ParserConfigurationException e) {
+            Log.e("Error: ", e.getMessage());
+            return null;
+        } catch (SAXException e) {
+            Log.e("Error: ", e.getMessage());
+            return null;
+        } catch (IOException e) {
+            Log.e("Error: ", e.getMessage());
+            return null;
+        }
+
+        return doc;
+    }
+
+    // Retrive Node element
+    public final String getElementValue(Node elem) {
+        Node child;
+        if (elem != null) {
+            if (elem.hasChildNodes()) {
+                for (child = elem.getFirstChild(); child != null; child = child
+                        .getNextSibling()) {
+                    if (child.getNodeType() == Node.TEXT_NODE) {
+                        return child.getNodeValue();
+                    }
+                }
+            }
+        }
+        return "";
+    }
+
+    // Retrive Node Value
+    public String getValue(Element item, String str) {
+        NodeList n = item.getElementsByTagName(str);
+        return this.getElementValue(n.item(0));
+    }
 
     @Override
     public void endElement(String uri, String localName, String name) throws SAXException {
-
-
 
 
 
