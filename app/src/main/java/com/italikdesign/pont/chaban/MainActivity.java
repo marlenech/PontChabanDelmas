@@ -12,6 +12,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AlertDialog;
+import android.support.v7.app.AppCompatDelegate;
 import android.support.v7.app.NotificationCompat;
 import android.util.Log;
 import android.view.View;
@@ -25,6 +26,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GooglePlayServicesUtil;
+import com.italikdesign.inappbilling.util.IabException;
 import com.italikdesign.inappbilling.util.IabHelper;
 import com.italikdesign.inappbilling.util.IabResult;
 import com.italikdesign.inappbilling.util.Inventory;
@@ -51,8 +55,8 @@ public class MainActivity extends AppCompatActivity
     boolean searchAllowed = false;
 
 
-
     static boolean active = false;
+
 
 
 
@@ -121,26 +125,34 @@ public class MainActivity extends AppCompatActivity
         // compute your public key and store it in base64EncodedPublicKey
         mHelper = new IabHelper(this, base64EncodedPublicKey);
 
-        mHelper.startSetup(new IabHelper.OnIabSetupFinishedListener() {
-            @SuppressLint("LongLogTag")
-            public void onIabSetupFinished(IabResult result) {
-                if (!result.isSuccess()) {
-                    // Oh no, there was a problem.
-                    Log.d(TAG, "Problem setting up In-app Billing: " + result);
+        int status = GooglePlayServicesUtil
+                .isGooglePlayServicesAvailable(this);
 
-                }
+        // Showing status
+        if (status != ConnectionResult.SUCCESS) {
 
-                // Hooray, IAB is fully set up. Now, let's get an inventory of
+            mHelper.startSetup(new IabHelper.OnIabSetupFinishedListener() {
+                                   @SuppressLint("LongLogTag")
+                                   public void onIabSetupFinished(IabResult result) {
+                                       if (!result.isSuccess()) {
+                                           // Oh no, there was a problem.
+                                           Log.d(TAG, "Problem setting up In-app Billing: " + result);
 
-                Log.d(TAG, "Setup successful. Querying inventory.");
-                mHelper.queryInventoryAsync(mGotInventoryListener);
+                                       }
 
-            }
-                           }
-        );
+                                       // Hooray, IAB is fully set up. Now, let's get an inventory of
 
+                                       Log.d(TAG, "Setup successful. Querying inventory.");
+                                       mHelper.queryInventoryAsync(mGotInventoryListener);
+
+
+                                   }
+                               }
+            );
+        }
 
     }
+
 
 
     @Override
@@ -176,6 +188,7 @@ public class MainActivity extends AppCompatActivity
     }
 
 
+    @SuppressLint("LongLogTag")
     @Override
     protected void onActivityResult(int requestCode, int resultCode,
                                     Intent data) {
@@ -183,7 +196,9 @@ public class MainActivity extends AppCompatActivity
                 resultCode, data)) {
             super.onActivityResult(requestCode, resultCode, data);
         }
-
+        else {
+            Log.i(TAG, "onActivityResult handled by IABUtil.");
+        }
 
     }
 
@@ -351,6 +366,8 @@ public class MainActivity extends AppCompatActivity
 
 
 
+
+
     }
 
     @SuppressLint("LongLogTag")
@@ -456,5 +473,8 @@ public class MainActivity extends AppCompatActivity
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String s) {
 
+    }
+    static {
+        AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
     }
 }

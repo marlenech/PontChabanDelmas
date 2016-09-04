@@ -28,7 +28,7 @@
                 android:id="@+id/developer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_contact_mail_black_24dp"
+                app:srcCompat="@drawable/ic_contact_mail_black_24dp"
                 android:paddingLeft="8dp"
                 android:paddingTop="8dp"/>
 
@@ -86,7 +86,7 @@
                 android:id="@+id/informations"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_help_black_24dp"
+                app:srcCompat="@drawable/ic_help_black_24dp"
                 android:paddingLeft="8dp"
                 android:paddingTop="8dp"
                 android:layout_below="@id/ligne"/>
@@ -131,7 +131,7 @@
                 android:id="@+id/liens"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_language_black_24dp"
+                app:srcCompat="@drawable/ic_language_black_24dp"
                 android:paddingLeft="8dp"
                 android:paddingTop="8dp"
                 android:layout_below="@id/ligne3"/>

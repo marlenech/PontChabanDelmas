@@ -977,6 +977,8 @@ public class IabHelper {
         })).start();
     }
 
+
+
     void logDebug(String msg) {
         if (mDebugLog) Log.d(mDebugTag, msg);
     }
