@@ -3,6 +3,7 @@ package com.italikdesign.pont.chaban;
 import android.appwidget.AppWidgetManager;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.widget.RemoteViews;
 import android.widget.RemoteViewsService;
 
@@ -64,15 +65,33 @@ public class ListProvider implements RemoteViewsService.RemoteViewsFactory {
      */
     @Override
     public RemoteViews getViewAt(int position) {
-        final RemoteViews remoteView = new RemoteViews(
-                context.getPackageName(), R.layout.list_row);
-        ListItem listItem = listItemList.get(position);
-        remoteView.setTextViewText(R.id.heading, listItem.title);
-        remoteView.setTextViewText(R.id.content, listItem.description);
 
-        return remoteView;
+        if (Build.VERSION.SDK_INT > 20) {
+            final RemoteViews remoteView = new RemoteViews(
+                    context.getPackageName(), R.layout.list_row);
+            ListItem listItem = listItemList.get(position);
+            remoteView.setTextViewText(R.id.title, listItem.title);
+            remoteView.setTextViewText(R.id.description, listItem.description);
+            remoteView.setTextViewText(R.id.heure, listItem.heure);
+            remoteView.setImageViewResource(R.id.listViewWidget, R.id.date);
+            return remoteView;
+
+        }
+        else{
+            final RemoteViews remoteView = new RemoteViews(
+                    context.getPackageName(), R.layout.list_row_noicon);
+            ListItem listItem = listItemList.get(position);
+            remoteView.setTextViewText(R.id.title, listItem.title);
+            remoteView.setTextViewText(R.id.description, listItem.description);
+            remoteView.setTextViewText(R.id.heure, listItem.heure);
+
+            return remoteView;
+        }
+
+
+
+
     }
-
 
     @Override
     public RemoteViews getLoadingView() {

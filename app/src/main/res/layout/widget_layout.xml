@@ -7,7 +7,8 @@
     android:layout_height="wrap_content"
     android:divider="@android:color/transparent"
 
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <FrameLayout android:paddingTop="2sp"
         android:layout_width="fill_parent"
@@ -44,7 +45,8 @@
             android:orientation="vertical"
 
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:background="@color/transparent">
 
 
 
@@ -58,17 +60,7 @@
 
 
                 />
-            <TextView
-                android:id="@+id/textView4"
-                android:textSize="12.0sp"
-                android:textColor="#FFFFFF"
-                android:layout_gravity="center"
-                android:textAlignment="center"
-                android:background="@color/transparent"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:paddingLeft="8dp"
-                android:text="@string/chargement" />
+
 
             <!-- Empty view is show if list items are empty -->
             <TextView
@@ -86,7 +78,7 @@
     </FrameLayout>
     <TextView android:textAppearance="?android:textAppearanceSmall"
         android:textSize="8.0sp"
-        android:layout_marginBottom="10sp"
+        android:layout_marginBottom="6sp"
         android:textColor="#FFFFFF"
         android:gravity="right"
         android:id="@+id/textView5"

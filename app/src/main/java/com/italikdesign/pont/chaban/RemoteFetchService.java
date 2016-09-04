@@ -80,9 +80,11 @@ public class RemoteFetchService extends Service {
                 ListItem listItem = new ListItem();
                 listItem.title = jsonObject.getString("title");
                 listItem.description = jsonObject.getString("description");
+                listItem.heure = jsonObject.getString("heure");
 
                 Log.i("Heading",listItem.title);
                 Log.i("Content",listItem.description);
+                Log.i("Heure",listItem.heure);
 
                 listItemList.add(listItem);
             }
