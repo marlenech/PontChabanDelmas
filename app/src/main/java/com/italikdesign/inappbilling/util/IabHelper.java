@@ -748,10 +748,10 @@ public class IabHelper {
      *     It also includes the result code numerically.
      */
     public static String getResponseDesc(int code) {
-        String[] iab_msgs = ("0:OK/1:User Canceled/2:Unknown/" +
-                "3:Billing Unavailable/4:Item unavailable/" +
-                "5:Developer Error/6:Error/7:Item Already Owned/" +
-                "8:Item not owned").split("/");
+        String[] iab_msgs = ("0:OK/1:Annulation de l'utilisateur/2:Inconnue/" +
+                "3:Achat non disponible/4:Produit non disponible/" +
+                "5:Erreur de développement/6:Erreur/7:L'achat a déjà été effectué/" +
+                "8:Le produit n'est plus actif").split("/");
         String[] iabhelper_msgs = ("0:OK/-1001:Remote exception during initialization/" +
                                    "-1002:Bad response received/" +
                                    "-1003:Purchase signature verification failed/" +

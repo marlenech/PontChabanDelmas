@@ -1,20 +1,14 @@
 package com.italikdesign.pont.chaban;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
-import android.app.Notification;
-import android.app.NotificationManager;
-import android.content.Context;
+
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
+
 import android.net.Uri;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatDelegate;
-import android.support.v7.app.NotificationCompat;
 import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -27,14 +21,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.GooglePlayServicesUtil;
-import com.italikdesign.inappbilling.util.IabException;
+
 import com.italikdesign.inappbilling.util.IabHelper;
 import com.italikdesign.inappbilling.util.IabResult;
 import com.italikdesign.inappbilling.util.Inventory;
 import com.italikdesign.inappbilling.util.Purchase;
-import com.onesignal.OneSignal;
+
 
 
 public class MainActivity extends AppCompatActivity
@@ -42,7 +34,7 @@ public class MainActivity extends AppCompatActivity
 
     private static final String TAG = "com.italikdesign.inappbilling";
 
-    public static final String ITEM_SKU = "test8";
+    public static final String ITEM_SKU = "ad_one";
 
     NavigationView navigationView = null;
     Toolbar toolbar = null;
@@ -51,8 +43,6 @@ public class MainActivity extends AppCompatActivity
     boolean mIsUserPremium = false;
     boolean searchAllowed = false;
 
-
-    static boolean active = false;
 
 
 
@@ -123,11 +113,7 @@ public class MainActivity extends AppCompatActivity
         // compute your public key and store it in base64EncodedPublicKey
         mHelper = new IabHelper(this, base64EncodedPublicKey);
 
-        int status = GooglePlayServicesUtil
-                .isGooglePlayServicesAvailable(this);
 
-        // Showing status
-        if (status != ConnectionResult.SUCCESS) {
 
             mHelper.startSetup(new IabHelper.OnIabSetupFinishedListener() {
                                    @SuppressLint("LongLogTag")
@@ -149,7 +135,7 @@ public class MainActivity extends AppCompatActivity
             );
         }
 
-    }
+
 
 
 
@@ -179,7 +165,11 @@ public class MainActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            return true;
+            Preferences fragment = new Preferences();
+            android.support.v4.app.FragmentTransaction fragmentTransaction =
+                    getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragment_container, fragment);
+            fragmentTransaction.commit();
         }
 
         return super.onOptionsItemSelected(item);
@@ -207,7 +197,7 @@ public class MainActivity extends AppCompatActivity
             Log.d(TAG, "Achat validé: " + result + ", achat: "
                     + purchase);
             if (result.isFailure()) {
-                complain("erreur lors de l'achat: " + result);
+                complain("Erreur lors de l'achat: " + result);
                 // Handle error
 
                 return;
@@ -215,7 +205,7 @@ public class MainActivity extends AppCompatActivity
 
             }
             if (!verifyDeveloperPayload(purchase)) {
-                complain("Error purchasing. Authenticity verification failed.");
+                complain("Erreur lors de l'achat. Authentification non reconnue.");
 
                 return;
 
@@ -224,8 +214,8 @@ public class MainActivity extends AppCompatActivity
 
             if (purchase.getSku().equals(ITEM_SKU)) {
                 // bought the premium upgrade!
-                Log.d(TAG, "Purchase is premium upgrade. Congratulating user.");
-                alert("Thank you for upgrading to premium!");
+                Log.d(TAG, "Vous avez acheté la version sans publicité. Félicitation.");
+                alert("Merci pour votre achat!");
                 mIsPremium = true;
                 SharedPreferences prefs = getBaseContext().getSharedPreferences(
                         "com.italikdesign.pont.chaban", 0);
@@ -244,9 +234,9 @@ public class MainActivity extends AppCompatActivity
         @Override
         public void onQueryInventoryFinished(IabResult result,
                                              Inventory inventory) {
-            Log.d(TAG, "Query inventory finished.");
+            Log.d(TAG, "L'inventaire des achats est terminé.");
             if (result.isFailure()) {
-                complain("Failed to query inventory: " + result);
+                complain("Echec lors de l'inventaire des achats: " + result);
 
                 return;
             }
@@ -256,7 +246,7 @@ public class MainActivity extends AppCompatActivity
             mHelper.consumeAsync(inventory.getPurchase(PREM_SKU), null);
         }*/
 
-            Log.d(TAG, "Query inventory was successful.");
+            Log.d(TAG, "L'inventaire a été réalisé avec succés.");
 
 
             Purchase premiumPurchase = inventory.getPurchase(ITEM_SKU);
@@ -265,7 +255,7 @@ public class MainActivity extends AppCompatActivity
             if (mIsPremium) {
                 searchAllowed = true;
                 mIsUserPremium = true;
-                Log.d(TAG, "Should be premium by now...");
+                Log.d(TAG, "Vous devez être premium...");
                 SharedPreferences prefs = getBaseContext().getSharedPreferences(
                         "com.italikdesign.pont.chaban", 0);
                 prefs.edit().putBoolean("premium", true).apply();
@@ -370,7 +360,7 @@ public class MainActivity extends AppCompatActivity
 
     @SuppressLint("LongLogTag")
     void complain(String message) {
-        Log.e(TAG, "**** TrivialDrive Error: " + message);
+        Log.e(TAG, "**** PontChaban Error: " + message);
         alert("Error: " + message);
     }
 
@@ -379,7 +369,7 @@ public class MainActivity extends AppCompatActivity
         AlertDialog.Builder bld = new AlertDialog.Builder(this);
         bld.setMessage(message);
         bld.setNeutralButton("OK", null);
-        Log.d(TAG, "Showing alert dialog: " + message);
+        Log.d(TAG, "Message: " + message);
         bld.create().show();
     }
 
@@ -426,12 +416,7 @@ public class MainActivity extends AppCompatActivity
 
             Log.d(TAG,
                     "Upgrade button clicked; launching purchase flow for upgrade.");
-    /*
-     * TODO: for security, generate your payload here for verification. See
-     * the comments on verifyDeveloperPayload() for more info. Since this is
-     * a SAMPLE, we just use an empty string, but on a production app you
-     * should carefully generate this.
-     */
+
             String payload = "";
 
             mHelper.launchPurchaseFlow(this, ITEM_SKU, 10001,
@@ -467,11 +452,6 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-    //for Pushbots (customPushReceiver)
-
-    public static boolean isActive(){
-        return active;
-    }
 
 
     @Override
