@@ -447,6 +447,12 @@ public class MainActivity extends AppCompatActivity
             fragmentTransaction.commit();
 
         } else if (id == R.id.nav_share) {
+            Intent shareIntent = new Intent(android.content.Intent.ACTION_SEND);
+            shareIntent.setType("text/plain");
+            shareIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, getString(R.string.app_name));
+            shareIntent.putExtra(android.content.Intent.EXTRA_TEXT, getString(R.string.partage));
+            startActivity(Intent.createChooser(shareIntent, getString(R.string.app_name)));
+
 
         } else if (id == R.id.nav_github) {
             Intent intent = new Intent(Intent.ACTION_VIEW);
