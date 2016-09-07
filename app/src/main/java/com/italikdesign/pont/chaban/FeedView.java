@@ -1,6 +1,6 @@
 package com.italikdesign.pont.chaban;
 
-import android.widget.ImageView;
+
 import android.widget.TextView;
 
 /**

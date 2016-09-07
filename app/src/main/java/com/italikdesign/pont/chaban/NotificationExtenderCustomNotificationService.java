@@ -2,7 +2,6 @@ package com.italikdesign.pont.chaban;
 
 import android.annotation.SuppressLint;
 import android.app.ActivityManager;
-import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.ComponentName;
@@ -22,7 +21,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.List;
-import java.util.concurrent.atomic.AtomicInteger;
+
 
 /**
  * Created by italikdesign on 05/09/16.

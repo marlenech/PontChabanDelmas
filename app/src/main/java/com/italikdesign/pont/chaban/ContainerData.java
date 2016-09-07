@@ -2,27 +2,14 @@ package com.italikdesign.pont.chaban;
 
 import android.content.Context;
 
-import android.net.Uri;
-import android.os.Bundle;
+
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 
-import com.google.android.gms.appindexing.Action;
-import com.google.android.gms.appindexing.AppIndex;
-import com.google.android.gms.common.api.GoogleApiClient;
-
-
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.NodeList;
-
-
-import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
 import java.io.IOException;
-import java.io.StringReader;
+
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;

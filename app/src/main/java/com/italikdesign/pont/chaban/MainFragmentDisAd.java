@@ -6,7 +6,6 @@ package com.italikdesign.pont.chaban;
 
 
 import android.app.ProgressDialog;
-import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
@@ -16,7 +15,6 @@ import android.os.StrictMode;
 
 
 import android.os.SystemClock;
-import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -27,19 +25,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.RelativeLayout;
 
-
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdSize;
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.purchase.InAppPurchaseResult;
-import com.google.android.gms.ads.purchase.PlayStorePurchaseListener;
-import com.italikdesign.inappbilling.util.IabHelper;
-import com.italikdesign.inappbilling.util.IabResult;
-import com.italikdesign.inappbilling.util.Inventory;
-import com.italikdesign.inappbilling.util.Purchase;
-import com.italikdesign.pont.chaban.MainActivity;
 
 
 import java.util.ArrayList;

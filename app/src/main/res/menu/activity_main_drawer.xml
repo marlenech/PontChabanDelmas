@@ -20,7 +20,7 @@
             android:title="A propos" />
     </group>
 
-    <item android:title="Version 5.5   @ItalikDesign">
+    <item android:title="@string/version">
         <menu>
             <item
                 android:id="@+id/nav_share"

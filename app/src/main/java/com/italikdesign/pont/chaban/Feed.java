@@ -1,7 +1,7 @@
 package com.italikdesign.pont.chaban;
 
 import android.content.pm.ResolveInfo;
-import android.graphics.Bitmap;
+
 
 /**
  * Created by italikdesign on 29/05/2016.

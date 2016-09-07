@@ -8,8 +8,7 @@ import android.widget.Toast;
 
 
 import com.onesignal.OneSignal;
-import com.pushbots.push.PBGenerateCustomNotification;
-import com.pushbots.push.Pushbots;
+
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -27,8 +26,7 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
         mContext = this;
-        OneSignal.setLogLevel(OneSignal.LOG_LEVEL.DEBUG, OneSignal.LOG_LEVEL.DEBUG);
-        OneSignal.setLogLevel(OneSignal.LOG_LEVEL.ERROR, OneSignal.LOG_LEVEL.ERROR);
+
         OneSignal.startInit(this).setNotificationOpenedHandler(new ExampleNotificationOpenedHandler()).init();
         OneSignal.idsAvailable(new OneSignal.IdsAvailableHandler() {
             @Override

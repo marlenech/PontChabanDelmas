@@ -7,7 +7,7 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">Options</string>
 
     <string name="pont">Le Pont</string>
     <string name="chaban">Jacques Chaban Delmas</string>
@@ -33,7 +33,7 @@
 
     <string name="titre1">Levées du Pont Chaban Delmas</string>
     <string name="auteur">Par Italik Design</string>
-    <string name="version">V.5.0.0</string>
+    <string name="version">V.5.0.0 @ItalikDesign</string>
     <string name="empty_string">Aucune donnée</string>
     <string name="donnees">données à jour</string>
     <string name="chargement">données en cours de chargement</string>

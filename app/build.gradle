@@ -5,21 +5,21 @@ android {
     }
 
     compileSdkVersion 24
-    buildToolsVersion "24.0.1"
+    buildToolsVersion "24.0.2"
 
     defaultConfig {
         applicationId "com.italikdesign.pont.chaban"
         minSdkVersion 16
         targetSdkVersion 24
-        versionCode 38
-        versionName "4.0.1"
+        versionCode 39
+        versionName "5.0.0"
 
 
 
         multiDexEnabled true
         vectorDrawables.useSupportLibrary = true
 
-        // TODO: Please update the Google Project number and OneSignal Id below to yours.
+
         manifestPlaceholders = [manifestApplicationId: "${applicationId}",
                                 onesignal_app_id: "eae45a57-c846-4e5f-9080-326e3b1c4922",
                                 onesignal_google_project_number: "277319102390"]
