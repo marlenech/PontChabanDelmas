@@ -52,12 +52,16 @@ public class Preferences extends Fragment {
         check = prefs.getBoolean("notif", true);
 
         Switch notificationSwitch = (Switch) rootView.findViewById(R.id.notifications);
+        final TextView notif_pref_ok = (TextView) rootView.findViewById(R.id.notif_pref_ok);
+        final TextView notif_pref_no = (TextView) rootView.findViewById(R.id.notif_pref_no);
         //set the switch to ON
         if (check) {
             notificationSwitch.setChecked(true);
+            notif_pref_no.setVisibility(TextView.GONE);
         }
         else {
             notificationSwitch.setChecked(false);
+            notif_pref_ok.setVisibility(TextView.GONE);
         }
 
         //attach a listener to check for changes in state
@@ -69,6 +73,8 @@ public class Preferences extends Fragment {
                     Log.e("PB", "Notifications is currently ON");
                     check = true;
                     OneSignal.setSubscription(true);
+                    notif_pref_ok.setVisibility(TextView.VISIBLE);
+                    notif_pref_no.setVisibility(TextView.GONE);
                     SharedPreferences prefs = getActivity().getBaseContext().getSharedPreferences(
                             "com.italikdesign.pont.chaban", 0);
                     prefs.edit().putBoolean("notif", true).apply();
@@ -77,6 +83,8 @@ public class Preferences extends Fragment {
                     Log.e("PB", "Notifications is currently OFF");
                     check = false;
                     OneSignal.setSubscription(false);
+                    notif_pref_no.setVisibility(TextView.VISIBLE);
+                    notif_pref_ok.setVisibility(TextView.GONE);
                     SharedPreferences prefs = getActivity().getBaseContext().getSharedPreferences(
                             "com.italikdesign.pont.chaban", 0);
                     prefs.edit().putBoolean("notif", false).apply();
