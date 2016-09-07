@@ -46,6 +46,17 @@ public class AproposFragment extends Fragment {
         feedback2.setText(Html.fromHtml("<a href=\"http://data.bordeaux-metropole.fr/data.php?layer=PREVISIONS_PONT_CHABAN\">http://data.bordeaux-metropole.fr</a>"));
         feedback2.setMovementMethod(LinkMovementMethod.getInstance());
 
+        TextView feedback3 = (TextView) rootView.findViewById(R.id.lien_blog);
+        feedback3.setText(Html.fromHtml("<a href=\"http://www.bordeauxpaquebots.com\">http://www.bordeauxpaquebots.com</a>"));
+        feedback3.setMovementMethod(LinkMovementMethod.getInstance());
+
+        TextView feedback4 = (TextView) rootView.findViewById(R.id.lien_twitter);
+        feedback4.setText(Html.fromHtml("<a href=\"https://twitter.com/SebD333\">https://twitter.com/SebD333</a>"));
+        feedback4.setMovementMethod(LinkMovementMethod.getInstance());
+
+        TextView feedback5 = (TextView) rootView.findViewById(R.id.licence_name);
+        feedback5.setText(Html.fromHtml("<a href=\"https://github.com/marlenech/PontChabanDelmas/blob/master/licence\">Apache License Version 2.0</a>"));
+        feedback5.setMovementMethod(LinkMovementMethod.getInstance());
 
 
         return rootView;

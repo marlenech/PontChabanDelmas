@@ -18,39 +18,37 @@
     <string name="devlop"><u>Développement</u></string>
     <string name="info"><u>Informations</u></string>
     <string name="info1">Les dates de fermetures sont indiquées sous réserve de confirmation de la Capitainerie.</string>
-    <string name="info2">Cette application est développée de manière indépendante, sur du temps personnel. Vous souhaitez apporter votre aide, proposer des idées de développement? N\'hésitez pas à me contacter (Adresse mail en bas de page).</string>
-    <string name="blog"><u>A découvrir :  www.BordeauxPaquebots.com </u></string>
-    <string name="blog1">Pour les amoureux du milieu maritime et pour connaître les secrets des paquebots qui font escale à Bordeaux, venez découvrir ce blog très riche en informations.</string>
-    <string name="contact"><u>Pour me contacter (Informations, Bugs, Développeurs)</u></string>
+    <string name="blog"><u>www.BordeauxPaquebots.com </u></string>
+    <string name="blog1">Vous voulez tout connaître des secrets des paquebots qui font escale à Bordeaux, venez découvrir ce blog très riche en informations.</string>
+
     <string name="contact1">italikdesignbordeaux@gmail.com</string>
 
-    <string name="google">VOTRE AVIS SUR L\'APPLICATION </string>
-    <string name="noter">Vous aimez cette application ? Vous la trouvez utile ? </string>
-    <string name="textnoter">Venez donner votre avis et noter l\'application sur le Google Play </string>
-    <string name="ouimerci">Je donne mon avis maintenant </string>
-    <string name="nonmerci">Non merci, plus tard... </string>
-    <string name="good">Noter sur GooglePlay</string>
+
     <string name="share">Partager</string>
     <string name="partage">Le PontChabanDelmasBordeaux, l\'application pour consulter où que vous soyez les dates et heures de levées du Pont J. Chaban Delmas. http://bit.ly/10BDLy1</string>
 
     <string name="parametre">Paramètres</string>
 
     <string name="promo">\@ItalikDesign</string>
-    <string name="notif">Désactivez les notifications</string>
-    <string name="explic">Pour désactivez les notifications, allez dans le menu \"parametres\" de votre téléphone, puis dans \"Gestionnaire d\'applications\", séléctionnez l\'application du Pont Chaban Delmas, et décochez la case \"Afficher notifications\"</string>
-    <string name="suite">Lancez ensuite l\'application du Pont Chaban Delmas afin que les modifications soient bien prises en compte</string>
 
     <string name="titre1">Levées du Pont Chaban Delmas</string>
     <string name="auteur">Par Italik Design</string>
-    <string name="version">V.3.0.3</string>
+    <string name="version">V.5.0.0</string>
     <string name="empty_string">Aucune donnée</string>
     <string name="donnees">données à jour</string>
     <string name="chargement">données en cours de chargement</string>
-    <string name="configwidget">Vous êtes sur le point d\'installer le widget des levées du Pont Chaban Delmas. Vous avez la possibilité de redimensionner ce widget simplement en faisant un appui long dessus. Les levées seront mises à jour toutes les 30 minutes.</string>
+    <string name="configwidget">Vous êtes sur le point d\'installer le widget des levées du Pont Chaban Delmas. Les levées seront mises à jour toutes les 30 minutes.</string>
     <string name="bouton">Installer le widget</string>
     <string name="dialog_processinganduploading">En cours de chargement</string>
     <string name="dialog_nointernet">Aucune connexion n\'a été trouvée</string>
     <string name="site1"><u>Liens Officiels</u> </string>
     <string name="lien_site1">Bordeaux Métropole</string>
     <string name="lien_opendata">OpenData</string>
+
+    <string name="liens_utiles"><u>Liens très utiles</u></string>
+    <string name="bridgeman">BridgeMan via son compte Twitter vous informe de toutes les modifications de levées et évènements liés au pont Chaban Delmas.</string>
+
+    <string name="licence"><u>Licence</u></string>
+    <string name="licence_name">Apache License Version 2.0</string>
+    <string name="licence_text">Vérifier les termes de la licence Apache</string>
 </resources>
