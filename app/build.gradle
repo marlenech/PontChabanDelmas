@@ -19,6 +19,11 @@ android {
         multiDexEnabled true
         vectorDrawables.useSupportLibrary = true
 
+        // TODO: Please update the Google Project number and OneSignal Id below to yours.
+        manifestPlaceholders = [manifestApplicationId: "${applicationId}",
+                                onesignal_app_id: "eae45a57-c846-4e5f-9080-326e3b1c4922",
+                                onesignal_google_project_number: "277319102390"]
+
 
 
         }
@@ -48,6 +53,19 @@ dependencies {
     compile 'com.google.android.gms:play-services-ads:9.4.0'
     compile 'com.google.android.gms:play-services-appindexing:9.4.0'
     compile 'io.realm:realm-android:0.81.1'
+
+    //onesignal
+
+    compile 'com.onesignal:OneSignal:2.+@aar'
+
+    // Required for OneSignal, even if you have added FCM.
+    compile 'com.google.android.gms:play-services-gcm:+'
+
+    // Required for geotagging
+    compile "com.google.android.gms:play-services-location:+"
+
+    // play-services-analytics is only needed when using 8.1.0 or older.
+    // compile 'com.google.android.gms:play-services-analytics:+'
 
 
 

@@ -1,6 +1,7 @@
 package com.italikdesign.pont.chaban;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.content.Context;
@@ -33,11 +34,7 @@ import com.italikdesign.inappbilling.util.IabHelper;
 import com.italikdesign.inappbilling.util.IabResult;
 import com.italikdesign.inappbilling.util.Inventory;
 import com.italikdesign.inappbilling.util.Purchase;
-
-
-
-
-
+import com.onesignal.OneSignal;
 
 
 public class MainActivity extends AppCompatActivity
@@ -59,12 +56,13 @@ public class MainActivity extends AppCompatActivity
 
 
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+
 
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);

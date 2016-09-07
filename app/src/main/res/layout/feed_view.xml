@@ -61,7 +61,7 @@
             android:layout_marginTop="5dp"
             android:textColor="@color/colorAccent"
             android:textSize="12.0sp"
-            android:textStyle="italic"/>
+            android:textStyle="italic" />
 
         <!-- Heures -->
 

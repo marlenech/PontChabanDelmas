@@ -17,7 +17,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
-        android:hardwareAccelerated="true">
+        android:hardwareAccelerated="true"
+        >
+        <meta-data
+            android:name="com.onesignal.NotificationOpened.DEFAULT"
+            android:value="DISABLE" />
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
@@ -28,10 +32,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            <intent-filter>
-                <action android:name="com.italikdesign.pont.chaban.MESSAGE" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
+
 
 
 
@@ -68,8 +69,8 @@
                 <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
             </intent-filter>
         </activity>
-
         <service android:name=".RemoteFetchService" />
+
         <!-- Broadcast receiver that responds when phone successfully boots -->
         <receiver android:name=".PhoneBootCompleteReceiver" >
             <intent-filter>
@@ -86,39 +87,19 @@
             android:theme="@android:style/Theme.Translucent"
             />
 
-        <!-- Pushbots -->
 
-        <activity android:name="com.pushbots.push.PBMsg"/>
-        <activity android:name="com.pushbots.push.PBListener"/>
-        <receiver android:name="com.italikdesign.pont.chaban.customPushReceiver" />
-        <receiver
-            android:name="com.google.android.gcm.GCMBroadcastReceiver"
-            android:permission="com.google.android.c2dm.permission.SEND" >
+        <service
+            android:name=".NotificationExtenderCustomNotificationService"
+            android:exported="false">
             <intent-filter>
-                <!-- Receives the actual messages. -->
-                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-                <!-- Receives the registration id. -->
-                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
-                <category android:name="com.italikdesign.pont.chaban" />
-            </intent-filter>
-        </receiver>
-        <receiver android:name="com.pushbots.push.MsgReceiver" />
-        <service android:name="com.pushbots.push.GCMIntentService" />
-        <service android:name="org.OpenUDID.OpenUDID_service" >
-            <intent-filter>
-                <action android:name="org.openudid.GETUDID" />
+                <action android:name="com.onesignal.NotificationExtender"></action>
             </intent-filter>
         </service>
 
 
-
-
-
     </application>
 
-    <permission android:name="com.italikdesign.pont.chaban.permission.C2D_MESSAGE" android:protectionLevel="signature" />
-    <uses-permission android:name="com.italikdesign.pont.chaban.permission.C2D_MESSAGE" />
-    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+
 
 
 </manifest>
