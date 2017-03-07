@@ -88,15 +88,6 @@
             />
 
 
-        <service
-            android:name=".NotificationExtenderCustomNotificationService"
-            android:exported="false">
-            <intent-filter>
-                <action android:name="com.onesignal.NotificationExtender"></action>
-            </intent-filter>
-        </service>
-
-
     </application>
 
 

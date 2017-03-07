@@ -25,7 +25,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
+import android.widget.Toast;
 
 
 import java.util.ArrayList;
@@ -92,22 +92,25 @@ public class MainFragmentDisAd extends Fragment implements SwipeRefreshLayout.On
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
+                if (Utils.connectivity(getActivity())) {
 
-                ArrayList<Feed> feeds = ContainerData.getFeeds();
-                for (Feed feed : feeds) {
-                    Log.e("MainActivity", feed.toString());
+                    ArrayList<Feed> feeds = ContainerData.getFeeds();
+                    for (Feed feed : feeds) {
+                        Log.e("MainActivity", feed.toString());
+                    }
+                    //RecyclerView
+                    lfa = new ListFeedAdapter(getActivity(), feeds);
+                    recyclerView = (RecyclerView) rootView.findViewById(R.id.listFeed);
+                    recyclerView.setAdapter(lfa);
+                    final LinearLayoutManager llm = new LinearLayoutManager(getActivity());
+                    recyclerView.setItemAnimator(new DefaultItemAnimator());
+                    recyclerView.setLayoutManager(llm);
+                } else {
+                    Toast.makeText(getActivity(), "Vous devez être connecté à internet pour recevoir les données.", Toast.LENGTH_SHORT).show();
                 }
-                //RecyclerView
-                lfa = new ListFeedAdapter(getActivity(), feeds);
-                recyclerView = (RecyclerView) rootView.findViewById(R.id.listFeed);
-                recyclerView.setAdapter(lfa);
-                final LinearLayoutManager llm = new LinearLayoutManager(getActivity());
-                recyclerView.setItemAnimator(new DefaultItemAnimator());
-                recyclerView.setLayoutManager(llm);
                 swipeLayout.setRefreshing(false);
             }
         }, 2000);
-
 
     }
 
@@ -142,6 +145,7 @@ public class MainFragmentDisAd extends Fragment implements SwipeRefreshLayout.On
 
         @Override
         protected void onPostExecute(Void useless) {
+            if(Utils.connectivity(getActivity())) {
             ArrayList<Feed> feeds = ContainerData.getFeeds();
             for (Feed feed : feeds) {
                 Log.e("MainActivity", feed.toString());
@@ -154,9 +158,14 @@ public class MainFragmentDisAd extends Fragment implements SwipeRefreshLayout.On
             final LinearLayoutManager llm = new LinearLayoutManager(getActivity());
             recyclerView.setItemAnimator(new DefaultItemAnimator());
             recyclerView.setLayoutManager(llm);
-
-
+            }
+            else
+            {
+                Toast.makeText(getActivity(), "Vous devez être connecté à internet pour recevoir les données.", Toast.LENGTH_SHORT).show();
+            }
             dialog.dismiss();
+
+
         }
     }
 

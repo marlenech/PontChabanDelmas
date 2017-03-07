@@ -71,8 +71,33 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/description"
             android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
             app:srcCompat="@drawable/ic_alarm_black_24dp"/>
+
+        <!-- Passage -->
+
+        <ImageView
+            android:id="@+id/bat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/heure"
+            android:paddingTop="15dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            app:srcCompat="@drawable/ic_directions_boat_black_24dp"/>
+
+        <TextView
+            android:id="@+id/passage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="35.0dp"
+            android:paddingTop="18dp"
+            android:layout_below="@id/heure"
+            android:layout_marginTop="1dip"
+            android:textColor="@color/marronclair"
+            android:textSize="12.0sp"
+             />
+
+
 
 
     </RelativeLayout>

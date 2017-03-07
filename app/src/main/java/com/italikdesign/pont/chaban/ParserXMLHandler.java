@@ -29,6 +29,7 @@ public class ParserXMLHandler extends DefaultHandler {
     private final String TITLE = "title";
     private final String DESCRIPTION = "description";
     private final String HEURE = "heure";
+    private final String PASSAGE = "passage";
     String xml = null;
 
 
@@ -92,6 +93,9 @@ public class ParserXMLHandler extends DefaultHandler {
         }
 
         if (localName.equalsIgnoreCase(HEURE)) {
+            // Nothing to do
+        }
+        if (localName.equalsIgnoreCase(PASSAGE)) {
             // Nothing to do
         }
 
@@ -170,6 +174,12 @@ public class ParserXMLHandler extends DefaultHandler {
         if(localName.equalsIgnoreCase(HEURE)){
             if(inItem){
                 this.currentFeed.setHeure(buffer.toString());
+                buffer = null;
+            }
+        }
+        if(localName.equalsIgnoreCase(PASSAGE)){
+            if(inItem){
+                this.currentFeed.setPassage(buffer.toString());
                 buffer = null;
             }
         }

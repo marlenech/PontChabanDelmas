@@ -13,6 +13,8 @@ public class Feed {
 
     private String description;
     private String heure;
+    private String passage;
+
 
 
     public Feed() {
@@ -22,6 +24,7 @@ public class Feed {
         this.title = title;
         this.description = description;
         this.heure = heure;
+        this.passage = passage;
 
     }
 
@@ -59,6 +62,13 @@ public class Feed {
     }
     public void setHeure(String heure) {
         this.heure = heure;
+    }
+
+    public String getPassage() {
+        return passage;
+    }
+    public void setPassage(String passage) {
+        this.passage = passage;
     }
 
 

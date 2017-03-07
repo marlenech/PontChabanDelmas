@@ -41,6 +41,7 @@ public class ListFeedAdapter extends RecyclerView.Adapter<ListFeedAdapter.MyView
         holder.title.setText(feeds.getTitle());
         holder.heure.setText(feeds.getHeure());
         holder.description.setText(feeds.getDescription());
+        holder.passage.setText(feeds.getPassage());
     }
 
     public int getItemCount() {
@@ -51,6 +52,7 @@ public class ListFeedAdapter extends RecyclerView.Adapter<ListFeedAdapter.MyView
         TextView title;
         TextView heure;
         TextView description;
+        TextView passage;
 
 
         public MyViewHolder(View itemView) {
@@ -58,6 +60,7 @@ public class ListFeedAdapter extends RecyclerView.Adapter<ListFeedAdapter.MyView
             title = (TextView) itemView.findViewById(R.id.title);
             heure = (TextView) itemView.findViewById(R.id.heure);
             description = (TextView) itemView.findViewById(R.id.description);
+            passage = (TextView) itemView.findViewById(R.id.passage);
 
 
         }
