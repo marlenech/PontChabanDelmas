@@ -57,7 +57,7 @@
             android:layout_height="wrap_content"
             android:layout_toLeftOf="@+id/horloge"
             android:layout_below="@id/description"
-            android:layout_marginRight="8.0dp"
+            android:layout_marginRight="10.0dp"
             android:layout_marginTop="5dp"
             android:textColor="@color/colorAccent"
             android:textSize="12.0sp"

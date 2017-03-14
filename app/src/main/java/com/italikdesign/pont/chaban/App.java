@@ -30,33 +30,67 @@ public class App extends Application {
         super.onCreate();
         mContext = this;
 
-        OneSignal.startInit(this).setNotificationOpenedHandler(new ExampleNotificationOpenedHandler()).init();
-        OneSignal.idsAvailable(new OneSignal.IdsAvailableHandler() {
-            @Override
-            public void idsAvailable(String userId, String registrationId) {
-
-
-            }
-        });
-
+        OneSignal.startInit(this)
+                .autoPromptLocation(true)
+                .setNotificationOpenedHandler(new ExampleNotificationOpenedHandler())
+                .setNotificationReceivedHandler(new ExampleNotificationReceivedHandler())
+                .init();
     }
+
+    private class ExampleNotificationReceivedHandler implements OneSignal.NotificationReceivedHandler {
+        /**
+         * Callback to implement in your app to handle when a notification is received while your app running
+         *  in the foreground or background.
+         *
+         *  Use a NotificationExtenderService instead to receive an event even when your app is closed (not 'forced stopped')
+         *     or to override notification properties.
+         *
+         * @param notification Contains information about the notification received.
+         */
+        @Override
+        public void notificationReceived(OSNotification notification) {
+            Log.w("OneSignalExample", "notificationReceived!!!!!!");
+        }
+    }
+
     private class ExampleNotificationOpenedHandler implements OneSignal.NotificationOpenedHandler {
+        /**
+         * Callback to implement in your app to handle when a notification is opened from the Android status bar or in app alert
+         *
+         * @param openedResult Contains information about the notification opened and the action taken on it.
+         */
         @Override
         public void notificationOpened(OSNotificationOpenResult openedResult) {
-            OSNotification notification = openedResult.notification;
-            JSONObject data = notification.payload.additionalData;
             OSNotificationAction.ActionType actionType = openedResult.action.type;
+            JSONObject data = openedResult.notification.payload.additionalData;
+            String customKey;
 
-            String customKey = data.optString("customkey", null);
+            if (data != null) {
+                customKey = data.optString("customkey", null);
+                if (customKey != null)
+                    Log.i("OneSignalExample", "customkey set with value: " + customKey);
+            }
+
             if (actionType == OSNotificationAction.ActionType.ActionTaken)
                 Log.i("OneSignalExample", "Button pressed with id: " + openedResult.action.actionID);
 
-            if (data != null)
-                Log.d("OneSignalExample", "Full additionalData:\n" + data.toString());
+            // The following can be used to open an Activity of your choice.
 
-            Log.d("OneSignalExample", "App in focus: " + notification.isAppInFocus);
+            // Intent intent = new Intent(getApplication(), YourActivity.class);
+            // intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT | Intent.FLAG_ACTIVITY_NEW_TASK);
+            // startActivity(intent);
+
+            // Add the following to your AndroidManifest.xml to prevent the launching of your main Activity
+            //  if you are calling startActivity above.
+         /*
+            <application ...>
+              <meta-data android:name="com.onesignal.NotificationOpened.DEFAULT" android:value="DISABLE" />
+            </application>
+         */
         }
     }
+
+
 
 
     public static Context getContext(){
