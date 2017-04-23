@@ -121,7 +121,7 @@ public class MainFragment extends Fragment implements SwipeRefreshLayout.OnRefre
                 }
                 else
                 {
-                    Toast.makeText(getActivity(), "Vous devez être connecté à internet pour recevoir les données.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "Vous devez être connecté à internet pour recevoir les données.", Toast.LENGTH_LONG).show();
                 }
                 swipeLayout.setRefreshing(false);
             }
@@ -182,7 +182,7 @@ public class MainFragment extends Fragment implements SwipeRefreshLayout.OnRefre
             }
             else
             {
-                Toast.makeText(getActivity(), "Vous devez être connecté à internet pour recevoir les données.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "Vous devez être connecté à internet pour recevoir les données.", Toast.LENGTH_LONG).show();
             }
                 dialog.dismiss();
 

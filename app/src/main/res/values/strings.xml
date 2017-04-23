@@ -33,7 +33,7 @@
 
     <string name="titre1">Levées du Pont Chaban Delmas</string>
     <string name="auteur">Par Italik Design</string>
-    <string name="version">V.5.0.6 @ItalikDesign</string>
+    <string name="version">V.5.0.8 @ItalikDesign</string>
     <string name="empty_string">Aucune donnée</string>
     <string name="donnees">données à jour</string>
     <string name="chargement">données en cours de chargement</string>
@@ -54,4 +54,12 @@
 
     <string name="notif_pref_ok">Vous recevez les notifications la veille de la levée du pont, ainsi que toutes les modifications de dernière minute en temps réel.</string>
     <string name="notif_pref_no">Vous ne recevez pas les notifications.</string>
+
+    //AlertDialog Rate
+
+    <string name="my_own_title">Soutenez l\'Appli !</string>
+    <string name="my_own_message">Cette application vous aide dans vos trajets quotidiens ? Soutenez la en lui attribuant une note sur le Play Store !</string>
+    <string name="my_own_rate">Notez maintenant</string>
+    <string name="my_own_thanks">Non merci</string>
+    <string name="my_own_cancel">Plus tard</string>
 </resources>

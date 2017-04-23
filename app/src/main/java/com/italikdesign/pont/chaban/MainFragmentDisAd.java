@@ -106,7 +106,7 @@ public class MainFragmentDisAd extends Fragment implements SwipeRefreshLayout.On
                     recyclerView.setItemAnimator(new DefaultItemAnimator());
                     recyclerView.setLayoutManager(llm);
                 } else {
-                    Toast.makeText(getActivity(), "Vous devez être connecté à internet pour recevoir les données.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "Vous devez être connecté à internet pour recevoir les données.", Toast.LENGTH_LONG).show();
                 }
                 swipeLayout.setRefreshing(false);
             }
@@ -161,7 +161,7 @@ public class MainFragmentDisAd extends Fragment implements SwipeRefreshLayout.On
             }
             else
             {
-                Toast.makeText(getActivity(), "Vous devez être connecté à internet pour recevoir les données.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "Vous devez être connecté à internet pour recevoir les données.", Toast.LENGTH_LONG).show();
             }
             dialog.dismiss();
 

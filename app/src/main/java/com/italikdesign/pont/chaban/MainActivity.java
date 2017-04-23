@@ -26,7 +26,7 @@ import com.italikdesign.inappbilling.util.IabHelper;
 import com.italikdesign.inappbilling.util.IabResult;
 import com.italikdesign.inappbilling.util.Inventory;
 import com.italikdesign.inappbilling.util.Purchase;
-
+import com.kobakei.ratethisapp.RateThisApp;
 
 
 public class MainActivity extends AppCompatActivity
@@ -104,9 +104,26 @@ public class MainActivity extends AppCompatActivity
             fragmentTransaction.commit();
         }
 
+        //AlertDialog Rate
+
+        // Custom condition: 3 days and 5 launches
+        RateThisApp.Config config = new RateThisApp.Config(3, 5);
+        config.setTitle(R.string.my_own_title);
+        config.setMessage(R.string.my_own_message);
+        config.setYesButtonText(R.string.my_own_rate);
+        config.setNoButtonText(R.string.my_own_thanks);
+        config.setCancelButtonText(R.string.my_own_cancel);
+        RateThisApp.init(config);
+
+        // Monitor launch times and interval from installation
+        RateThisApp.onStart(this);
+        // If the condition is satisfied, "Rate this app" dialog will be shown
+        RateThisApp.showRateDialogIfNeeded(this);
 
 
-            //InAppBilling
+
+
+        //InAppBilling
 
 
         String base64EncodedPublicKey = getString(R.string.base64);
