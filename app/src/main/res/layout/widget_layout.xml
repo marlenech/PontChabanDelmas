@@ -54,7 +54,7 @@
                 android:id="@+id/listViewWidget"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/fond1"
+                android:background="@color/gris_fonce"
                 android:divider="@color/transparent"
                 android:fadingEdge="none"
 
