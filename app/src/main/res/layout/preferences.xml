@@ -1,54 +1,834 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
 
-    <TextView android:id="@+id/text" android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-    <Switch
-        android:id="@+id/notifications"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
-        android:text="Activer les Notifications"
-        android:layout_below="@+id/text"
-        android:layout_alignParentLeft="true" />
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+    <LinearLayout
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingTop="60dp"
 
-    <View
-        android:id="@+id/ligne"
-        android:layout_height="1dp"
-        android:background="@color/gris"
-        android:layout_width="match_parent"
-        android:layout_marginTop="20dp"
-        android:paddingTop="10dp"
-        android:layout_below="@id/notifications"
-        />
+        >
+        <android.support.v7.widget.CardView
 
-    <TextView android:id="@+id/notif_pref_ok"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/notif_pref_ok"
-        android:paddingRight="8dp"
-        android:paddingTop="12dp"
-        android:paddingBottom="8dp"
-        android:textSize="13.0sp"
-        android:textColor="@color/colorPrimary"
-        android:layout_below="@id/ligne"
-        ></TextView>
+            android:id="@+id/card_view_00a07"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            app:cardCornerRadius="3dp"
+            app:cardElevation="5dp"
+            app:cardPreventCornerOverlap="false"
+            app:contentPadding="0dp"
+            >
 
-    <TextView android:id="@+id/notif_pref_no"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/notif_pref_no"
-        android:paddingRight="8dp"
-        android:paddingTop="12dp"
-        android:paddingBottom="8dp"
-        android:textSize="13.0sp"
-        android:textColor="@color/colorPrimary"
-        android:layout_below="@id/ligne"
-        ></TextView>
 
-</RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+
+
+                >
+
+                <ImageView
+                    android:id="@+id/d00a07"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    app:srcCompat="@drawable/ic_alarm_black_24dp"
+                    android:paddingLeft="8dp"
+                    android:paddingTop="8dp"/>
+
+
+                <TextView android:id="@+id/d00a07text"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/d00a07"
+                    android:paddingLeft="40.0dp"
+                    android:paddingTop="10dp"
+                    android:textSize="14.0sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/marronclair">
+                </TextView>
+                <Switch
+                    android:id="@+id/notifications00a07"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="Activer les Notifications"
+                    android:switchPadding="40dp"
+                    android:layout_below="@id/d00a07text"
+                    android:paddingLeft="40dp"
+                    android:layout_alignParentLeft="true" />
+
+                <View
+                    android:id="@+id/ligne"
+                    android:layout_height="1dp"
+                    android:background="@color/gris"
+                    android:layout_width="match_parent"
+                    android:paddingTop="10dp"
+                    android:layout_below="@id/notifications00a07"
+                    />
+
+                <TextView android:id="@+id/notif_pref_ok_00a07"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/notif_pref_ok_00a07"
+                    android:paddingRight="8dp"
+                    android:paddingTop="12dp"
+                    android:paddingLeft="8dp"
+                    android:paddingBottom="8dp"
+                    android:textSize="13.0sp"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_below="@id/ligne"
+                    />
+
+                <TextView android:id="@+id/notif_pref_no_00a07"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/notif_pref_no_00a07"
+                    android:paddingRight="8dp"
+                    android:paddingTop="12dp"
+                    android:paddingLeft="8dp"
+                    android:paddingBottom="8dp"
+                    android:textSize="13.0sp"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_below="@id/ligne"
+                    />
+
+            </RelativeLayout></android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+
+            android:id="@+id/card_view_07a0930"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            app:cardCornerRadius="3dp"
+            app:cardElevation="5dp"
+            app:cardPreventCornerOverlap="false"
+            app:contentPadding="0dp"
+            >
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+
+
+                >
+
+                <ImageView
+                    android:id="@+id/d07a0930"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    app:srcCompat="@drawable/ic_alarm_black_24dp"
+                    android:paddingLeft="8dp"
+                    android:paddingTop="8dp"/>
+
+
+                <TextView android:id="@+id/d07a0930text"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/d07a0930"
+                    android:paddingLeft="40.0dp"
+                    android:paddingTop="10dp"
+                    android:textSize="14.0sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/marronclair">
+                </TextView>
+                <Switch
+                    android:id="@+id/notifications07a0930"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="Activer les Notifications"
+                    android:switchPadding="40dp"
+                    android:layout_below="@id/d07a0930text"
+                    android:paddingLeft="40dp"
+                    android:layout_alignParentLeft="true" />
+
+                <View
+                    android:id="@+id/ligne0930"
+                    android:layout_height="1dp"
+                    android:background="@color/gris"
+                    android:layout_width="match_parent"
+                    android:paddingTop="10dp"
+                    android:layout_below="@id/notifications07a0930"
+                    />
+
+                <TextView android:id="@+id/notif_pref_ok_07a0930"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/notif_pref_ok_07a0930"
+                    android:paddingRight="8dp"
+                    android:paddingTop="12dp"
+                    android:paddingLeft="8dp"
+                    android:paddingBottom="8dp"
+                    android:textSize="13.0sp"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_below="@id/ligne0930"
+                    />
+
+                <TextView android:id="@+id/notif_pref_no_07a0930"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/notif_pref_no_07a0930"
+                    android:paddingRight="8dp"
+                    android:paddingTop="12dp"
+                    android:paddingLeft="8dp"
+                    android:paddingBottom="8dp"
+                    android:textSize="13.0sp"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_below="@id/ligne0930"
+                    />
+
+            </RelativeLayout></android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+
+            android:id="@+id/card_view_0930a1130"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            app:cardCornerRadius="3dp"
+            app:cardElevation="5dp"
+            app:cardPreventCornerOverlap="false"
+            app:contentPadding="0dp"
+            >
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+
+
+                >
+
+                <ImageView
+                    android:id="@+id/d0930a1130"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    app:srcCompat="@drawable/ic_alarm_black_24dp"
+                    android:paddingLeft="8dp"
+                    android:paddingTop="8dp"/>
+
+
+                <TextView android:id="@+id/d0930a1130text"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/d0930a1130"
+                    android:paddingLeft="40.0dp"
+                    android:paddingTop="10dp"
+                    android:textSize="14.0sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/marronclair">
+                </TextView>
+                <Switch
+                    android:id="@+id/notifications0930a1130"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="Activer les Notifications"
+                    android:switchPadding="40dp"
+                    android:layout_below="@id/d0930a1130text"
+                    android:paddingLeft="40dp"
+                    android:layout_alignParentLeft="true" />
+
+                <View
+                    android:id="@+id/ligne1130"
+                    android:layout_height="1dp"
+                    android:background="@color/gris"
+                    android:layout_width="match_parent"
+                    android:paddingTop="10dp"
+                    android:layout_below="@id/notifications0930a1130"
+                    />
+
+                <TextView android:id="@+id/notif_pref_ok_0930a1130"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/notif_pref_ok_0930a1130"
+                    android:paddingRight="8dp"
+                    android:paddingTop="12dp"
+                    android:paddingLeft="8dp"
+                    android:paddingBottom="8dp"
+                    android:textSize="13.0sp"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_below="@id/ligne1130"
+                    />
+
+                <TextView android:id="@+id/notif_pref_no_0930a1130"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/notif_pref_no_0930a1130"
+                    android:paddingRight="8dp"
+                    android:paddingTop="12dp"
+                    android:paddingLeft="8dp"
+                    android:paddingBottom="8dp"
+                    android:textSize="13.0sp"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_below="@id/ligne1130"
+                    />
+
+            </RelativeLayout></android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+
+            android:id="@+id/card_view_1130a14"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            app:cardCornerRadius="3dp"
+            app:cardElevation="5dp"
+            app:cardPreventCornerOverlap="false"
+            app:contentPadding="0dp"
+            >
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+
+
+                >
+
+                <ImageView
+                    android:id="@+id/d1130a14"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    app:srcCompat="@drawable/ic_alarm_black_24dp"
+                    android:paddingLeft="8dp"
+                    android:paddingTop="8dp"/>
+
+
+                <TextView android:id="@+id/d1130a14text"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/d1130a14"
+                    android:paddingLeft="40.0dp"
+                    android:paddingTop="10dp"
+                    android:textSize="14.0sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/marronclair">
+                </TextView>
+                <Switch
+                    android:id="@+id/notifications1130a14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="Activer les Notifications"
+                    android:switchPadding="40dp"
+                    android:layout_below="@id/d1130a14text"
+                    android:paddingLeft="40dp"
+                    android:layout_alignParentLeft="true" />
+
+                <View
+                    android:id="@+id/ligne14"
+                    android:layout_height="1dp"
+                    android:background="@color/gris"
+                    android:layout_width="match_parent"
+                    android:paddingTop="10dp"
+                    android:layout_below="@id/notifications1130a14"
+                    />
+
+                <TextView android:id="@+id/notif_pref_ok_1130a14"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/notif_pref_ok_1130a14"
+                    android:paddingRight="8dp"
+                    android:paddingTop="12dp"
+                    android:paddingLeft="8dp"
+                    android:paddingBottom="8dp"
+                    android:textSize="13.0sp"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_below="@id/ligne14"
+                    />
+
+                <TextView android:id="@+id/notif_pref_no_1130a14"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/notif_pref_no_1130a14"
+                    android:paddingRight="8dp"
+                    android:paddingTop="12dp"
+                    android:paddingLeft="8dp"
+                    android:paddingBottom="8dp"
+                    android:textSize="13.0sp"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_below="@id/ligne14"
+                    />
+
+            </RelativeLayout></android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+
+            android:id="@+id/card_view_14a1630"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            app:cardCornerRadius="3dp"
+            app:cardElevation="5dp"
+            app:cardPreventCornerOverlap="false"
+            app:contentPadding="0dp"
+            >
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+
+
+                >
+
+                <ImageView
+                    android:id="@+id/d14a1630"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    app:srcCompat="@drawable/ic_alarm_black_24dp"
+                    android:paddingLeft="8dp"
+                    android:paddingTop="8dp"/>
+
+
+                <TextView android:id="@+id/d14a1630text"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/d14a1630"
+                    android:paddingLeft="40.0dp"
+                    android:paddingTop="10dp"
+                    android:textSize="14.0sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/marronclair">
+                </TextView>
+                <Switch
+                    android:id="@+id/notifications14a1630"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="Activer les Notifications"
+                    android:switchPadding="40dp"
+                    android:layout_below="@id/d14a1630text"
+                    android:paddingLeft="40dp"
+                    android:layout_alignParentLeft="true" />
+
+                <View
+                    android:id="@+id/ligne1630"
+                    android:layout_height="1dp"
+                    android:background="@color/gris"
+                    android:layout_width="match_parent"
+                    android:paddingTop="10dp"
+                    android:layout_below="@id/notifications14a1630"
+                    />
+
+                <TextView android:id="@+id/notif_pref_ok_14a1630"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/notif_pref_ok_14a1630"
+                    android:paddingRight="8dp"
+                    android:paddingTop="12dp"
+                    android:paddingLeft="8dp"
+                    android:paddingBottom="8dp"
+                    android:textSize="13.0sp"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_below="@id/ligne1630"
+                    />
+
+                <TextView android:id="@+id/notif_pref_no_14a1630"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/notif_pref_no_14a1630"
+                    android:paddingRight="8dp"
+                    android:paddingTop="12dp"
+                    android:paddingLeft="8dp"
+                    android:paddingBottom="8dp"
+                    android:textSize="13.0sp"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_below="@id/ligne1630"
+                    />
+
+            </RelativeLayout></android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+
+            android:id="@+id/card_view_1630a19"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            app:cardCornerRadius="3dp"
+            app:cardElevation="5dp"
+            app:cardPreventCornerOverlap="false"
+            app:contentPadding="0dp"
+            >
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+
+
+                >
+
+                <ImageView
+                    android:id="@+id/d1630a19"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    app:srcCompat="@drawable/ic_alarm_black_24dp"
+                    android:paddingLeft="8dp"
+                    android:paddingTop="8dp"/>
+
+
+                <TextView android:id="@+id/d1630a19text"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/d1630a19"
+                    android:paddingLeft="40.0dp"
+                    android:paddingTop="10dp"
+                    android:textSize="14.0sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/marronclair">
+                </TextView>
+                <Switch
+                    android:id="@+id/notifications1630a19"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="Activer les Notifications"
+                    android:switchPadding="40dp"
+                    android:layout_below="@id/d1630a19text"
+                    android:paddingLeft="40dp"
+                    android:layout_alignParentLeft="true" />
+
+                <View
+                    android:id="@+id/ligne19"
+                    android:layout_height="1dp"
+                    android:background="@color/gris"
+                    android:layout_width="match_parent"
+                    android:paddingTop="10dp"
+                    android:layout_below="@id/notifications1630a19"
+                    />
+
+                <TextView android:id="@+id/notif_pref_ok_1630a19"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/notif_pref_ok_1630a19"
+                    android:paddingRight="8dp"
+                    android:paddingTop="12dp"
+                    android:paddingLeft="8dp"
+                    android:paddingBottom="8dp"
+                    android:textSize="13.0sp"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_below="@id/ligne19"
+                    />
+
+                <TextView android:id="@+id/notif_pref_no_1630a19"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/notif_pref_no_1630a19"
+                    android:paddingRight="8dp"
+                    android:paddingTop="12dp"
+                    android:paddingLeft="8dp"
+                    android:paddingBottom="8dp"
+                    android:textSize="13.0sp"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_below="@id/ligne19"
+                    />
+
+            </RelativeLayout></android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+
+            android:id="@+id/card_view_19a00"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            app:cardCornerRadius="3dp"
+            app:cardElevation="5dp"
+            app:cardPreventCornerOverlap="false"
+            app:contentPadding="0dp"
+            >
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+
+
+                >
+
+                <ImageView
+                    android:id="@+id/d19a00"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    app:srcCompat="@drawable/ic_alarm_black_24dp"
+                    android:paddingLeft="8dp"
+                    android:paddingTop="8dp"/>
+
+
+                <TextView android:id="@+id/d19a00text"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/d19a00"
+                    android:paddingLeft="40.0dp"
+                    android:paddingTop="10dp"
+                    android:textSize="14.0sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/marronclair">
+                </TextView>
+                <Switch
+                    android:id="@+id/notifications19a00"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="Activer les Notifications"
+                    android:switchPadding="40dp"
+                    android:layout_below="@id/d19a00text"
+                    android:paddingLeft="40dp"
+                    android:layout_alignParentLeft="true" />
+
+                <View
+                    android:id="@+id/ligne00"
+                    android:layout_height="1dp"
+                    android:background="@color/gris"
+                    android:layout_width="match_parent"
+                    android:paddingTop="10dp"
+                    android:layout_below="@id/notifications19a00"
+                    />
+
+                <TextView android:id="@+id/notif_pref_ok_19a00"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/notif_pref_ok_19a00"
+                    android:paddingRight="8dp"
+                    android:paddingTop="12dp"
+                    android:paddingLeft="8dp"
+                    android:paddingBottom="8dp"
+                    android:textSize="13.0sp"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_below="@id/ligne00"
+                    />
+
+                <TextView android:id="@+id/notif_pref_no_19a00"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/notif_pref_no_19a00"
+                    android:paddingRight="8dp"
+                    android:paddingTop="12dp"
+                    android:paddingLeft="8dp"
+                    android:paddingBottom="8dp"
+                    android:textSize="13.0sp"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_below="@id/ligne00"
+                    />
+
+            </RelativeLayout></android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+
+            android:id="@+id/card_view_samedi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            app:cardCornerRadius="3dp"
+            app:cardElevation="5dp"
+            app:cardPreventCornerOverlap="false"
+            app:contentPadding="0dp"
+            >
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+
+
+                >
+
+                <ImageView
+                    android:id="@+id/samedi"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    app:srcCompat="@drawable/ic_alarm_black_24dp"
+                    android:paddingLeft="8dp"
+                    android:paddingTop="8dp"/>
+
+
+                <TextView android:id="@+id/sameditext"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/samedi"
+                    android:paddingLeft="40.0dp"
+                    android:paddingTop="10dp"
+                    android:textSize="14.0sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/marronclair">
+                </TextView>
+                <Switch
+                    android:id="@+id/notificationssamedi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="Activer les Notifications"
+                    android:switchPadding="40dp"
+                    android:layout_below="@id/sameditext"
+                    android:paddingLeft="40dp"
+                    android:layout_alignParentLeft="true" />
+
+                <View
+                    android:id="@+id/lignesamedi"
+                    android:layout_height="1dp"
+                    android:background="@color/gris"
+                    android:layout_width="match_parent"
+                    android:paddingTop="10dp"
+                    android:layout_below="@id/notificationssamedi"
+                    />
+
+                <TextView android:id="@+id/notif_pref_ok_samedi"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/notif_pref_ok_samedi"
+                    android:paddingRight="8dp"
+                    android:paddingTop="12dp"
+                    android:paddingLeft="8dp"
+                    android:paddingBottom="8dp"
+                    android:textSize="13.0sp"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_below="@id/lignesamedi"
+                    />
+
+                <TextView android:id="@+id/notif_pref_no_samedi"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/notif_pref_no_samedi"
+                    android:paddingRight="8dp"
+                    android:paddingTop="12dp"
+                    android:paddingLeft="8dp"
+                    android:paddingBottom="8dp"
+                    android:textSize="13.0sp"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_below="@id/lignesamedi"
+                    />
+
+            </RelativeLayout></android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+
+            android:id="@+id/card_view_dimanche"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            app:cardCornerRadius="3dp"
+            app:cardElevation="5dp"
+            app:cardPreventCornerOverlap="false"
+            app:contentPadding="0dp"
+            >
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+
+
+                >
+
+                <ImageView
+                    android:id="@+id/dimanche"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    app:srcCompat="@drawable/ic_alarm_black_24dp"
+                    android:paddingLeft="8dp"
+                    android:paddingTop="8dp"/>
+
+
+                <TextView android:id="@+id/dimanchetext"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/dimanche"
+                    android:paddingLeft="40.0dp"
+                    android:paddingTop="10dp"
+                    android:textSize="14.0sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/marronclair">
+                </TextView>
+                <Switch
+                    android:id="@+id/notificationsdimanche"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="Activer les Notifications"
+                    android:switchPadding="40dp"
+                    android:layout_below="@id/dimanchetext"
+                    android:paddingLeft="40dp"
+                    android:layout_alignParentLeft="true" />
+
+                <View
+                    android:id="@+id/lignedimanche"
+                    android:layout_height="1dp"
+                    android:background="@color/gris"
+                    android:layout_width="match_parent"
+                    android:paddingTop="10dp"
+                    android:layout_below="@id/notificationsdimanche"
+                    />
+
+                <TextView android:id="@+id/notif_pref_ok_dimanche"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/notif_pref_ok_dimanche"
+                    android:paddingRight="8dp"
+                    android:paddingTop="12dp"
+                    android:paddingLeft="8dp"
+                    android:paddingBottom="8dp"
+                    android:textSize="13.0sp"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_below="@id/lignedimanche"
+                    />
+
+                <TextView android:id="@+id/notif_pref_no_dimanche"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/notif_pref_no_dimanche"
+                    android:paddingRight="8dp"
+                    android:paddingTop="12dp"
+                    android:paddingLeft="8dp"
+                    android:paddingBottom="8dp"
+                    android:textSize="13.0sp"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_below="@id/lignedimanche"
+                    />
+
+            </RelativeLayout></android.support.v7.widget.CardView>
+    </LinearLayout></ScrollView>

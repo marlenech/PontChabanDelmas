@@ -27,6 +27,7 @@ import com.italikdesign.inappbilling.util.IabResult;
 import com.italikdesign.inappbilling.util.Inventory;
 import com.italikdesign.inappbilling.util.Purchase;
 import com.kobakei.ratethisapp.RateThisApp;
+import com.onesignal.OneSignal;
 
 
 public class MainActivity extends AppCompatActivity
@@ -43,6 +44,16 @@ public class MainActivity extends AppCompatActivity
     boolean mIsUserPremium = false;
     boolean searchAllowed = false;
 
+    //Notifs
+    boolean notif00a07 = true;
+    boolean notif07a0930 = true;
+    boolean notif0930a1130 = true;
+    boolean notif1130a14 = true;
+    boolean notif14a1630 = true;
+    boolean notif1630a19 = true;
+    boolean notif19a00 = true;
+    boolean notifsamedi = true;
+    boolean notifdimanche = true;
 
 
 
@@ -120,6 +131,88 @@ public class MainActivity extends AppCompatActivity
         // If the condition is satisfied, "Rate this app" dialog will be shown
         RateThisApp.showRateDialogIfNeeded(this);
 
+        //Notifs
+        SharedPreferences prefs1 = getSharedPreferences(
+                "com.italikdesign.pont.chaban", 0);
+        notif00a07 = prefs1.getBoolean("notif00a07", true);
+
+        SharedPreferences prefs2 = getSharedPreferences(
+                "com.italikdesign.pont.chaban", 0);
+        notif07a0930 = prefs2.getBoolean("notif07a0930", true);
+
+        SharedPreferences prefs3 = getSharedPreferences(
+                "com.italikdesign.pont.chaban", 0);
+        notif0930a1130 = prefs3.getBoolean("notif0930a1130", true);
+
+        SharedPreferences prefs4 = getSharedPreferences(
+                "com.italikdesign.pont.chaban", 0);
+        notif1130a14 = prefs4.getBoolean("notif1130a14", true);
+
+        SharedPreferences prefs5 = getSharedPreferences(
+                "com.italikdesign.pont.chaban", 0);
+        notif14a1630 = prefs5.getBoolean("notif14a1630", true);
+
+        SharedPreferences prefs6 = getSharedPreferences(
+                "com.italikdesign.pont.chaban", 0);
+        notif1630a19 = prefs6.getBoolean("notif1630a19", true);
+
+        SharedPreferences prefs7 = getSharedPreferences(
+                "com.italikdesign.pont.chaban", 0);
+        notif19a00 = prefs7.getBoolean("notif19a00", true);
+
+        SharedPreferences prefs8 = getSharedPreferences(
+                "com.italikdesign.pont.chaban", 0);
+        notifsamedi = prefs8.getBoolean("notifsamedi", true);
+
+        SharedPreferences prefs9 = getSharedPreferences(
+                "com.italikdesign.pont.chaban", 0);
+        notifdimanche = prefs9.getBoolean("notifdimanche", true);
+
+        if (notif00a07) {
+            OneSignal.sendTag("00a07", "00a07");
+        }else{
+            OneSignal.deleteTag("00a07");
+        }
+        if (notif07a0930) {
+            OneSignal.sendTag("07a0930", "07a0930");
+        }else{
+            OneSignal.deleteTag("07a0930");
+        }
+        if (notif0930a1130) {
+            OneSignal.sendTag("0930a1130", "0930a1130");
+        }else{
+            OneSignal.deleteTag("0930a1130");
+        }
+        if (notif1130a14) {
+            OneSignal.sendTag("1130a14", "1130a14");
+        }else{
+            OneSignal.deleteTag("1130a14");
+        }
+        if (notif14a1630) {
+            OneSignal.sendTag("14a1630", "14a1630");
+        }else{
+            OneSignal.deleteTag("14a1630");
+        }
+        if (notif1630a19) {
+            OneSignal.sendTag("1630a19", "1630a19");
+        }else{
+            OneSignal.deleteTag("1630a19");
+        }
+        if (notif19a00) {
+            OneSignal.sendTag("19a00", "19a00");
+        }else{
+            OneSignal.deleteTag("19a00");
+        }
+        if (notifsamedi) {
+            OneSignal.sendTag("samedi", "samedi");
+        }else{
+            OneSignal.deleteTag("samedi");
+        }
+        if (notifdimanche) {
+            OneSignal.sendTag("dimanche", "dimanche");
+        }else{
+            OneSignal.deleteTag("dimanche");
+        }
 
 
 

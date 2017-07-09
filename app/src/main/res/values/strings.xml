@@ -62,4 +62,41 @@
     <string name="my_own_rate">Notez maintenant</string>
     <string name="my_own_thanks">Non merci</string>
     <string name="my_own_cancel">Plus tard</string>
+
+    //Choix horaires notification
+
+    <string name="d00a07">Levée entre 00h00 et 07h00</string>
+    <string name="d07a0930">Levée entre 07h00 et 09h30</string>
+    <string name="d0930a1130">Levée entre 09h30 et 11h30</string>
+    <string name="d1130a14">Levée entre 11h30 et 14h00</string>
+    <string name="d14a1630">Levée entre 14h00 et 16h30</string>
+    <string name="d1630a19">Levée entre 16h30 et 19h00</string>
+    <string name="d19a00">Levée entre 19h00 et 00h00</string>
+    <string name="samedi">Levée le Samedi</string>
+    <string name="dimanche">Levée le Dimanche et Jours fériés</string>
+
+    <string name="notif_pref_ok_00a07">Vous recevez les notifications des levées situées entre 00h00 et 07h00, ainsi que toutes les modifications de dernière minute en temps réel.</string>
+    <string name="notif_pref_ok_07a0930">Vous recevez les notifications des levées situées entre 07h00 et 09h30, ainsi que toutes les modifications de dernière minute en temps réel.</string>
+    <string name="notif_pref_ok_0930a1130">Vous recevez les notifications des levées situées entre 09h30 et 11h30, ainsi que toutes les modifications de dernière minute en temps réel.</string>
+    <string name="notif_pref_ok_1130a14">Vous recevez les notifications des levées situées entre 11h30 et 14h00, ainsi que toutes les modifications de dernière minute en temps réel.</string>
+    <string name="notif_pref_ok_14a1630">Vous recevez les notifications des levées situées entre 14h00 et 16h30, ainsi que toutes les modifications de dernière minute en temps réel.</string>
+    <string name="notif_pref_ok_1630a19">Vous recevez les notifications des levées situées entre 16h30 et 19h00, ainsi que toutes les modifications de dernière minute en temps réel.</string>
+    <string name="notif_pref_ok_19a00">Vous recevez les notifications des levées situées entre 19h00 et 00h00, ainsi que toutes les modifications de dernière minute en temps réel.</string>
+    <string name="notif_pref_ok_samedi">Vous recevez les notifications des levées du Samedi, ainsi que toutes les modifications de dernière minute en temps réel.</string>
+    <string name="notif_pref_ok_dimanche">Vous recevez les notifications des levées du Dimanche et des jours fériés, ainsi que toutes les modifications de dernière minute en temps réel.</string>
+
+
+    <string name="notif_pref_no_00a07">Vous ne recevez pas les notifications des levées situées entre 00h00 et 07h00.</string>
+    <string name="notif_pref_no_07a0930">Vous ne recevez pas les notifications des levées situées entre 07h00 et 09h30.</string>
+    <string name="notif_pref_no_0930a1130">Vous ne recevez pas les notifications des levées situées entre 09h30 et 11h30.</string>
+    <string name="notif_pref_no_1130a14">Vous ne recevez pas les notifications des levées situées entre 11h30 et 14h00.</string>
+    <string name="notif_pref_no_14a1630">Vous ne recevez pas les notifications des levées situées entre 14h00 et 16h30.</string>
+    <string name="notif_pref_no_1630a19">Vous ne recevez pas les notifications des levées situées entre 16h30 et 19h00.</string>
+    <string name="notif_pref_no_19a00">Vous ne recevez pas les notifications des levées situées entre 19h00 et 00h00.</string>
+    <string name="notif_pref_no_samedi">Vous ne recevez pas les notifications des levées du Samedi.</string>
+    <string name="notif_pref_no_dimanche">Vous ne recevez pas les notifications des levées du Dimanche et des jour fériés.</string>
+
+
+
+
 </resources>

@@ -1,7 +1,9 @@
 package com.italikdesign.pont.chaban;
 
+import android.app.AlertDialog;
 import android.app.Application;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.util.Log;
 import android.widget.Toast;
@@ -32,9 +34,12 @@ public class App extends Application {
 
         OneSignal.startInit(this)
                 .autoPromptLocation(true)
+
                 .setNotificationOpenedHandler(new ExampleNotificationOpenedHandler())
                 .setNotificationReceivedHandler(new ExampleNotificationReceivedHandler())
+
                 .init();
+
     }
 
     private class ExampleNotificationReceivedHandler implements OneSignal.NotificationReceivedHandler {
@@ -73,6 +78,15 @@ public class App extends Application {
 
             if (actionType == OSNotificationAction.ActionType.ActionTaken)
                 Log.i("OneSignalExample", "Button pressed with id: " + openedResult.action.actionID);
+
+
+            OneSignal.startInit(mContext)
+                    .autoPromptLocation(true)
+
+                    .setNotificationOpenedHandler(new ExampleNotificationOpenedHandler())
+                    .setNotificationReceivedHandler(new ExampleNotificationReceivedHandler())
+
+                    .init();
 
             // The following can be used to open an Activity of your choice.
 
