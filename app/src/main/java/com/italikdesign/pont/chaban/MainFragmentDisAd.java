@@ -161,7 +161,7 @@ public class MainFragmentDisAd extends Fragment implements SwipeRefreshLayout.On
             }
             else
             {
-                Toast.makeText(getActivity(), "Vous devez être connecté à internet pour recevoir les données.", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity().getApplicationContext(), "Vous devez être connecté à internet pour recevoir les données.", Toast.LENGTH_LONG).show();
             }
             dialog.dismiss();
 

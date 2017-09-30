@@ -46,7 +46,7 @@ public class RemoteFetchService extends Service {
                     AppWidgetManager.INVALID_APPWIDGET_ID);
         aquery = new AQuery(getBaseContext());
         fetchDataFromWeb();
-        return super.onStartCommand(intent, flags, startId);
+        return START_STICKY_COMPATIBILITY;
     }
 
     /**
