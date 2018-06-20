@@ -76,7 +76,7 @@ public class MainFragmentDisAd extends Fragment implements SwipeRefreshLayout.On
 
 
 
-        swipeLayout = (SwipeRefreshLayout) rootView.findViewById(R.id.swipe_container);
+        swipeLayout = rootView.findViewById(R.id.swipe_container);
         swipeLayout.setOnRefreshListener(this);
         swipeLayout.setColorSchemeColors(getResources().getColor(R.color.colorPrimary),
                 getResources().getColor(R.color.colorPrimaryDark), getResources().getColor(R.color.colorAccent));
@@ -93,20 +93,22 @@ public class MainFragmentDisAd extends Fragment implements SwipeRefreshLayout.On
             @Override
             public void run() {
                 if (Utils.connectivity(getActivity())) {
+                    if (isAdded()) {
 
-                    ArrayList<Feed> feeds = ContainerData.getFeeds();
-                    for (Feed feed : feeds) {
-                        Log.e("MainActivity", feed.toString());
+                        ArrayList<Feed> feeds = ContainerData.getFeeds();
+                        for (Feed feed : feeds) {
+                            Log.e("MainActivity", feed.toString());
+                        }
+                        //RecyclerView
+                        lfa = new ListFeedAdapter(getActivity(), feeds);
+                        recyclerView = rootView.findViewById(R.id.listFeed);
+                        recyclerView.setAdapter(lfa);
+                        final LinearLayoutManager llm = new LinearLayoutManager(getActivity());
+                        recyclerView.setItemAnimator(new DefaultItemAnimator());
+                        recyclerView.setLayoutManager(llm);
+                    } else {
+                        Toast.makeText(getActivity(), "Vous devez être connecté à internet pour recevoir les données.", Toast.LENGTH_LONG).show();
                     }
-                    //RecyclerView
-                    lfa = new ListFeedAdapter(getActivity(), feeds);
-                    recyclerView = (RecyclerView) rootView.findViewById(R.id.listFeed);
-                    recyclerView.setAdapter(lfa);
-                    final LinearLayoutManager llm = new LinearLayoutManager(getActivity());
-                    recyclerView.setItemAnimator(new DefaultItemAnimator());
-                    recyclerView.setLayoutManager(llm);
-                } else {
-                    Toast.makeText(getActivity(), "Vous devez être connecté à internet pour recevoir les données.", Toast.LENGTH_LONG).show();
                 }
                 swipeLayout.setRefreshing(false);
             }
@@ -146,22 +148,22 @@ public class MainFragmentDisAd extends Fragment implements SwipeRefreshLayout.On
         @Override
         protected void onPostExecute(Void useless) {
             if(Utils.connectivity(getActivity())) {
-            ArrayList<Feed> feeds = ContainerData.getFeeds();
-            for (Feed feed : feeds) {
-                Log.e("MainActivity", feed.toString());
-            }
-            //RecyclerView
-            lfa = new ListFeedAdapter(getActivity(), feeds);
-            recyclerView = (RecyclerView) getActivity().findViewById(R.id.listFeed);
-            recyclerView.setHasFixedSize(true);
-            recyclerView.setAdapter(lfa);
-            final LinearLayoutManager llm = new LinearLayoutManager(getActivity());
-            recyclerView.setItemAnimator(new DefaultItemAnimator());
-            recyclerView.setLayoutManager(llm);
-            }
-            else
-            {
-                Toast.makeText(getActivity().getApplicationContext(), "Vous devez être connecté à internet pour recevoir les données.", Toast.LENGTH_LONG).show();
+                if (isAdded()) {
+                    ArrayList<Feed> feeds = ContainerData.getFeeds();
+                    for (Feed feed : feeds) {
+                        Log.e("MainActivity", feed.toString());
+                    }
+                    //RecyclerView
+                    lfa = new ListFeedAdapter(getActivity(), feeds);
+                    recyclerView = getActivity().findViewById(R.id.listFeed);
+                    recyclerView.setHasFixedSize(true);
+                    recyclerView.setAdapter(lfa);
+                    final LinearLayoutManager llm = new LinearLayoutManager(getActivity());
+                    recyclerView.setItemAnimator(new DefaultItemAnimator());
+                    recyclerView.setLayoutManager(llm);
+                } else {
+                    Toast.makeText(getActivity().getApplicationContext(), "Vous devez être connecté à internet pour recevoir les données.", Toast.LENGTH_LONG).show();
+                }
             }
             dialog.dismiss();
 

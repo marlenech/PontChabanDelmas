@@ -9,13 +9,14 @@ import android.widget.RemoteViewsService;
 
 import java.util.ArrayList;
 
+
 /**
  * Created by italikdesign on 29/05/2016.
  */
 public class ListProvider implements RemoteViewsService.RemoteViewsFactory {
 
     private ArrayList<ListItem> listItemList = new ArrayList<ListItem>();
-    private Context context = null;
+    private Context context;
     private int appWidgetId;
 
     public ListProvider(Context context, Intent intent) {

@@ -1,7 +1,13 @@
 package com.italikdesign.pont.chaban;
 
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.appwidget.AppWidgetManager;
+import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
+import android.support.v4.app.NotificationCompat;
 import android.widget.RemoteViewsService;
 
 /**
@@ -19,7 +25,9 @@ public class WidgetService extends RemoteViewsService {
                 AppWidgetManager.EXTRA_APPWIDGET_ID,
                 AppWidgetManager.INVALID_APPWIDGET_ID);
 
-        return (new ListProvider(this.getApplicationContext(), intent));
+        return (new ListProvider(this, intent));
     }
+
+
 
 }

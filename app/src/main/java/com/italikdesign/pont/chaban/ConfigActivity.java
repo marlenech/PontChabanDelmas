@@ -3,7 +3,9 @@ package com.italikdesign.pont.chaban;
 import android.app.Activity;
 import android.appwidget.AppWidgetManager;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.view.View;
 
 /**
@@ -13,10 +15,14 @@ public class ConfigActivity extends Activity implements View.OnClickListener {
 
     private int appWidgetId = AppWidgetManager.INVALID_APPWIDGET_ID;
 
+    Intent serviceIntent;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.configactivity);
+
+
 
         assignAppWidgetId();
         findViewById(R.id.widgetStartButton).setOnClickListener(this);
@@ -56,11 +62,16 @@ public class ConfigActivity extends Activity implements View.OnClickListener {
 
         // start your service
         // to fetch data from web
-        Intent serviceIntent = new Intent(this, RemoteFetchService.class);
+        serviceIntent = new Intent(this, RemoteFetchService.class);
 
         serviceIntent
                 .putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, appWidgetId);
-        startService(serviceIntent);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            ContextCompat.startForegroundService(this, serviceIntent);
+        }
+        else {
+            startService(serviceIntent);
+        }
 
         // finish this activity
         this.finish();

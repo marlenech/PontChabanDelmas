@@ -57,10 +57,10 @@ public class ListFeedAdapter extends RecyclerView.Adapter<ListFeedAdapter.MyView
 
         public MyViewHolder(View itemView) {
             super(itemView);
-            title = (TextView) itemView.findViewById(R.id.title);
-            heure = (TextView) itemView.findViewById(R.id.heure);
-            description = (TextView) itemView.findViewById(R.id.description);
-            passage = (TextView) itemView.findViewById(R.id.passage);
+            title = itemView.findViewById(R.id.title);
+            heure = itemView.findViewById(R.id.heure);
+            description = itemView.findViewById(R.id.description);
+            passage = itemView.findViewById(R.id.passage);
 
 
         }

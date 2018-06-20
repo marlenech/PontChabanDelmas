@@ -1,9 +1,11 @@
 package com.italikdesign.pont.chaban;
 
 
+import android.app.Notification;
 import android.app.Service;
 import android.appwidget.AppWidgetManager;
 import android.content.Intent;
+import android.os.Build;
 import android.os.IBinder;
 import android.util.Log;
 
@@ -11,9 +13,11 @@ import com.androidquery.AQuery;
 import com.androidquery.callback.AjaxCallback;
 import com.androidquery.callback.AjaxStatus;
 
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
 
 import java.util.ArrayList;
 
@@ -49,6 +53,16 @@ public class RemoteFetchService extends Service {
         return START_STICKY_COMPATIBILITY;
     }
 
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        int NOTIFICATION_ID = (int) (System.currentTimeMillis()%10000);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            startForeground(NOTIFICATION_ID, new Notification.Builder(this).build());
+        }
+
+
+    }
     /**
      * method which fetches data(json) from web aquery takes params
      * remoteJsonUrl = from where data to be fetched String.class = return
@@ -111,5 +125,5 @@ public class RemoteFetchService extends Service {
 
         this.stopSelf();
     }
-}
 
+}

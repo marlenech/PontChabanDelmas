@@ -89,6 +89,8 @@ public class MainActivity extends AppCompatActivity
 
         navigationView.setNavigationItemSelectedListener(this);
 
+
+
         //Preferences App-billing
 
         SharedPreferences prefs = getSharedPreferences(

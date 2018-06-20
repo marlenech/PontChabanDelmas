@@ -7,6 +7,7 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.widget.RemoteViews;
 
 /**
@@ -35,7 +36,9 @@ public class WidgetProvider extends AppWidgetProvider {
             Intent serviceIntent = new Intent(context, RemoteFetchService.class);
             serviceIntent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID,
                     appWidgetIds[i]);
-            context.startService(serviceIntent);
+
+                context.startService(serviceIntent);
+
         }
         super.onUpdate(context, appWidgetManager, appWidgetIds);
     }
