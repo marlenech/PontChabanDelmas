@@ -5,10 +5,12 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
 
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatDelegate;
+import android.support.v7.widget.CardView;
 import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -39,6 +41,7 @@ public class MainActivity extends AppCompatActivity
 
     NavigationView navigationView = null;
     Toolbar toolbar = null;
+    CardView cardview = null;
     IabHelper mHelper;
     boolean mIsPremium = false;
     boolean mIsUserPremium = false;
@@ -66,11 +69,19 @@ public class MainActivity extends AppCompatActivity
 
 
 
+        toolbar = findViewById(R.id.toolbar);
+
+
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
         toolbar.setTitle("Le Pont Chaban Delmas");
         toolbar.setSubtitle("Dates et Heures de Levées");
+
+
+
+
+
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

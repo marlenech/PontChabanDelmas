@@ -80,6 +80,8 @@
             />
         <meta-data android:name="android.max_aspect"
             android:value="ratio_float"/>
+
+
         <activity
             android:name="com.google.android.gms.ads.AdActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
