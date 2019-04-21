@@ -26,10 +26,15 @@ public class ParserXMLHandler extends DefaultHandler {
 
     // name of tags XML
     private final String ITEM = "item";
-    private final String TITLE = "title";
-    private final String DESCRIPTION = "description";
-    private final String HEURE = "heure";
-    private final String PASSAGE = "passage";
+    private final String JOUR = "jour";
+    private final String DATE = "date";
+    private final String ANNEE = "annee";
+    private final String SENS = "sens";
+    private final String BATEAUX = "bateaux";
+    private final String HEURE1 = "heure1";
+    private final String HEURE2 = "heure2";
+    private final String MOTIF = "motif";
+    private final String HEUREPASSAGE = "heurepassage";
     String xml = null;
 
 
@@ -84,18 +89,33 @@ public class ParserXMLHandler extends DefaultHandler {
         }
 
 
-        if (localName.equalsIgnoreCase(TITLE)) {
+        if (localName.equalsIgnoreCase(JOUR)) {
             // Nothing to do
         }
 
-        if (localName.equalsIgnoreCase(DESCRIPTION)) {
+        if (localName.equalsIgnoreCase(DATE)) {
             // Nothing to do
         }
 
-        if (localName.equalsIgnoreCase(HEURE)) {
+        if (localName.equalsIgnoreCase(ANNEE)) {
             // Nothing to do
         }
-        if (localName.equalsIgnoreCase(PASSAGE)) {
+        if (localName.equalsIgnoreCase(SENS)) {
+            // Nothing to do
+        }
+        if (localName.equalsIgnoreCase(BATEAUX)) {
+            // Nothing to do
+        }
+        if (localName.equalsIgnoreCase(HEURE1)) {
+            // Nothing to do
+        }
+        if (localName.equalsIgnoreCase(HEURE2)) {
+            // Nothing to do
+        }
+        if (localName.equalsIgnoreCase(MOTIF)) {
+            // Nothing to do
+        }
+        if (localName.equalsIgnoreCase(HEUREPASSAGE)) {
             // Nothing to do
         }
 
@@ -155,34 +175,69 @@ public class ParserXMLHandler extends DefaultHandler {
 
 
 
-        if (localName.equalsIgnoreCase(TITLE)){
+        if (localName.equalsIgnoreCase(JOUR)){
             if(inItem){
                 // The characters are in the buffer object
-                this.currentFeed.setTitle(buffer.toString());
+                this.currentFeed.setJour(buffer.toString());
                 buffer = null;
             }
         }
 
 
-        if(localName.equalsIgnoreCase(DESCRIPTION)){
+        if(localName.equalsIgnoreCase(DATE)){
             if(inItem){
-                this.currentFeed.setDescription(buffer.toString());
+                this.currentFeed.setDate(buffer.toString());
                 buffer = null;
             }
         }
 
-        if(localName.equalsIgnoreCase(HEURE)){
+        if(localName.equalsIgnoreCase(ANNEE)){
             if(inItem){
-                this.currentFeed.setHeure(buffer.toString());
+                this.currentFeed.setAnnee(buffer.toString());
                 buffer = null;
             }
         }
-        if(localName.equalsIgnoreCase(PASSAGE)){
+        if(localName.equalsIgnoreCase(SENS)){
             if(inItem){
-                this.currentFeed.setPassage(buffer.toString());
+                this.currentFeed.setSens(buffer.toString());
                 buffer = null;
             }
         }
+        if(localName.equalsIgnoreCase(BATEAUX)){
+            if(inItem){
+                this.currentFeed.setBateaux(buffer.toString());
+                buffer = null;
+            }
+        }
+        if(localName.equalsIgnoreCase(HEURE1)){
+            if(inItem){
+                this.currentFeed.setHeure1(buffer.toString());
+                buffer = null;
+            }
+        }
+        if(localName.equalsIgnoreCase(HEURE2)){
+            if(inItem){
+                this.currentFeed.setHeure2(buffer.toString());
+                buffer = null;
+            }
+        }
+        if(localName.equalsIgnoreCase(MOTIF)){
+            if(inItem){
+                this.currentFeed.setMotif(buffer.toString());
+                buffer = null;
+            }
+        }
+        if(localName.equalsIgnoreCase(HEUREPASSAGE)){
+            if(inItem){
+                this.currentFeed.setHeurepassage(buffer.toString());
+                buffer = null;
+            }
+        }
+
+
+
+
+
 
         if (localName.equalsIgnoreCase(ITEM)){
             feeds.add(currentFeed);

@@ -13,7 +13,8 @@
             android:layout_width="match_parent" android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary" app:popupTheme="@style/AppTheme.PopupOverlay"
             app:titleTextAppearance="@style/titleSize"
-            app:subtitleTextAppearance="@style/subTitleSize"/>
+            app:subtitleTextAppearance="@style/subTitleSize"
+            android:fontFamily="@font/roboto_thin"/>
 
     </android.support.design.widget.AppBarLayout>
 

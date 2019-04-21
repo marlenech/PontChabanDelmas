@@ -52,6 +52,9 @@
     <string name="licence_name">Apache License Version 2.0</string>
     <string name="licence_text">Vérifier les termes de la licence Apache</string>
 
+    <string name="titrebateaux"><u>Bateaux</u></string>
+
+
     <string name="notif_pref_ok">Vous recevez les notifications la veille de la levée du pont, ainsi que toutes les modifications de dernière minute en temps réel.</string>
     <string name="notif_pref_no">Vous ne recevez pas les notifications.</string>
 

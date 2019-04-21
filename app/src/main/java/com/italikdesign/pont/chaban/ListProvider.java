@@ -71,9 +71,15 @@ public class ListProvider implements RemoteViewsService.RemoteViewsFactory {
             final RemoteViews remoteView = new RemoteViews(
                     context.getPackageName(), R.layout.list_row);
             ListItem listItem = listItemList.get(position);
-            remoteView.setTextViewText(R.id.title, listItem.title);
-            remoteView.setTextViewText(R.id.description, listItem.description);
-            remoteView.setTextViewText(R.id.heure, listItem.heure);
+            remoteView.setTextViewText(R.id.jour, listItem.jour);
+            remoteView.setTextViewText(R.id.date, listItem.date);
+            remoteView.setTextViewText(R.id.annee, listItem.annee);
+            remoteView.setTextViewText(R.id.sens, listItem.sens);
+            remoteView.setTextViewText(R.id.bateaux, listItem.bateaux);
+            remoteView.setTextViewText(R.id.heure1, listItem.heure1);
+            remoteView.setTextViewText(R.id.heure2, listItem.heure2);
+            remoteView.setTextViewText(R.id.motif, listItem.motif);
+            remoteView.setTextViewText(R.id.heurepassage, listItem.heurepassage);
             remoteView.setImageViewResource(R.id.listViewWidget, R.id.date);
             return remoteView;
 
@@ -82,9 +88,15 @@ public class ListProvider implements RemoteViewsService.RemoteViewsFactory {
             final RemoteViews remoteView = new RemoteViews(
                     context.getPackageName(), R.layout.list_row_noicon);
             ListItem listItem = listItemList.get(position);
-            remoteView.setTextViewText(R.id.title, listItem.title);
-            remoteView.setTextViewText(R.id.description, listItem.description);
-            remoteView.setTextViewText(R.id.heure, listItem.heure);
+            remoteView.setTextViewText(R.id.jour, listItem.jour);
+            remoteView.setTextViewText(R.id.date, listItem.date);
+            remoteView.setTextViewText(R.id.annee, listItem.annee);
+            remoteView.setTextViewText(R.id.sens, listItem.sens);
+            remoteView.setTextViewText(R.id.bateaux, listItem.bateaux);
+            remoteView.setTextViewText(R.id.heure1, listItem.heure1);
+            remoteView.setTextViewText(R.id.heure2, listItem.heure2);
+            remoteView.setTextViewText(R.id.motif, listItem.motif);
+            remoteView.setTextViewText(R.id.heurepassage, listItem.heurepassage);
 
             return remoteView;
         }

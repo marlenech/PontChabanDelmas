@@ -1,6 +1,7 @@
 package com.italikdesign.pont.chaban;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -38,10 +39,16 @@ public class ListFeedAdapter extends RecyclerView.Adapter<ListFeedAdapter.MyView
     public void onBindViewHolder(MyViewHolder holder, int position) {
         Feed feeds = data.get(position);
 
-        holder.title.setText(feeds.getTitle());
-        holder.heure.setText(feeds.getHeure());
-        holder.description.setText(feeds.getDescription());
-        holder.passage.setText(feeds.getPassage());
+        holder.jour.setText(feeds.getJour());
+        holder.date.setText(feeds.getDate());
+        holder.annee.setText(feeds.getAnnee());
+        holder.sens.setText(feeds.getSens());
+        holder.bateaux.setText(feeds.getBateaux());
+        holder.heure1.setText(feeds.getHeure1());
+        holder.heure2.setText(feeds.getHeure2());
+        holder.motif.setText(feeds.getMotif());
+        holder.heurepassage.setText(feeds.getHeurepassage());
+
     }
 
     public int getItemCount() {
@@ -49,18 +56,29 @@ public class ListFeedAdapter extends RecyclerView.Adapter<ListFeedAdapter.MyView
     }
 
     class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView title;
-        TextView heure;
-        TextView description;
-        TextView passage;
+        TextView jour;
+        TextView date;
+        TextView annee;
+        public TextView sens;
+        TextView bateaux;
+        TextView heure1;
+        TextView heure2;
+        TextView motif;
+        TextView heurepassage;
 
 
         public MyViewHolder(View itemView) {
             super(itemView);
-            title = itemView.findViewById(R.id.title);
-            heure = itemView.findViewById(R.id.heure);
-            description = itemView.findViewById(R.id.description);
-            passage = itemView.findViewById(R.id.passage);
+            jour = itemView.findViewById(R.id.jour);
+            date = itemView.findViewById(R.id.date);
+            annee = itemView.findViewById(R.id.annee);
+            sens = itemView.findViewById(R.id.sens);
+            bateaux = itemView.findViewById(R.id.bateaux);
+            heure1 = itemView.findViewById(R.id.heure1);
+            heure2 = itemView.findViewById(R.id.heure2);
+            motif = itemView.findViewById(R.id.motif);
+            heurepassage = itemView.findViewById(R.id.heurepassage);
+
 
 
         }

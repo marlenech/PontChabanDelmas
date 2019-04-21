@@ -92,13 +92,25 @@ public class RemoteFetchService extends Service {
             for (int i = 0; i < length; i++) {
                 JSONObject jsonObject = jsonArray.getJSONObject(i);
                 ListItem listItem = new ListItem();
-                listItem.title = jsonObject.getString("title");
-                listItem.description = jsonObject.getString("description");
-                listItem.heure = jsonObject.getString("heure");
+                listItem.jour = jsonObject.getString("jour");
+                listItem.date = jsonObject.getString("date");
+                listItem.annee = jsonObject.getString("annee");
+                listItem.sens = jsonObject.getString("sens");
+                listItem.bateaux = jsonObject.getString("bateaux");
+                listItem.heure1 = jsonObject.getString("heure1");
+                listItem.heure2 = jsonObject.getString("heure2");
+                listItem.motif = jsonObject.getString("motif");
+                listItem.heurepassage = jsonObject.getString("heurepassage");
 
-                Log.i("Heading",listItem.title);
-                Log.i("Content",listItem.description);
-                Log.i("Heure",listItem.heure);
+                Log.i("jour",listItem.jour);
+                Log.i("date",listItem.date);
+                Log.i("annee",listItem.annee);
+                Log.i("sens",listItem.sens);
+                Log.i("bateaux",listItem.bateaux);
+                Log.i("heure1",listItem.heure1);
+                Log.i("heure2",listItem.heure2);
+                Log.i("motif",listItem.motif);
+                Log.i("heurepassage",listItem.heurepassage);
 
                 listItemList.add(listItem);
             }

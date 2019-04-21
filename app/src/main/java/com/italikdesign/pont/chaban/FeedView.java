@@ -8,10 +8,15 @@ import android.widget.TextView;
  */
 public class FeedView {
 
-    public TextView title;
-    public TextView description;
-    public TextView heure;
-    public TextView passage;
+    public TextView jour;
+    public TextView date;
+    public TextView annee;
+    public TextView sens;
+    public TextView bateaux;
+    public TextView heure1;
+    public TextView heure2;
+    public TextView motif;
+    public TextView heurepassage;
 
 
 

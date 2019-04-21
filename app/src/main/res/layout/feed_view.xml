@@ -6,11 +6,11 @@
     android:id="@+id/card_view"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="8dp"
+    android:layout_marginBottom="15dp"
     android:layout_marginLeft="6dp"
     android:layout_marginRight="6dp"
-    app:cardCornerRadius="3dp"
-    app:cardElevation="2dp"
+    app:cardCornerRadius="5dp"
+    app:cardElevation="7dp"
     app:cardPreventCornerOverlap="false"
     app:contentPadding="0dp"
 
@@ -22,86 +22,183 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
-        android:padding="8dp" >
+        android:padding="0dp" >
 
-        <ImageView
-            android:id="@+id/date"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/ic_date_range_black_24dp"/>
+        <FrameLayout
+            android:id="@+id/contourhaut"
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:layout_alignParentTop="true"
+            android:background="@color/colorPrimary2"/>
+        <FrameLayout
+            android:id="@+id/contourbas"
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/colorPrimary2"/>
 
-        <!-- Title -->
+
+
+        <!-- Jour -->
 
         <TextView
-            android:id="@+id/title"
+            android:id="@+id/jour"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingLeft="35.0dp"
-            android:paddingTop="2dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="8dp"
             android:textColor="@color/windowBackground"
             android:textSize="20.0sp"
             android:fontFamily="@font/roboto_thin" />
 
-        <!-- Description -->
+        <!-- Date -->
         <TextView
-            android:id="@+id/description"
+            android:id="@+id/date"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:paddingLeft="35.0dp"
-            android:paddingTop="2dp"
-            android:layout_below="@id/title"
-            android:layout_marginTop="1dip"
-            android:textSize="12.0sp"
-            android:textColor="@color/colorPrimaryDark"/>
+            android:paddingLeft="10.0dp"
+            android:layout_below="@id/jour"
+            android:paddingTop="0dp"
+            android:textSize="25.0sp"
+            android:textColor="@color/windowBackground"
+            android:fontFamily="@font/roboto_thin"/>
 
 
+        <!-- Annee -->
+
+        <TextView
+            android:id="@+id/annee"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/date"
+            android:paddingLeft="10.0dp"
+            android:textColor="@color/colorAccent"
+            android:textSize="20.0sp"
+            android:fontFamily="@font/roboto_thin" />
+
+        <!-- Sens -->
+
+        <TextView
+            android:id="@+id/sens"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/jour"
+            android:layout_marginLeft="70dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/encadre"
+            android:textColor="@color/vert_arrivee"
+            android:textSize="15.0sp"
+            android:fontFamily="@font/roboto_bold" />
+
+        <!-- Titre Bateaux -->
 
 
         <TextView
-            android:id="@+id/heure"
+            android:id="@+id/titrebateaux"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toLeftOf="@+id/horloge"
-            android:layout_below="@id/description"
-            android:layout_marginRight="10.0dp"
-            android:layout_marginTop="5dp"
+            android:layout_below="@id/sens"
+            android:layout_alignLeft="@id/sens"
+            android:paddingTop="10dp"
+            android:textColor="@color/windowBackground"
+            android:textSize="8.0sp"
+            android:text="@string/titrebateaux"
+            android:fontFamily="@font/roboto_thinitalic" />
+
+
+        <!-- Bateaux -->
+
+        <TextView
+            android:id="@+id/bateaux"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/titrebateaux"
+            android:layout_alignLeft="@id/titrebateaux"
+            android:paddingTop="0dp"
+            android:paddingRight="90dp"
+            android:textColor="@color/windowBackground"
+            android:textSize="15.0sp"
+            android:fontFamily="@font/roboto_thin" />
+
+        <!-- Heure1 -->
+
+        <TextView
+            android:id="@+id/heure1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:paddingRight="5dp"
+            android:fontFamily="@font/roboto_thin"
+            android:paddingTop="17dp"
+            android:textColor="@color/colorAccent"
+            android:textSize="30.0sp" />
+
+        <!-- Heure2 -->
+
+        <TextView
+            android:id="@+id/heure2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:paddingRight="0dp"
+            android:paddingTop="38dp"
+            android:textColor="@color/colorAccent"
+            android:textSize="30.0sp"
+            android:fontFamily="@font/roboto_thin" />
+
+
+        <!-- Ligne horizontale -->
+
+        <FrameLayout
+            android:id="@+id/lignehorizontale"
+            android:layout_width="match_parent"
+            android:layout_height="0.2dp"
+            android:layout_below="@id/bateaux"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:background="@color/windowBackground"/>
+
+        <!-- Motif -->
+
+        <TextView
+            android:id="@+id/motif"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lignehorizontale"
+            android:paddingLeft="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:paddingRight="100dp"
+            android:textColor="@color/windowBackground"
+            android:textSize="12.0sp"
+            android:fontFamily="@font/roboto_thin" />
+
+        <!-- Ligne verticale -->
+
+        <FrameLayout
+            android:id="@+id/ligneverticale"
+            android:layout_width="0.2dp"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/lignehorizontale"
+            android:layout_toRightOf="@id/motif"
+            android:layout_marginLeft="20dp"
+            android:background="@color/windowBackground"/>
+
+        <!-- Heure Passage -->
+
+        <TextView
+            android:id="@+id/heurepassage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:paddingRight="20dp"
+            android:layout_below="@+id/lignehorizontale"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
             android:textColor="@color/colorAccent"
             android:textSize="12.0sp"
-            android:textStyle="italic" />
-
-        <!-- Heures -->
-
-        <ImageView
-            android:id="@+id/horloge"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/description"
-            android:layout_alignParentRight="true"
-            app:srcCompat="@drawable/ic_alarm_black_24dp"/>
-
-        <!-- Passage -->
-
-        <ImageView
-            android:id="@+id/bat"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/heure"
-            android:paddingTop="15dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentBottom="true"
-            app:srcCompat="@drawable/ic_directions_boat_black_24dp"/>
-
-        <TextView
-            android:id="@+id/passage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingLeft="35.0dp"
-            android:paddingTop="18dp"
-            android:layout_below="@id/heure"
-            android:layout_marginTop="1dip"
-            android:textColor="@color/marronclair"
-            android:textSize="12.0sp"
-             />
+            android:fontFamily="@font/roboto_thin" />
 
 
 

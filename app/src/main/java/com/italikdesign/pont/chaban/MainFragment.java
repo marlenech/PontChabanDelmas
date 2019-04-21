@@ -7,6 +7,7 @@ package com.italikdesign.pont.chaban;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
@@ -187,6 +188,8 @@ public class MainFragment extends Fragment implements SwipeRefreshLayout.OnRefre
                     final LinearLayoutManager llm = new LinearLayoutManager(getActivity());
                     recyclerView.setItemAnimator(new DefaultItemAnimator());
                     recyclerView.setLayoutManager(llm);
+
+
 
                 } else {
                     Toast.makeText(getActivity(), "Vous devez être connecté à internet pour recevoir les données.", Toast.LENGTH_LONG).show();

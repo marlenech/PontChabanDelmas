@@ -14,4 +14,9 @@
     <color name="marronclair">#745B4E</color>
     <color name="gris">#D8D2D1</color>
     <color name="gris_fonce">#b4b4b4</color>
+    <color name="fond">#353338</color>
+    <color name="cardview_background">#464449</color>
+    <color name="gris_text">#939196</color>
+    <color name="vert_arrivee">#407e71</color>
+    <color name="rouge_depart">#ba5f70</color>
 </resources>

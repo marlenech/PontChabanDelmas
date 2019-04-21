@@ -84,6 +84,8 @@ public class MainActivity extends AppCompatActivity
 
 
 
+
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
