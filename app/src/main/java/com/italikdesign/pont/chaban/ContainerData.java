@@ -4,6 +4,7 @@ import android.content.Context;
 
 
 import android.support.v7.app.AppCompatActivity;
+import android.widget.TextView;
 
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
@@ -84,6 +85,8 @@ public class ContainerData extends AppCompatActivity {
         //It returns the array list
         return feeds;
     }
+
+
 
 
 }

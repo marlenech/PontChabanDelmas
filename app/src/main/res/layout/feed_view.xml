@@ -86,7 +86,7 @@
             android:layout_marginLeft="70dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/encadre"
-            android:textColor="@color/vert_arrivee"
+            android:textColor="@color/gris_text"
             android:textSize="15.0sp"
             android:fontFamily="@font/roboto_bold" />
 
@@ -157,7 +157,7 @@
             android:layout_marginTop="15dp"
             android:layout_marginRight="15dp"
             android:layout_marginLeft="15dp"
-            android:background="@color/windowBackground"/>
+            android:background="@color/gris_text"/>
 
         <!-- Motif -->
 

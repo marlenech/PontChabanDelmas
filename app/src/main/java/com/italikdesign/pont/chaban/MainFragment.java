@@ -28,6 +28,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -191,6 +193,7 @@ public class MainFragment extends Fragment implements SwipeRefreshLayout.OnRefre
 
 
 
+
                 } else {
                     Toast.makeText(getActivity(), "Vous devez être connecté à internet pour recevoir les données.", Toast.LENGTH_LONG).show();
                 }
@@ -199,6 +202,8 @@ public class MainFragment extends Fragment implements SwipeRefreshLayout.OnRefre
 
 
         }
+
+
     }
 
 }

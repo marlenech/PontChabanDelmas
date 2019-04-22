@@ -5,6 +5,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
 
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
@@ -77,12 +78,6 @@ public class MainActivity extends AppCompatActivity
         getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
         toolbar.setTitle("Le Pont Chaban Delmas");
         toolbar.setSubtitle("Dates et Heures de Levées");
-
-
-
-
-
-
 
 
 
