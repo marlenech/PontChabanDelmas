@@ -14,8 +14,18 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
+import java.util.TooManyListenersException;
+
+import static java.time.LocalTime.parse;
+import static org.apache.http.client.utils.DateUtils.parseDate;
 
 
 /**
@@ -29,11 +39,25 @@ public class ListFeedAdapter extends RecyclerView.Adapter<ListFeedAdapter.MyView
     private LayoutInflater inflater;
     private Context context;
     private ArrayList<Feed> data;
+    String inputFormat = "HH:mm";
+    SimpleDateFormat inputParser = new SimpleDateFormat(inputFormat, Locale.US);
+
 
     public ListFeedAdapter(Context context, ArrayList<Feed> objects) {
         this.context = context;
         inflater = LayoutInflater.from(context);
         this.data = objects;
+    }
+
+    public Date parseDate1 (String date) {
+
+
+        try {
+            return inputParser.parse(date);
+        } catch (java.text.ParseException e) {
+            return new Date(0);
+        }
+
     }
 
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -68,6 +92,8 @@ public class ListFeedAdapter extends RecyclerView.Adapter<ListFeedAdapter.MyView
 
         LinearLayout.LayoutParams prms = new LinearLayout.LayoutParams(5, 2);
 
+        //////Adaptation couleur Sens en fonction arrivée et départ/////////////
+
         //Si le texte de sens est égal à "Arrivée", le texte et l'encadré passe en vert
         if(sensText.equalsIgnoreCase("Arrivée")) {
                 holder.sens.setTextColor(context.getResources().getColor(R.color.vert_arrivee));
@@ -94,6 +120,50 @@ public class ListFeedAdapter extends RecyclerView.Adapter<ListFeedAdapter.MyView
             holder.sens.setPadding(15, 2, 15, 2);
             holder.sens.setBackground(gd);
         }
+
+
+        //////Modification du subtitle de l'appli en fonction de la date et l'heure actuelle///////
+        //////avec comparaison date, année et heure des feeds//////////////////////////////////////
+
+        //date actuelle
+        Date now = new Date();
+        SimpleDateFormat formatterDate = new SimpleDateFormat("EEEE dd MMMM");
+        SimpleDateFormat formatterHeure = new SimpleDateFormat("HH:mm");
+        String resultDate = formatterDate.format(now);
+        String resultHeure = formatterHeure.format(now);
+
+
+
+
+
+        //Récupération des données feeds
+        String jourText = feeds.getJour();
+        String dateText = feeds.getDate();
+        String heureDebText = feeds.getHeure1();
+        String heureFinText = feeds.getHeure2();
+
+        //variables
+        Date date;
+        Date dateCompareOne;
+        Date dateCompareTwo;
+
+
+        //conversion des String en Date (feeds)
+        dateCompareOne = parseDate1(heureDebText);
+        dateCompareTwo = parseDate1(heureFinText);
+
+        //conversion de l'heure actuelle au format Date
+        date = parseDate1(resultHeure);
+
+        //Toast.makeText(context, resultHeure, Toast.LENGTH_LONG).show();
+
+        //vérifier si la date actuelle est la même que celle des feeds
+        if((jourText.concat(" ").concat(dateText)).equals(resultDate)) {
+            if (dateCompareOne.before(date) && dateCompareTwo.after(date)) {
+                holder.jour.setTextColor(context.getResources().getColor(R.color.colorAccent));
+            }
+        }
+
 
     }
 

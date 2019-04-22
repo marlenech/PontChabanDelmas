@@ -23,6 +23,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 import com.italikdesign.inappbilling.util.IabHelper;
@@ -31,6 +32,9 @@ import com.italikdesign.inappbilling.util.Inventory;
 import com.italikdesign.inappbilling.util.Purchase;
 import com.kobakei.ratethisapp.RateThisApp;
 import com.onesignal.OneSignal;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 
 public class MainActivity extends AppCompatActivity
@@ -96,6 +100,7 @@ public class MainActivity extends AppCompatActivity
         emailText.setText("Les Levées");
 
         navigationView.setNavigationItemSelectedListener(this);
+
 
 
 
