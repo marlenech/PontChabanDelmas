@@ -57,6 +57,7 @@ public class MainFragment extends Fragment implements SwipeRefreshLayout.OnRefre
     private View rootView;
 
 
+
     public MainFragment() {
 
     }
@@ -123,10 +124,10 @@ public class MainFragment extends Fragment implements SwipeRefreshLayout.OnRefre
                         //RecyclerView
                         lfa = new ListFeedAdapter(getActivity(), feeds);
                         recyclerView = rootView.findViewById(R.id.listFeed);
-                        recyclerView.setAdapter(lfa);
-                        final LinearLayoutManager llm = new LinearLayoutManager(getActivity());
+                        LinearLayoutManager llm = new LinearLayoutManager(getActivity());
                         recyclerView.setItemAnimator(new DefaultItemAnimator());
                         recyclerView.setLayoutManager(llm);
+                        recyclerView.setAdapter(lfa);
 
                     } else {
                         Toast.makeText(getActivity(), "Vous devez être connecté à internet pour recevoir les données.", Toast.LENGTH_LONG).show();
@@ -177,20 +178,20 @@ public class MainFragment extends Fragment implements SwipeRefreshLayout.OnRefre
             if(Utils.connectivity(getActivity())) {
                 if (isAdded()) {
 
+
+
                     ArrayList<Feed> feeds = ContainerData.getFeeds();
-                    for (Feed feed : feeds) {
-                        Log.e("MainActivity", feed.toString());
-                    }
+
 
                     //RecyclerView
                     lfa = new ListFeedAdapter(getActivity(), feeds);
                     recyclerView = getActivity().findViewById(R.id.listFeed);
                     recyclerView.setHasFixedSize(true);
-                    recyclerView.setAdapter(lfa);
-                    final LinearLayoutManager llm = new LinearLayoutManager(getActivity());
+
+                    LinearLayoutManager llm = new LinearLayoutManager(getActivity());
                     recyclerView.setItemAnimator(new DefaultItemAnimator());
                     recyclerView.setLayoutManager(llm);
-
+                    recyclerView.setAdapter(lfa);
 
 
 

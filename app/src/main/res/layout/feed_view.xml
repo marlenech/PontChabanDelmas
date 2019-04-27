@@ -19,6 +19,7 @@
 
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/relativeLayout"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
@@ -82,7 +83,7 @@
             android:id="@+id/sens"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/jour"
+            android:layout_toRightOf="@+id/annee"
             android:layout_marginLeft="70dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/encadre"
@@ -127,7 +128,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:paddingRight="5dp"
+            android:paddingRight="8dp"
             android:fontFamily="@font/roboto_thin"
             android:paddingTop="17dp"
             android:textColor="@color/colorAccent"
@@ -140,7 +141,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:paddingRight="0dp"
+            android:paddingRight="5dp"
             android:paddingTop="38dp"
             android:textColor="@color/colorAccent"
             android:textSize="30.0sp"
@@ -154,7 +155,7 @@
             android:layout_width="match_parent"
             android:layout_height="0.2dp"
             android:layout_below="@id/bateaux"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="28dp"
             android:layout_marginRight="15dp"
             android:layout_marginLeft="15dp"
             android:background="@color/gris_text"/>
@@ -167,23 +168,14 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/lignehorizontale"
             android:paddingLeft="10dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="10dp"
             android:layout_marginBottom="15dp"
             android:paddingRight="100dp"
             android:textColor="@color/windowBackground"
             android:textSize="12.0sp"
             android:fontFamily="@font/roboto_thin" />
 
-        <!-- Ligne verticale -->
 
-        <FrameLayout
-            android:id="@+id/ligneverticale"
-            android:layout_width="0.2dp"
-            android:layout_height="match_parent"
-            android:layout_below="@+id/lignehorizontale"
-            android:layout_toRightOf="@id/motif"
-            android:layout_marginLeft="20dp"
-            android:background="@color/windowBackground"/>
 
         <!-- Heure Passage -->
 
@@ -194,7 +186,7 @@
             android:layout_alignParentRight="true"
             android:paddingRight="20dp"
             android:layout_below="@+id/lignehorizontale"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="10dp"
             android:layout_marginBottom="15dp"
             android:textColor="@color/colorAccent"
             android:textSize="12.0sp"

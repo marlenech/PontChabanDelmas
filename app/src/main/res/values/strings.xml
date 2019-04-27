@@ -53,6 +53,8 @@
     <string name="licence_text">Vérifier les termes de la licence Apache</string>
 
     <string name="titrebateaux"><u>Bateaux</u></string>
+    <string name="ferme">Actuellement fermé à la circulation</string>
+    <string name="ouvert">Actuellement ouvert à la circulation</string>
 
 
     <string name="notif_pref_ok">Vous recevez les notifications la veille de la levée du pont, ainsi que toutes les modifications de dernière minute en temps réel.</string>

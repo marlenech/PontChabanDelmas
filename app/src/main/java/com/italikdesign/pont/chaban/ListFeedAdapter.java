@@ -3,14 +3,21 @@ package com.italikdesign.pont.chaban;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.style.ForegroundColorSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -39,8 +46,10 @@ public class ListFeedAdapter extends RecyclerView.Adapter<ListFeedAdapter.MyView
     private LayoutInflater inflater;
     private Context context;
     private ArrayList<Feed> data;
+    public View view;
     String inputFormat = "HH:mm";
     SimpleDateFormat inputParser = new SimpleDateFormat(inputFormat, Locale.US);
+
 
 
     public ListFeedAdapter(Context context, ArrayList<Feed> objects) {
@@ -60,8 +69,10 @@ public class ListFeedAdapter extends RecyclerView.Adapter<ListFeedAdapter.MyView
 
     }
 
+
+
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = inflater.inflate(R.layout.feed_view, parent, false);
+       view = inflater.inflate(R.layout.feed_view, parent, false);
         MyViewHolder holder = new MyViewHolder(view);
 
 
@@ -86,9 +97,11 @@ public class ListFeedAdapter extends RecyclerView.Adapter<ListFeedAdapter.MyView
 
         String sensText = feeds.getSens();
 
-        Drawable sensBackground = ContextCompat.getDrawable(context, R.drawable.encadre);
-
         GradientDrawable gd = new GradientDrawable();
+
+        FrameLayout contourHaut = view.findViewById(R.id.contourhaut);
+        FrameLayout contourBas = view.findViewById(R.id.contourbas);
+        RelativeLayout cardView = view.findViewById(R.id.relativeLayout);
 
         LinearLayout.LayoutParams prms = new LinearLayout.LayoutParams(5, 2);
 
@@ -148,6 +161,7 @@ public class ListFeedAdapter extends RecyclerView.Adapter<ListFeedAdapter.MyView
         Date dateCompareTwo;
 
 
+
         //conversion des String en Date (feeds)
         dateCompareOne = parseDate1(heureDebText);
         dateCompareTwo = parseDate1(heureFinText);
@@ -155,12 +169,32 @@ public class ListFeedAdapter extends RecyclerView.Adapter<ListFeedAdapter.MyView
         //conversion de l'heure actuelle au format Date
         date = parseDate1(resultHeure);
 
+        //Création d'un string pour pouvoir modifier subtitle dans l'adapter + attribution couleur + typeface
+        SpannableString spannableString = new SpannableString(context.getString(R.string.ferme));
+        spannableString.setSpan(new ForegroundColorSpan(context.getResources().getColor(R.color.rouge_depart)), 0, spannableString.toString()
+                .length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        Typeface typo = ResourcesCompat.getFont(context, R.font.roboto_regular);
+
+
         //Toast.makeText(context, resultHeure, Toast.LENGTH_LONG).show();
 
         //vérifier si la date actuelle est la même que celle des feeds
         if((jourText.concat(" ").concat(dateText)).equals(resultDate)) {
             if (dateCompareOne.before(date) && dateCompareTwo.after(date)) {
-                holder.jour.setTextColor(context.getResources().getColor(R.color.colorAccent));
+                holder.jour.setTextColor(context.getResources().getColor(R.color.rouge_depart));
+                holder.jour.setTypeface(typo);
+                holder.date.setTextColor(context.getResources().getColor(R.color.rouge_depart));
+                holder.date.setTypeface(typo);
+                holder.annee.setTextColor(context.getResources().getColor(R.color.rouge_depart));
+                holder.annee.setTypeface(typo);
+                holder.heure1.setTextColor(context.getResources().getColor(R.color.rouge_depart));
+                holder.heure1.setTypeface(typo);
+                holder.heure2.setTextColor(context.getResources().getColor(R.color.rouge_depart));
+                holder.heure2.setTypeface(typo);
+                ((MainActivity) context).getSupportActionBar().setSubtitle(spannableString);
+                contourHaut.setBackgroundColor(context.getResources().getColor(R.color.rouge_depart));
+                contourBas.setBackgroundColor(context.getResources().getColor(R.color.rouge_depart));
+                cardView.setBackgroundColor(context.getResources().getColor(R.color.colorPrimaryDark));
             }
         }
 
@@ -170,10 +204,10 @@ public class ListFeedAdapter extends RecyclerView.Adapter<ListFeedAdapter.MyView
 
 
     public int getItemCount() {
-        return data.size();
+        return data == null ? 0 : data.size();
     }
 
-   public class MyViewHolder extends RecyclerView.ViewHolder {
+   public static class MyViewHolder extends RecyclerView.ViewHolder {
         TextView jour;
         TextView date;
         TextView annee;

@@ -72,16 +72,13 @@ public class MainActivity extends AppCompatActivity
 
 
 
-
-
         toolbar = findViewById(R.id.toolbar);
 
 
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
         toolbar.setTitle("Le Pont Chaban Delmas");
-        toolbar.setSubtitle("Dates et Heures de Levées");
+        toolbar.setSubtitle(R.string.ouvert);
 
 
 

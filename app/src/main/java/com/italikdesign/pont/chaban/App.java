@@ -5,6 +5,8 @@ import android.app.Application;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.multidex.MultiDex;
+import android.support.multidex.MultiDexApplication;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -23,9 +25,15 @@ import org.json.JSONObject;
  *
  * For getRessources to call in a static context
  */
-public class App extends Application {
+public class App extends MultiDexApplication {
 
     private static Context mContext;
+
+    @Override
+    protected void attachBaseContext(Context context) {
+        super.attachBaseContext(context);
+        MultiDex.install(this);
+    }
 
     @Override
     public void onCreate() {
