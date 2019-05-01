@@ -48,7 +48,8 @@ public class ListFeedAdapter extends RecyclerView.Adapter<ListFeedAdapter.MyView
     private ArrayList<Feed> data;
     public View view;
     String inputFormat = "HH:mm";
-    SimpleDateFormat inputParser = new SimpleDateFormat(inputFormat, Locale.US);
+    SimpleDateFormat inputParser = new SimpleDateFormat(inputFormat, Locale.FRANCE);
+    Date dateTextd;
 
 
 
@@ -140,8 +141,8 @@ public class ListFeedAdapter extends RecyclerView.Adapter<ListFeedAdapter.MyView
 
         //date actuelle
         Date now = new Date();
-        SimpleDateFormat formatterDate = new SimpleDateFormat("EEEE dd MMMM");
-        SimpleDateFormat formatterHeure = new SimpleDateFormat("HH:mm");
+        SimpleDateFormat formatterDate = new SimpleDateFormat("dd MMM", Locale.FRANCE);
+        SimpleDateFormat formatterHeure = new SimpleDateFormat("HH:mm", Locale.FRANCE);
         String resultDate = formatterDate.format(now);
         String resultHeure = formatterHeure.format(now);
 
@@ -150,8 +151,13 @@ public class ListFeedAdapter extends RecyclerView.Adapter<ListFeedAdapter.MyView
 
 
         //Récupération des données feeds
-        String jourText = feeds.getJour();
-        String dateText = feeds.getDate();
+        //passage string en date
+        try {
+            dateTextd = formatterDate.parse(feeds.getDate());
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        String dateText = formatterDate.format(dateTextd);
         String heureDebText = feeds.getHeure1();
         String heureFinText = feeds.getHeure2();
 
@@ -176,10 +182,10 @@ public class ListFeedAdapter extends RecyclerView.Adapter<ListFeedAdapter.MyView
         Typeface typo = ResourcesCompat.getFont(context, R.font.roboto_regular);
 
 
-        //Toast.makeText(context, resultHeure, Toast.LENGTH_LONG).show();
+        Toast.makeText(context, dateText, Toast.LENGTH_LONG).show();
 
         //vérifier si la date actuelle est la même que celle des feeds
-        if((jourText.concat(" ").concat(dateText)).equals(resultDate)) {
+        if(dateText.equals(resultDate)) {
             if (dateCompareOne.before(date) && dateCompareTwo.after(date)) {
                 holder.jour.setTextColor(context.getResources().getColor(R.color.rouge_depart));
                 holder.jour.setTypeface(typo);
