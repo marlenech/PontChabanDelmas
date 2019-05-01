@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
         getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
         toolbar.setTitle("Le Pont Chaban Delmas");
-        toolbar.setSubtitle(R.string.ouvert);
+
 
 
 

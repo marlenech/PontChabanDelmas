@@ -10,6 +10,7 @@
         android:layout_width="match_parent" android:layout_height="match_parent"
         android:orientation="vertical"
         android:paddingTop="60dp"
+        android:background="@color/colorPrimary"
 
         >
         <android.support.v7.widget.CardView
@@ -17,12 +18,12 @@
             android:id="@+id/card_view_00a07"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            app:cardCornerRadius="3dp"
-            app:cardElevation="5dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="6dp"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="7dp"
             app:cardPreventCornerOverlap="false"
             app:contentPadding="0dp"
             >
@@ -31,10 +32,23 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-
+                android:background="@color/colorPrimaryDark"
 
 
                 >
+
+                <FrameLayout
+                    android:id="@+id/contourhaut"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.1dp"
+                    android:layout_alignParentTop="true"
+                    android:background="@color/colorPrimary2"/>
+                <FrameLayout
+                    android:id="@+id/contourbas"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.1dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/colorPrimary2"/>
 
                 <ImageView
                     android:id="@+id/d00a07"
@@ -53,15 +67,17 @@
                     android:paddingTop="10dp"
                     android:textSize="14.0sp"
                     android:textStyle="bold"
-                    android:textColor="@color/marronclair">
+                    android:textColor="@color/vert_arrivee">
                 </TextView>
                 <Switch
                     android:id="@+id/notifications00a07"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingTop="10dp"
-                    android:paddingBottom="10dp"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="20dp"
                     android:text="Activer les Notifications"
+                    android:textColor="@color/windowBackground"
+                    android:fontFamily="@font/roboto_thin"
                     android:switchPadding="40dp"
                     android:layout_below="@id/d00a07text"
                     android:paddingLeft="40dp"
@@ -69,11 +85,14 @@
 
                 <View
                     android:id="@+id/ligne"
-                    android:layout_height="1dp"
-                    android:background="@color/gris"
+                    android:layout_height="0.2dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:background="@color/gris_text"
                     android:layout_width="match_parent"
                     android:paddingTop="10dp"
                     android:layout_below="@id/notifications00a07"
+
                     />
 
                 <TextView android:id="@+id/notif_pref_ok_00a07"
@@ -85,7 +104,8 @@
                     android:paddingLeft="8dp"
                     android:paddingBottom="8dp"
                     android:textSize="13.0sp"
-                    android:textColor="@color/colorPrimary"
+                    android:textColor="@color/windowBackground"
+                    android:fontFamily="@font/roboto_thin"
                     android:layout_below="@id/ligne"
                     />
 
@@ -98,7 +118,8 @@
                     android:paddingLeft="8dp"
                     android:paddingBottom="8dp"
                     android:textSize="13.0sp"
-                    android:textColor="@color/colorPrimary"
+                    android:textColor="@color/windowBackground"
+                    android:fontFamily="@font/roboto_thin"
                     android:layout_below="@id/ligne"
                     />
 
@@ -108,12 +129,11 @@
             android:id="@+id/card_view_07a0930"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            app:cardCornerRadius="3dp"
-            app:cardElevation="5dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="6dp"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="7dp"
             app:cardPreventCornerOverlap="false"
             app:contentPadding="0dp"
             >
@@ -122,10 +142,22 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-
+                android:background="@color/colorPrimaryDark"
 
 
                 >
+                <FrameLayout
+                    android:id="@+id/contourhaut2"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.1dp"
+                    android:layout_alignParentTop="true"
+                    android:background="@color/colorPrimary2"/>
+                <FrameLayout
+                    android:id="@+id/contourbas2"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.1dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/colorPrimary2"/>
 
                 <ImageView
                     android:id="@+id/d07a0930"
@@ -144,15 +176,17 @@
                     android:paddingTop="10dp"
                     android:textSize="14.0sp"
                     android:textStyle="bold"
-                    android:textColor="@color/marronclair">
+                    android:textColor="@color/vert_arrivee">
                 </TextView>
                 <Switch
                     android:id="@+id/notifications07a0930"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingTop="10dp"
-                    android:paddingBottom="10dp"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="20dp"
                     android:text="Activer les Notifications"
+                    android:textColor="@color/windowBackground"
+                    android:fontFamily="@font/roboto_thin"
                     android:switchPadding="40dp"
                     android:layout_below="@id/d07a0930text"
                     android:paddingLeft="40dp"
@@ -160,11 +194,14 @@
 
                 <View
                     android:id="@+id/ligne0930"
-                    android:layout_height="1dp"
-                    android:background="@color/gris"
+                    android:layout_height="0.2dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:background="@color/gris_text"
                     android:layout_width="match_parent"
                     android:paddingTop="10dp"
                     android:layout_below="@id/notifications07a0930"
+
                     />
 
                 <TextView android:id="@+id/notif_pref_ok_07a0930"
@@ -176,7 +213,8 @@
                     android:paddingLeft="8dp"
                     android:paddingBottom="8dp"
                     android:textSize="13.0sp"
-                    android:textColor="@color/colorPrimary"
+                    android:textColor="@color/windowBackground"
+                    android:fontFamily="@font/roboto_thin"
                     android:layout_below="@id/ligne0930"
                     />
 
@@ -189,7 +227,8 @@
                     android:paddingLeft="8dp"
                     android:paddingBottom="8dp"
                     android:textSize="13.0sp"
-                    android:textColor="@color/colorPrimary"
+                    android:textColor="@color/windowBackground"
+                    android:fontFamily="@font/roboto_thin"
                     android:layout_below="@id/ligne0930"
                     />
 
@@ -199,24 +238,36 @@
             android:id="@+id/card_view_0930a1130"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            app:cardCornerRadius="3dp"
-            app:cardElevation="5dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="6dp"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="7dp"
             app:cardPreventCornerOverlap="false"
             app:contentPadding="0dp"
             >
 
 
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-
+                android:background="@color/colorPrimaryDark"
 
 
                 >
+                <FrameLayout
+                    android:id="@+id/contourhaut3"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.1dp"
+                    android:layout_alignParentTop="true"
+                    android:background="@color/colorPrimary2"/>
+                <FrameLayout
+                    android:id="@+id/contourbas3"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.1dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/colorPrimary2"/>
 
                 <ImageView
                     android:id="@+id/d0930a1130"
@@ -235,15 +286,17 @@
                     android:paddingTop="10dp"
                     android:textSize="14.0sp"
                     android:textStyle="bold"
-                    android:textColor="@color/marronclair">
+                    android:textColor="@color/vert_arrivee">
                 </TextView>
                 <Switch
                     android:id="@+id/notifications0930a1130"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingTop="10dp"
-                    android:paddingBottom="10dp"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="20dp"
                     android:text="Activer les Notifications"
+                    android:textColor="@color/windowBackground"
+                    android:fontFamily="@font/roboto_thin"
                     android:switchPadding="40dp"
                     android:layout_below="@id/d0930a1130text"
                     android:paddingLeft="40dp"
@@ -251,8 +304,10 @@
 
                 <View
                     android:id="@+id/ligne1130"
-                    android:layout_height="1dp"
-                    android:background="@color/gris"
+                    android:layout_height="0.2dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:background="@color/gris_text"
                     android:layout_width="match_parent"
                     android:paddingTop="10dp"
                     android:layout_below="@id/notifications0930a1130"
@@ -267,7 +322,8 @@
                     android:paddingLeft="8dp"
                     android:paddingBottom="8dp"
                     android:textSize="13.0sp"
-                    android:textColor="@color/colorPrimary"
+                    android:textColor="@color/windowBackground"
+                    android:fontFamily="@font/roboto_thin"
                     android:layout_below="@id/ligne1130"
                     />
 
@@ -280,7 +336,8 @@
                     android:paddingLeft="8dp"
                     android:paddingBottom="8dp"
                     android:textSize="13.0sp"
-                    android:textColor="@color/colorPrimary"
+                    android:textColor="@color/windowBackground"
+                    android:fontFamily="@font/roboto_thin"
                     android:layout_below="@id/ligne1130"
                     />
 
@@ -290,24 +347,36 @@
             android:id="@+id/card_view_1130a14"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            app:cardCornerRadius="3dp"
-            app:cardElevation="5dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="6dp"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="7dp"
             app:cardPreventCornerOverlap="false"
             app:contentPadding="0dp"
+            >
             >
 
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-
+                android:background="@color/colorPrimaryDark"
 
 
                 >
+                <FrameLayout
+                    android:id="@+id/contourhaut4"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.1dp"
+                    android:layout_alignParentTop="true"
+                    android:background="@color/colorPrimary2"/>
+                <FrameLayout
+                    android:id="@+id/contourbas4"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.1dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/colorPrimary2"/>
 
                 <ImageView
                     android:id="@+id/d1130a14"
@@ -326,15 +395,17 @@
                     android:paddingTop="10dp"
                     android:textSize="14.0sp"
                     android:textStyle="bold"
-                    android:textColor="@color/marronclair">
+                    android:textColor="@color/vert_arrivee">
                 </TextView>
                 <Switch
                     android:id="@+id/notifications1130a14"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingTop="10dp"
-                    android:paddingBottom="10dp"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="20dp"
                     android:text="Activer les Notifications"
+                    android:textColor="@color/windowBackground"
+                    android:fontFamily="@font/roboto_thin"
                     android:switchPadding="40dp"
                     android:layout_below="@id/d1130a14text"
                     android:paddingLeft="40dp"
@@ -342,8 +413,10 @@
 
                 <View
                     android:id="@+id/ligne14"
-                    android:layout_height="1dp"
-                    android:background="@color/gris"
+                    android:layout_height="0.2dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:background="@color/gris_text"
                     android:layout_width="match_parent"
                     android:paddingTop="10dp"
                     android:layout_below="@id/notifications1130a14"
@@ -358,7 +431,8 @@
                     android:paddingLeft="8dp"
                     android:paddingBottom="8dp"
                     android:textSize="13.0sp"
-                    android:textColor="@color/colorPrimary"
+                    android:textColor="@color/windowBackground"
+                    android:fontFamily="@font/roboto_thin"
                     android:layout_below="@id/ligne14"
                     />
 
@@ -371,7 +445,8 @@
                     android:paddingLeft="8dp"
                     android:paddingBottom="8dp"
                     android:textSize="13.0sp"
-                    android:textColor="@color/colorPrimary"
+                    android:textColor="@color/windowBackground"
+                    android:fontFamily="@font/roboto_thin"
                     android:layout_below="@id/ligne14"
                     />
 
@@ -381,24 +456,36 @@
             android:id="@+id/card_view_14a1630"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            app:cardCornerRadius="3dp"
-            app:cardElevation="5dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="6dp"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="7dp"
             app:cardPreventCornerOverlap="false"
             app:contentPadding="0dp"
+
             >
 
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-
+                android:background="@color/colorPrimaryDark"
 
 
                 >
+                <FrameLayout
+                    android:id="@+id/contourhaut5"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.1dp"
+                    android:layout_alignParentTop="true"
+                    android:background="@color/colorPrimary2"/>
+                <FrameLayout
+                    android:id="@+id/contourbas5"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.1dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/colorPrimary2"/>
 
                 <ImageView
                     android:id="@+id/d14a1630"
@@ -417,15 +504,17 @@
                     android:paddingTop="10dp"
                     android:textSize="14.0sp"
                     android:textStyle="bold"
-                    android:textColor="@color/marronclair">
+                    android:textColor="@color/vert_arrivee">
                 </TextView>
                 <Switch
                     android:id="@+id/notifications14a1630"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingTop="10dp"
-                    android:paddingBottom="10dp"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="20dp"
                     android:text="Activer les Notifications"
+                    android:textColor="@color/windowBackground"
+                    android:fontFamily="@font/roboto_thin"
                     android:switchPadding="40dp"
                     android:layout_below="@id/d14a1630text"
                     android:paddingLeft="40dp"
@@ -433,8 +522,10 @@
 
                 <View
                     android:id="@+id/ligne1630"
-                    android:layout_height="1dp"
-                    android:background="@color/gris"
+                    android:layout_height="0.2dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:background="@color/gris_text"
                     android:layout_width="match_parent"
                     android:paddingTop="10dp"
                     android:layout_below="@id/notifications14a1630"
@@ -449,7 +540,8 @@
                     android:paddingLeft="8dp"
                     android:paddingBottom="8dp"
                     android:textSize="13.0sp"
-                    android:textColor="@color/colorPrimary"
+                    android:textColor="@color/windowBackground"
+                    android:fontFamily="@font/roboto_thin"
                     android:layout_below="@id/ligne1630"
                     />
 
@@ -462,7 +554,8 @@
                     android:paddingLeft="8dp"
                     android:paddingBottom="8dp"
                     android:textSize="13.0sp"
-                    android:textColor="@color/colorPrimary"
+                    android:textColor="@color/windowBackground"
+                    android:fontFamily="@font/roboto_thin"
                     android:layout_below="@id/ligne1630"
                     />
 
@@ -472,21 +565,33 @@
             android:id="@+id/card_view_1630a19"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            app:cardCornerRadius="3dp"
-            app:cardElevation="5dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="6dp"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="7dp"
             app:cardPreventCornerOverlap="false"
             app:contentPadding="0dp"
+
             >
+            <FrameLayout
+                android:id="@+id/contourhaut6"
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                android:layout_alignParentTop="true"
+                android:background="@color/colorPrimary2"/>
+            <FrameLayout
+                android:id="@+id/contourbas6"
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                android:layout_alignParentBottom="true"
+                android:background="@color/colorPrimary2"/>
 
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-
+                android:background="@color/colorPrimaryDark"
 
 
                 >
@@ -508,15 +613,17 @@
                     android:paddingTop="10dp"
                     android:textSize="14.0sp"
                     android:textStyle="bold"
-                    android:textColor="@color/marronclair">
+                    android:textColor="@color/vert_arrivee">
                 </TextView>
                 <Switch
                     android:id="@+id/notifications1630a19"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingTop="10dp"
-                    android:paddingBottom="10dp"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="20dp"
                     android:text="Activer les Notifications"
+                    android:textColor="@color/windowBackground"
+                    android:fontFamily="@font/roboto_thin"
                     android:switchPadding="40dp"
                     android:layout_below="@id/d1630a19text"
                     android:paddingLeft="40dp"
@@ -524,8 +631,10 @@
 
                 <View
                     android:id="@+id/ligne19"
-                    android:layout_height="1dp"
-                    android:background="@color/gris"
+                    android:layout_height="0.2dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:background="@color/gris_text"
                     android:layout_width="match_parent"
                     android:paddingTop="10dp"
                     android:layout_below="@id/notifications1630a19"
@@ -540,7 +649,8 @@
                     android:paddingLeft="8dp"
                     android:paddingBottom="8dp"
                     android:textSize="13.0sp"
-                    android:textColor="@color/colorPrimary"
+                    android:textColor="@color/windowBackground"
+                    android:fontFamily="@font/roboto_thin"
                     android:layout_below="@id/ligne19"
                     />
 
@@ -553,7 +663,8 @@
                     android:paddingLeft="8dp"
                     android:paddingBottom="8dp"
                     android:textSize="13.0sp"
-                    android:textColor="@color/colorPrimary"
+                    android:textColor="@color/windowBackground"
+                    android:fontFamily="@font/roboto_thin"
                     android:layout_below="@id/ligne19"
                     />
 
@@ -563,12 +674,11 @@
             android:id="@+id/card_view_19a00"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            app:cardCornerRadius="3dp"
-            app:cardElevation="5dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="6dp"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="7dp"
             app:cardPreventCornerOverlap="false"
             app:contentPadding="0dp"
             >
@@ -577,10 +687,22 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-
+                android:background="@color/colorPrimaryDark"
 
 
                 >
+                <FrameLayout
+                    android:id="@+id/contourhaut7"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.1dp"
+                    android:layout_alignParentTop="true"
+                    android:background="@color/colorPrimary2"/>
+                <FrameLayout
+                    android:id="@+id/contourbas7"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.1dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/colorPrimary2"/>
 
                 <ImageView
                     android:id="@+id/d19a00"
@@ -599,15 +721,17 @@
                     android:paddingTop="10dp"
                     android:textSize="14.0sp"
                     android:textStyle="bold"
-                    android:textColor="@color/marronclair">
+                    android:textColor="@color/vert_arrivee">
                 </TextView>
                 <Switch
                     android:id="@+id/notifications19a00"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingTop="10dp"
-                    android:paddingBottom="10dp"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="20dp"
                     android:text="Activer les Notifications"
+                    android:textColor="@color/windowBackground"
+                    android:fontFamily="@font/roboto_thin"
                     android:switchPadding="40dp"
                     android:layout_below="@id/d19a00text"
                     android:paddingLeft="40dp"
@@ -615,8 +739,10 @@
 
                 <View
                     android:id="@+id/ligne00"
-                    android:layout_height="1dp"
-                    android:background="@color/gris"
+                    android:layout_height="0.2dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:background="@color/gris_text"
                     android:layout_width="match_parent"
                     android:paddingTop="10dp"
                     android:layout_below="@id/notifications19a00"
@@ -631,7 +757,8 @@
                     android:paddingLeft="8dp"
                     android:paddingBottom="8dp"
                     android:textSize="13.0sp"
-                    android:textColor="@color/colorPrimary"
+                    android:textColor="@color/windowBackground"
+                    android:fontFamily="@font/roboto_thin"
                     android:layout_below="@id/ligne00"
                     />
 
@@ -644,7 +771,8 @@
                     android:paddingLeft="8dp"
                     android:paddingBottom="8dp"
                     android:textSize="13.0sp"
-                    android:textColor="@color/colorPrimary"
+                    android:textColor="@color/windowBackground"
+                    android:fontFamily="@font/roboto_thin"
                     android:layout_below="@id/ligne00"
                     />
 
@@ -654,12 +782,11 @@
             android:id="@+id/card_view_samedi"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            app:cardCornerRadius="3dp"
-            app:cardElevation="5dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="6dp"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="7dp"
             app:cardPreventCornerOverlap="false"
             app:contentPadding="0dp"
             >
@@ -668,10 +795,22 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-
+                android:background="@color/colorPrimaryDark"
 
 
                 >
+                <FrameLayout
+                    android:id="@+id/contourhaut8"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.1dp"
+                    android:layout_alignParentTop="true"
+                    android:background="@color/colorPrimary2"/>
+                <FrameLayout
+                    android:id="@+id/contourbas8"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.1dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/colorPrimary2"/>
 
                 <ImageView
                     android:id="@+id/samedi"
@@ -690,15 +829,17 @@
                     android:paddingTop="10dp"
                     android:textSize="14.0sp"
                     android:textStyle="bold"
-                    android:textColor="@color/marronclair">
+                    android:textColor="@color/vert_arrivee">
                 </TextView>
                 <Switch
                     android:id="@+id/notificationssamedi"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingTop="10dp"
-                    android:paddingBottom="10dp"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="20dp"
                     android:text="Activer les Notifications"
+                    android:textColor="@color/windowBackground"
+                    android:fontFamily="@font/roboto_thin"
                     android:switchPadding="40dp"
                     android:layout_below="@id/sameditext"
                     android:paddingLeft="40dp"
@@ -706,8 +847,10 @@
 
                 <View
                     android:id="@+id/lignesamedi"
-                    android:layout_height="1dp"
-                    android:background="@color/gris"
+                    android:layout_height="0.2dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:background="@color/gris_text"
                     android:layout_width="match_parent"
                     android:paddingTop="10dp"
                     android:layout_below="@id/notificationssamedi"
@@ -722,7 +865,8 @@
                     android:paddingLeft="8dp"
                     android:paddingBottom="8dp"
                     android:textSize="13.0sp"
-                    android:textColor="@color/colorPrimary"
+                    android:textColor="@color/windowBackground"
+                    android:fontFamily="@font/roboto_thin"
                     android:layout_below="@id/lignesamedi"
                     />
 
@@ -735,7 +879,8 @@
                     android:paddingLeft="8dp"
                     android:paddingBottom="8dp"
                     android:textSize="13.0sp"
-                    android:textColor="@color/colorPrimary"
+                    android:textColor="@color/windowBackground"
+                    android:fontFamily="@font/roboto_thin"
                     android:layout_below="@id/lignesamedi"
                     />
 
@@ -745,12 +890,11 @@
             android:id="@+id/card_view_dimanche"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            app:cardCornerRadius="3dp"
-            app:cardElevation="5dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="6dp"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="7dp"
             app:cardPreventCornerOverlap="false"
             app:contentPadding="0dp"
             >
@@ -759,10 +903,22 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-
+                android:background="@color/colorPrimaryDark"
 
 
                 >
+                <FrameLayout
+                    android:id="@+id/contourhaut9"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.1dp"
+                    android:layout_alignParentTop="true"
+                    android:background="@color/colorPrimary2"/>
+                <FrameLayout
+                    android:id="@+id/contourbas9"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.1dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/colorPrimary2"/>
 
                 <ImageView
                     android:id="@+id/dimanche"
@@ -781,15 +937,17 @@
                     android:paddingTop="10dp"
                     android:textSize="14.0sp"
                     android:textStyle="bold"
-                    android:textColor="@color/marronclair">
+                    android:textColor="@color/vert_arrivee">
                 </TextView>
                 <Switch
                     android:id="@+id/notificationsdimanche"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingTop="10dp"
-                    android:paddingBottom="10dp"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="20dp"
                     android:text="Activer les Notifications"
+                    android:textColor="@color/windowBackground"
+                    android:fontFamily="@font/roboto_thin"
                     android:switchPadding="40dp"
                     android:layout_below="@id/dimanchetext"
                     android:paddingLeft="40dp"
@@ -797,8 +955,10 @@
 
                 <View
                     android:id="@+id/lignedimanche"
-                    android:layout_height="1dp"
-                    android:background="@color/gris"
+                    android:layout_height="0.2dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:background="@color/gris_text"
                     android:layout_width="match_parent"
                     android:paddingTop="10dp"
                     android:layout_below="@id/notificationsdimanche"
@@ -813,7 +973,8 @@
                     android:paddingLeft="8dp"
                     android:paddingBottom="8dp"
                     android:textSize="13.0sp"
-                    android:textColor="@color/colorPrimary"
+                    android:textColor="@color/windowBackground"
+                    android:fontFamily="@font/roboto_thin"
                     android:layout_below="@id/lignedimanche"
                     />
 
@@ -826,7 +987,8 @@
                     android:paddingLeft="8dp"
                     android:paddingBottom="8dp"
                     android:textSize="13.0sp"
-                    android:textColor="@color/colorPrimary"
+                    android:textColor="@color/windowBackground"
+                    android:fontFamily="@font/roboto_thin"
                     android:layout_below="@id/lignedimanche"
                     />
 

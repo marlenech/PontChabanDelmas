@@ -181,8 +181,12 @@ public class ListFeedAdapter extends RecyclerView.Adapter<ListFeedAdapter.MyView
                 .length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         Typeface typo = ResourcesCompat.getFont(context, R.font.roboto_regular);
 
+        SpannableString spannableStringvert = new SpannableString(context.getString(R.string.ouvert));
+        spannableStringvert.setSpan(new ForegroundColorSpan(context.getResources().getColor(R.color.vert_arrivee)), 0, spannableString.toString()
+                .length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
 
-        Toast.makeText(context, dateText, Toast.LENGTH_LONG).show();
+
+        //Toast.makeText(context, dateText, Toast.LENGTH_LONG).show();
 
         //vérifier si la date actuelle est la même que celle des feeds
         if(dateText.equals(resultDate)) {
@@ -201,6 +205,9 @@ public class ListFeedAdapter extends RecyclerView.Adapter<ListFeedAdapter.MyView
                 contourHaut.setBackgroundColor(context.getResources().getColor(R.color.rouge_depart));
                 contourBas.setBackgroundColor(context.getResources().getColor(R.color.rouge_depart));
                 cardView.setBackgroundColor(context.getResources().getColor(R.color.colorPrimaryDark));
+            }
+            else {
+                ((MainActivity) context).getSupportActionBar().setSubtitle(spannableStringvert);
             }
         }
 
