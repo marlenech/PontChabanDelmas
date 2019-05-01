@@ -118,9 +118,7 @@ public class MainFragment extends Fragment implements SwipeRefreshLayout.OnRefre
                     if (isAdded()) {
 
                         ArrayList<Feed> feeds = ContainerData.getFeeds();
-                        for (Feed feed : feeds) {
-                            Log.e("MainActivity", feed.toString());
-                        }
+
                         //RecyclerView
                         lfa = new ListFeedAdapter(getActivity(), feeds);
                         recyclerView = rootView.findViewById(R.id.listFeed);
