@@ -146,17 +146,22 @@ public class ListFeedAdapter extends RecyclerView.Adapter<ListFeedAdapter.MyView
         String resultDate = formatterDate.format(now);
         String resultHeure = formatterHeure.format(now);
 
+        //variable pour agir sur le calendrier (ex: incrementer date)
+        Calendar c = Calendar.getInstance();
+
+
 
 
 
 
         //Récupération des données feeds
-        //passage string en date
         try {
+            //récupération de la date du feed au format date
             dateTextd = formatterDate.parse(feeds.getDate());
         } catch (ParseException e) {
             e.printStackTrace();
         }
+        //passage de la date et des heures du feed en format String
         String dateText = formatterDate.format(dateTextd);
         String heureDebText = feeds.getHeure1();
         String heureFinText = feeds.getHeure2();
@@ -188,9 +193,11 @@ public class ListFeedAdapter extends RecyclerView.Adapter<ListFeedAdapter.MyView
 
         //Toast.makeText(context, dateText, Toast.LENGTH_LONG).show();
 
-        //vérifier si la date actuelle est la même que celle des feeds
-        if(dateText.equals(resultDate)) {
-            if (dateCompareOne.before(date) && dateCompareTwo.after(date)) {
+        //vérifier si l'heure actuelle est la même que celle des feeds
+        if (dateCompareOne.before(date) && dateCompareTwo.after(date)) {
+
+            //vérifier si la date actuelle est la même que celle des feeds
+            if(dateText.equals(resultDate)) {
                 holder.jour.setTextColor(context.getResources().getColor(R.color.rouge_depart));
                 holder.jour.setTypeface(typo);
                 holder.date.setTextColor(context.getResources().getColor(R.color.rouge_depart));
@@ -206,9 +213,51 @@ public class ListFeedAdapter extends RecyclerView.Adapter<ListFeedAdapter.MyView
                 contourBas.setBackgroundColor(context.getResources().getColor(R.color.rouge_depart));
                 cardView.setBackgroundColor(context.getResources().getColor(R.color.colorPrimaryDark));
             }
+
+
             else {
                 ((MainActivity) context).getSupportActionBar().setSubtitle(spannableStringvert);
             }
+        }
+        //vérifier si heure2 est inférieur à heure1 pour passer sur date du lendemain (ex: horaires entre 23h et 5h)
+        else if (dateCompareTwo.before(dateCompareOne)) {
+            //Affecte à c (calendrier) la date du feed (au format date)
+            c.setTime(dateTextd);
+
+            //incrémente d'un jour la date du feed
+            c.add(Calendar.DATE, 1);
+
+            //affecte au string de la date du feed l'incrémentation
+            dateText = formatterDate.format(c.getTime());
+
+            //l'heure1 passe à 00:00
+            dateCompareOne = parseDate1("00:00");
+
+            Toast.makeText(context, dateText, Toast.LENGTH_LONG).show();
+
+            if (dateText.equals(resultDate)) {
+                if (dateCompareOne.before(date) && dateCompareTwo.after(date)) {
+                    holder.jour.setTextColor(context.getResources().getColor(R.color.rouge_depart));
+                    holder.jour.setTypeface(typo);
+                    holder.date.setTextColor(context.getResources().getColor(R.color.rouge_depart));
+                    holder.date.setTypeface(typo);
+                    holder.annee.setTextColor(context.getResources().getColor(R.color.rouge_depart));
+                    holder.annee.setTypeface(typo);
+                    holder.heure1.setTextColor(context.getResources().getColor(R.color.rouge_depart));
+                    holder.heure1.setTypeface(typo);
+                    holder.heure2.setTextColor(context.getResources().getColor(R.color.rouge_depart));
+                    holder.heure2.setTypeface(typo);
+                    ((MainActivity) context).getSupportActionBar().setSubtitle(spannableString);
+                    contourHaut.setBackgroundColor(context.getResources().getColor(R.color.rouge_depart));
+                    contourBas.setBackgroundColor(context.getResources().getColor(R.color.rouge_depart));
+                    cardView.setBackgroundColor(context.getResources().getColor(R.color.colorPrimaryDark));
+                }
+            }
+
+        }
+
+        else {
+            ((MainActivity) context).getSupportActionBar().setSubtitle(spannableStringvert);
         }
 
 
