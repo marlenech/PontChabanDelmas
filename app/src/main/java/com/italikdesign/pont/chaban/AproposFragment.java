@@ -5,6 +5,7 @@ package com.italikdesign.pont.chaban;
  */
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
 import android.text.method.LinkMovementMethod;
 import android.view.LayoutInflater;
@@ -32,6 +33,8 @@ public class AproposFragment extends Fragment {
 
         rootView = inflater.inflate(R.layout.fragment_apropos, container, false);
         // Inflate the layout for this fragment
+
+        ((AppCompatActivity)getActivity()).getSupportActionBar().setSubtitle("A Propos");
 
         TextView feedback = (TextView) rootView.findViewById(R.id.contact);
         feedback.setText(Html.fromHtml("<a href=\"mailto:italikdesignbordeaux@gmail.com\">italikdesignbordeaux@gmail.com</a>"));

@@ -1,4 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+    <LinearLayout
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingTop="5dp"
+        android:background="@color/colorPrimary"
+
+        >
 
 <android.support.v7.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -10,25 +24,33 @@
     android:layout_marginTop="65dp"
     android:layout_marginLeft="8dp"
     android:layout_marginRight="8dp"
-    app:cardCornerRadius="3dp"
-    app:cardElevation="5dp"
+    app:cardCornerRadius="5dp"
+    app:cardElevation="7dp"
     app:cardPreventCornerOverlap="false"
     app:contentPadding="0dp"
-    >
-    <ScrollView
 
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fillViewport="true">
+    >
+
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
 
-
+            android:background="@color/colorPrimaryDark"
 
             >
-
+            <FrameLayout
+                android:id="@+id/contourhaut"
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                android:layout_alignParentTop="true"
+                android:background="@color/colorPrimary2"/>
+            <FrameLayout
+                android:id="@+id/contourbas"
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                android:layout_alignParentBottom="true"
+                android:background="@color/colorPrimary2"/>
             <!-- Mentions -->
 
             <ImageView
@@ -47,20 +69,21 @@
                 android:paddingLeft="40.0dp"
                 android:paddingTop="10dp"
                 android:textSize="14.0sp"
-                android:textStyle="bold"
-                android:textColor="@color/marronclair">
-                </TextView>
+                android:textColor="@color/windowBackground"
+                android:fontFamily="@font/roboto_regular"/>
+
 
             <TextView android:id="@+id/indep"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/indep"
                 android:paddingLeft="40.0dp"
-                android:paddingTop="4dp"
+                android:paddingTop="10dp"
                 android:textSize="13.0sp"
-                android:textColor="@color/colorPrimary"
+                android:textColor="@color/windowBackground"
+                android:fontFamily="@font/roboto_thin"
                 android:layout_below="@id/mentions"
-                ></TextView>
+                />
 
 
 
@@ -70,20 +93,24 @@
                 android:layout_height="wrap_content"
                 android:text="@string/contact1"
                 android:paddingLeft="40.0dp"
-                android:paddingTop="4dp"
-                android:paddingBottom="12.0dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="20.0dp"
                 android:textSize="13.0sp"
-                android:textColor="@color/colorPrimary"
+                android:textColor="@color/windowBackground"
+                android:fontFamily="@font/roboto_thin"
                 android:layout_below="@id/indep"
 
-                ></TextView>
+                />
 
             <View
                 android:id="@+id/ligne"
-                android:layout_height="1dp"
+                android:layout_height="0.2dp"
                 android:background="@color/gris"
                 android:layout_width="match_parent"
-                android:paddingTop="5dp"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="15dp"
                 android:layout_below="@id/contact"
                 />
 
@@ -105,8 +132,8 @@
                 android:paddingLeft="40.0dp"
                 android:paddingTop="10dp"
                 android:textSize="14.0sp"
-                android:textStyle="bold"
-                android:textColor="@color/marronclair"
+                android:textColor="@color/windowBackground"
+                android:fontFamily="@font/roboto_regular"
                 android:layout_below="@id/ligne">
             </TextView>
 
@@ -116,19 +143,23 @@
                 android:text="@string/info1"
                 android:paddingLeft="40.0dp"
                 android:paddingRight="8dp"
-                android:paddingTop="4dp"
-                android:paddingBottom="12dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="20.0dp"
                 android:textSize="13.0sp"
-                android:textColor="@color/colorPrimary"
+                android:textColor="@color/windowBackground"
+                android:fontFamily="@font/roboto_thin"
                 android:layout_below="@id/info">
             </TextView>
 
             <View
                 android:id="@+id/ligne3"
-                android:layout_height="1dp"
+                android:layout_height="0.2dp"
                 android:background="@color/gris"
                 android:layout_width="match_parent"
-                android:paddingTop="5dp"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="15dp"
                 android:layout_below="@id/info1"
                 />
 
@@ -150,8 +181,8 @@
                 android:paddingLeft="40.0dp"
                 android:paddingTop="10dp"
                 android:textSize="14.0sp"
-                android:textStyle="bold"
-                android:textColor="@color/marronclair"
+                android:textColor="@color/windowBackground"
+                android:fontFamily="@font/roboto_regular"
                 android:layout_below="@id/ligne3">
             </TextView>
 
@@ -160,9 +191,10 @@
                 android:layout_height="wrap_content"
                 android:text="@string/lien_site1"
                 android:paddingLeft="40.0dp"
-                android:paddingTop="4dp"
+                android:paddingTop="10dp"
                 android:textSize="13.0sp"
-                android:textColor="@color/marronclair"
+                android:textColor="@color/windowBackground"
+                android:fontFamily="@font/roboto_thin"
                 android:layout_below="@id/liens">
             </TextView>
 
@@ -173,18 +205,22 @@
                 android:paddingLeft="40.0dp"
                 android:paddingRight="8dp"
                 android:paddingTop="4dp"
-                android:paddingBottom="12dp"
+                android:paddingBottom="20.0dp"
                 android:textSize="13.0sp"
-                android:textColor="@color/colorPrimary"
+                android:textColor="@color/windowBackground"
+                android:fontFamily="@font/roboto_thin"
                 android:layout_below="@id/lien_site1"
-                ></TextView>
+                />
 
             <View
                 android:id="@+id/ligne4"
-                android:layout_height="1dp"
+                android:layout_height="0.2dp"
                 android:background="@color/gris"
                 android:layout_width="match_parent"
-                android:paddingTop="5dp"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="15dp"
                 android:layout_below="@id/lien_opendata"
                 />
 
@@ -206,8 +242,8 @@
                 android:paddingLeft="40.0dp"
                 android:paddingTop="10dp"
                 android:textSize="14.0sp"
-                android:textStyle="bold"
-                android:textColor="@color/marronclair"
+                android:textColor="@color/windowBackground"
+                android:fontFamily="@font/roboto_regular"
                 android:layout_below="@id/ligne4">
             </TextView>
 
@@ -216,9 +252,10 @@
                 android:layout_height="wrap_content"
                 android:text="@string/blog"
                 android:paddingLeft="40.0dp"
-                android:paddingTop="4dp"
+                android:paddingTop="10dp"
                 android:textSize="13.0sp"
-                android:textColor="@color/marronclair"
+                android:textColor="@color/gris_text"
+                android:fontFamily="@font/roboto_thin"
                 android:layout_below="@id/lien_utiles">
             </TextView>
 
@@ -231,9 +268,10 @@
                 android:paddingTop="4dp"
                 android:paddingBottom="8dp"
                 android:textSize="13.0sp"
-                android:textColor="@color/colorPrimary"
+                android:textColor="@color/windowBackground"
+                android:fontFamily="@font/roboto_thin"
                 android:layout_below="@id/lien_blog"
-                ></TextView>
+                />
 
             <TextView android:id="@+id/lien_twitter"
                 android:layout_width="fill_parent"
@@ -242,7 +280,8 @@
                 android:paddingLeft="40.0dp"
                 android:paddingTop="2dp"
                 android:textSize="13.0sp"
-                android:textColor="@color/marronclair"
+                android:textColor="@color/windowBackground"
+                android:fontFamily="@font/roboto_thin"
                 android:layout_below="@id/blog1">
             </TextView>
 
@@ -253,18 +292,22 @@
                 android:paddingLeft="40.0dp"
                 android:paddingRight="16dp"
                 android:paddingTop="2dp"
-                android:paddingBottom="12dp"
+                android:paddingBottom="20.0dp"
                 android:textSize="13.0sp"
-                android:textColor="@color/colorPrimary"
+                android:textColor="@color/windowBackground"
+                android:fontFamily="@font/roboto_thin"
                 android:layout_below="@id/lien_twitter"
-                ></TextView>
+                />
 
             <View
                 android:id="@+id/ligne5"
-                android:layout_height="1dp"
+                android:layout_height="0.2dp"
                 android:background="@color/gris"
                 android:layout_width="match_parent"
-                android:paddingTop="5dp"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="15dp"
                 android:layout_below="@id/bridgeman"
                 />
 
@@ -286,21 +329,22 @@
                 android:paddingLeft="40.0dp"
                 android:paddingTop="10dp"
                 android:textSize="14.0sp"
-                android:textStyle="bold"
-                android:textColor="@color/marronclair"
-                android:layout_below="@id/ligne5">
-            </TextView>
+                android:textColor="@color/windowBackground"
+                android:fontFamily="@font/roboto_regular"
+                android:layout_below="@id/ligne5"/>
+
 
             <TextView android:id="@+id/licence_name"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/licence_name"
                 android:paddingLeft="40.0dp"
-                android:paddingTop="4dp"
+                android:paddingTop="10dp"
                 android:textSize="13.0sp"
-                android:textColor="@color/marronclair"
-                android:layout_below="@id/licence">
-            </TextView>
+                android:textColor="@color/windowBackground"
+                android:fontFamily="@font/roboto_thin"
+                android:layout_below="@id/licence"/>
+
 
             <TextView android:id="@+id/licence_text"
                 android:layout_width="fill_parent"
@@ -308,16 +352,17 @@
                 android:text="@string/licence_text"
                 android:paddingLeft="40.0dp"
                 android:paddingRight="8dp"
-                android:paddingTop="4dp"
-                android:paddingBottom="12dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="20.0dp"
                 android:textSize="13.0sp"
-                android:textColor="@color/colorPrimary"
+                android:textColor="@color/windowBackground"
+                android:fontFamily="@font/roboto_thin"
                 android:layout_below="@id/licence_name"
-                ></TextView>
+                />
 
 
 
 
 
-        </RelativeLayout></ScrollView></android.support.v7.widget.CardView>
+        </RelativeLayout></android.support.v7.widget.CardView></LinearLayout></ScrollView>
 

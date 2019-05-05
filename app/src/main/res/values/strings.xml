@@ -14,7 +14,7 @@
     <string name="levee">Les Levées</string>
     <string name="titre2">Les Levées du Pont JCD</string>
     <string name="menu_settings">Vous aimez cette application? notez la sur le Google Play</string>
-    <string name="indep">Marlène Charlet (autodidacte passionnée)<p></p></string>
+    <string name="indep">Marlène Charlet<p></p></string>
     <string name="devlop"><u>Développement</u></string>
     <string name="info"><u>Informations</u></string>
     <string name="info1">Les dates de fermetures sont indiquées sous réserve de confirmation de la Capitainerie.</string>
@@ -33,7 +33,7 @@
 
     <string name="titre1">Levées du Pont Chaban Delmas</string>
     <string name="auteur">Par Marlene Charlet</string>
-    <string name="version">Version 5.1.6</string>
+    <string name="version">Version 6.0.1</string>
     <string name="empty_string">Aucune donnée</string>
     <string name="donnees">données à jour</string>
     <string name="chargement">données en cours de chargement</string>
