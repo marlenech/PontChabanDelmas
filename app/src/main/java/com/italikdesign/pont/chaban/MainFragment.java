@@ -20,6 +20,7 @@ import android.os.SystemClock;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -72,6 +73,8 @@ public class MainFragment extends Fragment implements SwipeRefreshLayout.OnRefre
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.fragment_main, container, false);
+
+        ((AppCompatActivity)getActivity()).getSupportActionBar().setSubtitle(R.string.ouvert);
 
         StartProgress();
 
@@ -126,6 +129,7 @@ public class MainFragment extends Fragment implements SwipeRefreshLayout.OnRefre
                         recyclerView.setItemAnimator(new DefaultItemAnimator());
                         recyclerView.setLayoutManager(llm);
                         recyclerView.setAdapter(lfa);
+                        ((AppCompatActivity)getActivity()).getSupportActionBar().setSubtitle(R.string.ouvert);
 
                     } else {
                         Toast.makeText(getActivity(), "Vous devez être connecté à internet pour recevoir les données.", Toast.LENGTH_LONG).show();
@@ -190,6 +194,7 @@ public class MainFragment extends Fragment implements SwipeRefreshLayout.OnRefre
                     recyclerView.setItemAnimator(new DefaultItemAnimator());
                     recyclerView.setLayoutManager(llm);
                     recyclerView.setAdapter(lfa);
+
 
 
 
