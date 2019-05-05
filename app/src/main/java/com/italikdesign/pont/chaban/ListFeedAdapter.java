@@ -216,6 +216,10 @@ public class ListFeedAdapter extends RecyclerView.Adapter<ListFeedAdapter.MyView
             }
             //vérifier si heure2 est inférieur à heure1 pour passer sur date du lendemain (ex: horaires entre 23h et 5h)
             else if (dateCompareTwo.before(dateCompareOne)) {
+                if(dateText.equals(resultDate) && dateCompareOne.before(date)) {
+                    select = 1;
+                }
+                else {
                 //Affecte à c (calendrier) la date du feed (au format date)
                 c.setTime(dateTextd);
 
@@ -228,7 +232,7 @@ public class ListFeedAdapter extends RecyclerView.Adapter<ListFeedAdapter.MyView
                 //l'heure1 passe à 00:00
                 dateCompareOne = parseDate1("00:00");
 
-                Toast.makeText(context, dateText, Toast.LENGTH_LONG).show();
+                //Toast.makeText(context, dateText, Toast.LENGTH_LONG).show();
 
                 if (dateText.equals(resultDate) &&
                         dateCompareOne.before(date) && dateCompareTwo.after(date)) {
@@ -241,7 +245,7 @@ public class ListFeedAdapter extends RecyclerView.Adapter<ListFeedAdapter.MyView
                     dateCompareOne = parseDate1(heureDebText);
 
                     select=0;
-                }
+                }}
 
 
             } else {
