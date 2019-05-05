@@ -1,15 +1,9 @@
 package com.italikdesign.pont.chaban;
 
 import android.content.Context;
-import android.content.res.ColorStateList;
-import android.graphics.Color;
 import android.graphics.Typeface;
-import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
-import android.support.v4.content.ContextCompat;
 import android.support.v4.content.res.ResourcesCompat;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.text.Spannable;
 import android.text.SpannableString;
@@ -18,11 +12,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
-import android.widget.Toolbar;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -30,10 +21,6 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
-import java.util.TooManyListenersException;
-
-import static java.time.LocalTime.parse;
-import static org.apache.http.client.utils.DateUtils.parseDate;
 
 
 /**

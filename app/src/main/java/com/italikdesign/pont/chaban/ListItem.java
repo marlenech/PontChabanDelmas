@@ -1,6 +1,5 @@
 package com.italikdesign.pont.chaban;
 
-import android.widget.TextView;
 
 /**
  * Created by italikdesign on 29/05/2016.
