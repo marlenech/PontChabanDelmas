@@ -4,8 +4,8 @@ package com.italikdesign.pont.chaban;
  * Created by italikdesign on 25/05/2016.
  */
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v7.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.appcompat.app.AppCompatActivity;
 import android.text.Html;
 import android.text.method.LinkMovementMethod;
 import android.view.LayoutInflater;

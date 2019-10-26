@@ -7,21 +7,20 @@ import android.content.SharedPreferences;
 
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatDelegate;
-import android.support.v7.widget.CardView;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatDelegate;
+import androidx.cardview.widget.CardView;
 import android.util.Log;
 import android.view.View;
-import android.support.design.widget.NavigationView;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import com.google.android.material.navigation.NavigationView;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
-import android.widget.Toast;
 
 
 import com.italikdesign.inappbilling.util.IabHelper;
@@ -111,14 +110,14 @@ public class MainActivity extends AppCompatActivity
 
             MainFragmentDisAd fragment = new MainFragmentDisAd();
 
-            android.support.v4.app.FragmentTransaction fragmentTransaction =
+            androidx.fragment.app.FragmentTransaction fragmentTransaction =
                     getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.fragment_container, fragment);
             fragmentTransaction.commit();
         } else {
             MainFragment fragment = new MainFragment();
 
-            android.support.v4.app.FragmentTransaction fragmentTransaction =
+            androidx.fragment.app.FragmentTransaction fragmentTransaction =
                     getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.fragment_container, fragment);
             fragmentTransaction.commit();
@@ -285,7 +284,7 @@ public class MainActivity extends AppCompatActivity
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             Preferences fragment = new Preferences();
-            android.support.v4.app.FragmentTransaction fragmentTransaction =
+            androidx.fragment.app.FragmentTransaction fragmentTransaction =
                     getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.fragment_container, fragment);
             fragmentTransaction.commit();
@@ -508,14 +507,14 @@ public class MainActivity extends AppCompatActivity
 
                 MainFragmentDisAd fragment = new MainFragmentDisAd();
 
-                android.support.v4.app.FragmentTransaction fragmentTransaction =
+                androidx.fragment.app.FragmentTransaction fragmentTransaction =
                         getSupportFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.fragment_container, fragment);
                 fragmentTransaction.commit();
             } else {
                 MainFragment fragment = new MainFragment();
 
-                android.support.v4.app.FragmentTransaction fragmentTransaction =
+                androidx.fragment.app.FragmentTransaction fragmentTransaction =
                         getSupportFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.fragment_container, fragment);
                 fragmentTransaction.commit();
@@ -526,7 +525,7 @@ public class MainActivity extends AppCompatActivity
         // Handle the camera action
         else if (id == R.id.nav_notification) {
             Preferences fragment = new Preferences();
-            android.support.v4.app.FragmentTransaction fragmentTransaction =
+            androidx.fragment.app.FragmentTransaction fragmentTransaction =
                     getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.fragment_container, fragment);
             fragmentTransaction.commit();
@@ -545,7 +544,7 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_apropos) {
             //Set the fragment initially
             AproposFragment fragment = new AproposFragment();
-            android.support.v4.app.FragmentTransaction fragmentTransaction =
+            androidx.fragment.app.FragmentTransaction fragmentTransaction =
                     getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.fragment_container, fragment);
             fragmentTransaction.commit();

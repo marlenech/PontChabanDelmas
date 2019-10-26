@@ -1,12 +1,9 @@
 package com.italikdesign.pont.chaban;
 
-import android.app.AlertDialog;
-import android.app.Application;
+
 import android.content.Context;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.support.multidex.MultiDex;
-import android.support.multidex.MultiDexApplication;
+import androidx.multidex.MultiDex;
+import androidx.multidex.MultiDexApplication;
 import android.util.Log;
 
 

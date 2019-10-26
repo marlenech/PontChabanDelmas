@@ -13,7 +13,7 @@
 
 
 
-    <android.support.v4.widget.SwipeRefreshLayout
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
@@ -23,7 +23,7 @@
 
 
 
-        <android.support.v7.widget.RecyclerView
+        <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/listFeed"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -31,11 +31,13 @@
             android:paddingBottom="16dp"
             android:paddingTop="16dp"
             android:scrollbars="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:context="com.italikdesign.pont.chaban.MainFragment"
             android:background="@color/colorPrimary">
 
-        </android.support.v7.widget.RecyclerView>
+        </androidx.recyclerview.widget.RecyclerView>
 
-    </android.support.v4.widget.SwipeRefreshLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 
     <com.google.android.gms.ads.AdView

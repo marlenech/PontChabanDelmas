@@ -13,7 +13,7 @@
         android:background="@color/colorPrimary"
 
         >
-        <android.support.v7.widget.CardView
+        <androidx.cardview.widget.CardView
 
             android:id="@+id/card_view_00a07"
             android:layout_width="match_parent"
@@ -123,8 +123,8 @@
                     android:layout_below="@id/ligne"
                     />
 
-            </RelativeLayout></android.support.v7.widget.CardView>
-        <android.support.v7.widget.CardView
+            </RelativeLayout></androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
 
             android:id="@+id/card_view_07a0930"
             android:layout_width="match_parent"
@@ -232,8 +232,8 @@
                     android:layout_below="@id/ligne0930"
                     />
 
-            </RelativeLayout></android.support.v7.widget.CardView>
-        <android.support.v7.widget.CardView
+            </RelativeLayout></androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
 
             android:id="@+id/card_view_0930a1130"
             android:layout_width="match_parent"
@@ -341,8 +341,8 @@
                     android:layout_below="@id/ligne1130"
                     />
 
-            </RelativeLayout></android.support.v7.widget.CardView>
-        <android.support.v7.widget.CardView
+            </RelativeLayout></androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
 
             android:id="@+id/card_view_1130a14"
             android:layout_width="match_parent"
@@ -450,8 +450,8 @@
                     android:layout_below="@id/ligne14"
                     />
 
-            </RelativeLayout></android.support.v7.widget.CardView>
-        <android.support.v7.widget.CardView
+            </RelativeLayout></androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
 
             android:id="@+id/card_view_14a1630"
             android:layout_width="match_parent"
@@ -559,8 +559,8 @@
                     android:layout_below="@id/ligne1630"
                     />
 
-            </RelativeLayout></android.support.v7.widget.CardView>
-        <android.support.v7.widget.CardView
+            </RelativeLayout></androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
 
             android:id="@+id/card_view_1630a19"
             android:layout_width="match_parent"
@@ -668,8 +668,8 @@
                     android:layout_below="@id/ligne19"
                     />
 
-            </RelativeLayout></android.support.v7.widget.CardView>
-        <android.support.v7.widget.CardView
+            </RelativeLayout></androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
 
             android:id="@+id/card_view_19a00"
             android:layout_width="match_parent"
@@ -776,8 +776,8 @@
                     android:layout_below="@id/ligne00"
                     />
 
-            </RelativeLayout></android.support.v7.widget.CardView>
-        <android.support.v7.widget.CardView
+            </RelativeLayout></androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
 
             android:id="@+id/card_view_samedi"
             android:layout_width="match_parent"
@@ -884,8 +884,8 @@
                     android:layout_below="@id/lignesamedi"
                     />
 
-            </RelativeLayout></android.support.v7.widget.CardView>
-        <android.support.v7.widget.CardView
+            </RelativeLayout></androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
 
             android:id="@+id/card_view_dimanche"
             android:layout_width="match_parent"
@@ -992,5 +992,5 @@
                     android:layout_below="@id/lignedimanche"
                     />
 
-            </RelativeLayout></android.support.v7.widget.CardView>
+            </RelativeLayout></androidx.cardview.widget.CardView>
     </LinearLayout></ScrollView>

@@ -3,7 +3,8 @@ package com.italikdesign.pont.chaban;
 import android.content.Context;
 
 
-import android.support.v7.app.AppCompatActivity;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
