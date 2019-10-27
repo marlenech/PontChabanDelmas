@@ -7,6 +7,7 @@
     android:layout_height="match_parent"
     android:fillViewport="true">
     <LinearLayout
+        android:id="@+id/linearnotif"
         android:layout_width="match_parent" android:layout_height="match_parent"
         android:orientation="vertical"
         android:paddingTop="60dp"
@@ -30,6 +31,7 @@
 
 
             <RelativeLayout
+                android:id="@+id/notifrelative"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@color/colorPrimaryDark"
@@ -140,6 +142,7 @@
 
 
             <RelativeLayout
+                android:id="@+id/notifrelative1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@color/colorPrimaryDark"
@@ -250,6 +253,7 @@
 
 
             <RelativeLayout
+                android:id="@+id/notifrelative2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@color/colorPrimaryDark"
@@ -355,10 +359,11 @@
             app:cardPreventCornerOverlap="false"
             app:contentPadding="0dp"
             >
-            >
+
 
 
             <RelativeLayout
+                android:id="@+id/notifrelative3"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@color/colorPrimaryDark"
@@ -468,6 +473,7 @@
 
 
             <RelativeLayout
+                android:id="@+id/notifrelative4"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@color/colorPrimaryDark"
@@ -589,6 +595,7 @@
 
 
             <RelativeLayout
+                android:id="@+id/notifrelative5"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@color/colorPrimaryDark"
@@ -685,6 +692,7 @@
 
 
             <RelativeLayout
+                android:id="@+id/notifrelative6"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@color/colorPrimaryDark"
@@ -793,6 +801,7 @@
 
 
             <RelativeLayout
+                android:id="@+id/notifrelative7"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@color/colorPrimaryDark"
@@ -901,6 +910,7 @@
 
 
             <RelativeLayout
+                android:id="@+id/notifrelative8"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@color/colorPrimaryDark"

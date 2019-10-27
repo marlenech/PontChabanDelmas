@@ -19,4 +19,5 @@
     <color name="gris_text">#939196</color>
     <color name="vert_arrivee">#407e71</color>
     <color name="rouge_depart">#ba5f70</color>
+    <color name="vert_clair">#088A4B</color>
 </resources>

@@ -43,7 +43,7 @@
         <item name="windowActionBar">true</item>
         <!-- Police par défaut -->
         <item name="android:fontFamily">@font/roboto_regular</item>
-        <item name="android:textColor">@color/vert_arrivee</item>
+        <item name="android:textColor">@color/vert_clair</item>
 
 
     </style>

@@ -6,6 +6,7 @@ package com.italikdesign.pont.chaban;
 
 
 import android.app.ProgressDialog;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
@@ -101,6 +102,18 @@ public class MainFragment extends Fragment implements SwipeRefreshLayout.OnRefre
         swipeLayout.setOnRefreshListener(this);
         swipeLayout.setColorSchemeColors(getResources().getColor(R.color.colorPrimary),
                 getResources().getColor(R.color.colorPrimaryDark), getResources().getColor(R.color.colorAccent));
+
+        //Theme
+        SharedPreferences prefs10 = getActivity().getSharedPreferences(
+                "com.italikdesign.pont.chaban", 0);
+        boolean themeSombre = prefs10.getBoolean("themeSombre", true);
+
+        //Définition fond fenetre principale
+        RecyclerView recycler = view.findViewById(R.id.listFeed);
+
+        if(!themeSombre) {
+            recycler.setBackgroundColor(getResources().getColor(R.color.windowBackground));
+        }
 
 
     }

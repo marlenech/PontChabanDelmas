@@ -1,10 +1,14 @@
 package com.italikdesign.pont.chaban;
 
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.graphics.drawable.GradientDrawable;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.recyclerview.widget.RecyclerView;
+
+import android.text.Layout;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
@@ -44,6 +48,7 @@ public class ListFeedAdapter extends RecyclerView.Adapter<ListFeedAdapter.MyView
 
 
 
+
     public ListFeedAdapter(Context context, ArrayList<Feed> objects) {
         this.context = context;
         inflater = LayoutInflater.from(context);
@@ -78,6 +83,19 @@ public class ListFeedAdapter extends RecyclerView.Adapter<ListFeedAdapter.MyView
         this.context = context;
 
 
+
+
+        boolean themeSombre = false;
+
+        //Theme
+        SharedPreferences prefs10 = context.getSharedPreferences(
+                "com.italikdesign.pont.chaban", 0);
+        themeSombre = prefs10.getBoolean("themeSombre", true);
+
+
+
+
+
         holder.jour.setText(feeds.getJour());
         holder.date.setText(feeds.getDate());
         holder.annee.setText(feeds.getAnnee());
@@ -97,16 +115,24 @@ public class ListFeedAdapter extends RecyclerView.Adapter<ListFeedAdapter.MyView
         FrameLayout contourBas = holder.itemView.findViewById(R.id.contourbas);
         RelativeLayout cardView = view.findViewById(R.id.relativeLayout);
 
+        ////RelativeLayout layoutContentMain = view.findViewById(R.id.background_ecran);
 
+        /////Fond écran si thème sombre sélectionné
+        ///if(themeSombre) {
 
+        ///}
+        ///else
+        ///{
+         ///layoutContentMain.setBackgroundColor(context.getResources().getColor(R.color.windowBackground));
+        ///}
 
         //////Adaptation couleur Sens en fonction arrivée et départ/////////////
 
         //Si le texte de sens est égal à "Arrivée", le texte et l'encadré passe en vert
         if(sensText.equalsIgnoreCase("Arrivée")) {
-            holder.sens.setTextColor(context.getResources().getColor(R.color.vert_arrivee));
+            holder.sens.setTextColor(context.getResources().getColor(R.color.vert_clair));
 
-            gd.setStroke(2, context.getResources().getColor(R.color.vert_arrivee));
+            gd.setStroke(2, context.getResources().getColor(R.color.vert_clair));
             gd.setCornerRadius(10);
             holder.sens.setPadding(15, 2, 15, 2);
             holder.sens.setBackground(gd);
@@ -182,7 +208,7 @@ public class ListFeedAdapter extends RecyclerView.Adapter<ListFeedAdapter.MyView
         Typeface typonormal = ResourcesCompat.getFont(context, R.font.roboto_thin);
 
         spannableStringvert = new SpannableString(holder.itemView.getContext().getString(R.string.ouvert));
-        spannableStringvert.setSpan(new ForegroundColorSpan(holder.itemView.getContext().getResources().getColor(R.color.vert_arrivee)), 0, spannableString.toString()
+        spannableStringvert.setSpan(new ForegroundColorSpan(holder.itemView.getContext().getResources().getColor(R.color.vert_clair)), 0, spannableString.toString()
                 .length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
 
 
@@ -240,37 +266,81 @@ public class ListFeedAdapter extends RecyclerView.Adapter<ListFeedAdapter.MyView
             }
 
             if (select == 1) {
-                ((MainActivity) context).getSupportActionBar().setSubtitle(spannableString);
-                holder.jour.setTextColor(context.getResources().getColor(R.color.rouge_depart));
-                holder.jour.setTypeface(typo);
-                holder.date.setTextColor(context.getResources().getColor(R.color.rouge_depart));
-                holder.date.setTypeface(typo);
-                holder.annee.setTextColor(context.getResources().getColor(R.color.rouge_depart));
-                holder.annee.setTypeface(typo);
-                holder.heure1.setTextColor(context.getResources().getColor(R.color.rouge_depart));
-                holder.heure1.setTypeface(typo);
-                holder.heure2.setTextColor(context.getResources().getColor(R.color.rouge_depart));
-                holder.heure2.setTypeface(typo);
+                if(themeSombre) {
+                    ((MainActivity) context).getSupportActionBar().setSubtitle(spannableString);
+                    holder.jour.setTextColor(context.getResources().getColor(R.color.rouge_depart));
+                    holder.jour.setTypeface(typo);
+                    holder.date.setTextColor(context.getResources().getColor(R.color.rouge_depart));
+                    holder.date.setTypeface(typo);
+                    holder.annee.setTextColor(context.getResources().getColor(R.color.rouge_depart));
+                    holder.annee.setTypeface(typo);
+                    holder.heure1.setTextColor(context.getResources().getColor(R.color.rouge_depart));
+                    holder.heure1.setTypeface(typo);
+                    holder.heure2.setTextColor(context.getResources().getColor(R.color.rouge_depart));
+                    holder.heure2.setTypeface(typo);
 
-                contourHaut.setBackgroundColor(context.getResources().getColor(R.color.rouge_depart));
-                contourBas.setBackgroundColor(context.getResources().getColor(R.color.rouge_depart));
-                cardView.setBackgroundColor(context.getResources().getColor(R.color.colorPrimaryDark));
+                    contourHaut.setBackgroundColor(context.getResources().getColor(R.color.rouge_depart));
+                    contourBas.setBackgroundColor(context.getResources().getColor(R.color.rouge_depart));
+                    cardView.setBackgroundColor(context.getResources().getColor(R.color.colorPrimaryDark));
+                }
+                else {
+                    ((MainActivity) context).getSupportActionBar().setSubtitle(spannableString);
+                    holder.jour.setTextColor(context.getResources().getColor(R.color.rouge_depart));
+                    holder.jour.setTypeface(typo);
+                    holder.date.setTextColor(context.getResources().getColor(R.color.rouge_depart));
+                    holder.date.setTypeface(typo);
+                    holder.annee.setTextColor(context.getResources().getColor(R.color.rouge_depart));
+                    holder.annee.setTypeface(typo);
+                    holder.heure1.setTextColor(context.getResources().getColor(R.color.rouge_depart));
+                    holder.heure1.setTypeface(typo);
+                    holder.heure2.setTextColor(context.getResources().getColor(R.color.rouge_depart));
+                    holder.heure2.setTypeface(typo);
+                    holder.bateaux.setTextColor(context.getResources().getColor(R.color.marronclair));
+                    holder.bateaux.setTypeface(typo);
+                    holder.motif.setTextColor(context.getResources().getColor(R.color.colorPrimaryDark));
+                    holder.heurepassage.setTextColor(context.getResources().getColor(R.color.colorPrimaryDark));
 
+                    contourHaut.setBackgroundColor(context.getResources().getColor(R.color.rouge_depart));
+                    contourBas.setBackgroundColor(context.getResources().getColor(R.color.rouge_depart));
+                    cardView.setBackgroundColor(context.getResources().getColor(R.color.gris_fonce));
+
+                }
             } else {
+                if(themeSombre) {
+                    holder.jour.setTextColor(context.getResources().getColor(R.color.windowBackground));
+                    holder.jour.setTypeface(typonormal);
+                    holder.date.setTextColor(context.getResources().getColor(R.color.windowBackground));
+                    holder.date.setTypeface(typonormal);
+                    holder.annee.setTextColor(context.getResources().getColor(R.color.colorAccent));
+                    holder.annee.setTypeface(typonormal);
+                    holder.heure1.setTextColor(context.getResources().getColor(R.color.colorAccent));
+                    holder.heure1.setTypeface(typonormal);
+                    holder.heure2.setTextColor(context.getResources().getColor(R.color.colorAccent));
+                    holder.heure2.setTypeface(typonormal);
+                    contourHaut.setBackgroundColor(context.getResources().getColor(R.color.colorPrimary2));
+                    contourBas.setBackgroundColor(context.getResources().getColor(R.color.colorPrimary2));
+                    cardView.setBackgroundColor(context.getResources().getColor(R.color.colorPrimaryDark));
+                }
+                else {
+                        holder.jour.setTextColor(context.getResources().getColor(R.color.marronclair));
+                        holder.jour.setTypeface(typo);
+                        holder.date.setTextColor(context.getResources().getColor(R.color.marronclair));
+                        holder.date.setTypeface(typo);
+                        holder.annee.setTextColor(context.getResources().getColor(R.color.colorAccent));
+                        holder.annee.setTypeface(typo);
+                        holder.heure1.setTextColor(context.getResources().getColor(R.color.colorAccent));
+                        holder.heure1.setTypeface(typo);
+                        holder.heure2.setTextColor(context.getResources().getColor(R.color.colorAccent));
+                        holder.heure2.setTypeface(typo);
+                        holder.bateaux.setTextColor(context.getResources().getColor(R.color.marronclair));
+                        holder.bateaux.setTypeface(typo);
+                        holder.motif.setTextColor(context.getResources().getColor(R.color.colorPrimaryDark));
+                        holder.heurepassage.setTextColor(context.getResources().getColor(R.color.colorPrimaryDark));
 
-                holder.jour.setTextColor(context.getResources().getColor(R.color.windowBackground));
-                holder.jour.setTypeface(typonormal);
-                holder.date.setTextColor(context.getResources().getColor(R.color.windowBackground));
-                holder.date.setTypeface(typonormal);
-                holder.annee.setTextColor(context.getResources().getColor(R.color.colorAccent));
-                holder.annee.setTypeface(typonormal);
-                holder.heure1.setTextColor(context.getResources().getColor(R.color.colorAccent));
-                holder.heure1.setTypeface(typonormal);
-                holder.heure2.setTextColor(context.getResources().getColor(R.color.colorAccent));
-                holder.heure2.setTypeface(typonormal);
-                contourHaut.setBackgroundColor(context.getResources().getColor(R.color.colorPrimary2));
-                contourBas.setBackgroundColor(context.getResources().getColor(R.color.colorPrimary2));
-                cardView.setBackgroundColor(context.getResources().getColor(R.color.colorPrimaryDark));
+                        contourHaut.setBackgroundColor(context.getResources().getColor(R.color.windowBackground));
+                        contourBas.setBackgroundColor(context.getResources().getColor(R.color.windowBackground));
+                        cardView.setBackgroundColor(context.getResources().getColor(R.color.windowBackground));
+                    }
             }
 
 

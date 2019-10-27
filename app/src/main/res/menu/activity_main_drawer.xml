@@ -11,6 +11,10 @@
             android:icon="@drawable/ic_notification"
             android:title="Les Notifications" />
         <item
+            android:id="@+id/nav_theme"
+            android:icon="@drawable/ic_color_lens_black_24dp"
+            android:title="Changer le thème" />
+        <item
             android:id="@+id/nav_cadena"
             android:icon="@drawable/ic_cadena"
             android:title="Enlever la pub" />

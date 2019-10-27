@@ -18,6 +18,8 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.RecyclerView;
+
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -42,6 +44,7 @@ public class MainActivity extends AppCompatActivity
     NavigationView navigationView = null;
     Toolbar toolbar = null;
     CardView cardview = null;
+    RecyclerView recycler = null;
     IabHelper mHelper;
     boolean mIsPremium = false;
     boolean mIsUserPremium = false;
@@ -57,6 +60,9 @@ public class MainActivity extends AppCompatActivity
     boolean notif19a00 = true;
     boolean notifsamedi = true;
     boolean notifdimanche = true;
+
+    //Theme
+    boolean themeSombre = false;
 
 
 
@@ -221,6 +227,11 @@ public class MainActivity extends AppCompatActivity
         }else{
             OneSignal.deleteTag("dimanche");
         }
+
+        //Theme
+        SharedPreferences prefs10 = getSharedPreferences(
+                "com.italikdesign.pont.chaban", 0);
+        themeSombre = prefs10.getBoolean("themeSombre", true);
 
 
 
@@ -530,7 +541,17 @@ public class MainActivity extends AppCompatActivity
             fragmentTransaction.replace(R.id.fragment_container, fragment);
             fragmentTransaction.commit();
 
-        } else if (id == R.id.nav_cadena) {
+        }
+        else if (id == R.id.nav_theme) {
+            Theme fragment = new Theme();
+            androidx.fragment.app.FragmentTransaction fragmentTransaction =
+                    getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragment_container, fragment);
+            fragmentTransaction.commit();
+
+        }
+
+        else if (id == R.id.nav_cadena) {
 
             Log.d(TAG,
                     "Upgrade button clicked; launching purchase flow for upgrade.");

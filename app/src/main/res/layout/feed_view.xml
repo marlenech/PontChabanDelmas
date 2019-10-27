@@ -128,7 +128,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:paddingRight="8dp"
+            android:paddingRight="12dp"
             android:fontFamily="@font/roboto_thin"
             android:paddingTop="17dp"
             android:textColor="@color/colorAccent"

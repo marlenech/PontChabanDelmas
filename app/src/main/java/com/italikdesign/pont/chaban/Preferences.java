@@ -5,6 +5,8 @@ package com.italikdesign.pont.chaban;
  */
 import android.content.SharedPreferences;
 import android.os.Bundle;
+
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
@@ -12,6 +14,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CompoundButton;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.Switch;
 import android.widget.TextView;
 
@@ -24,6 +30,8 @@ import com.onesignal.OneSignal;
 public class Preferences extends Fragment {
 
     private View rootView;
+
+    boolean checkSombre;
 
 
     boolean check00a07;
@@ -55,6 +63,12 @@ public class Preferences extends Fragment {
         rootView = inflater.inflate(R.layout.preferences, container, false);
         // Inflate the layout for this fragment
 
+        //Prise en compte du mode sombre ou non
+        SharedPreferences prefsTheme = getActivity().getSharedPreferences(
+                "com.italikdesign.pont.chaban", 0);
+        checkSombre = prefsTheme.getBoolean("themeSombre", true);
+
+
 
 
         SharedPreferences prefs = getActivity().getSharedPreferences(
@@ -70,15 +84,15 @@ public class Preferences extends Fragment {
         checkdimanche = prefs.getBoolean("notifdimanche", true);
 
 
-        Switch notificationSwitch00a07 = (Switch) rootView.findViewById(R.id.notifications00a07);
-        Switch notificationSwitch07a0930 = (Switch) rootView.findViewById(R.id.notifications07a0930);
-        Switch notificationSwitch0930a1130 = (Switch) rootView.findViewById(R.id.notifications0930a1130);
-        Switch notificationSwitch1130a14 = (Switch) rootView.findViewById(R.id.notifications1130a14);
-        Switch notificationSwitch14a1630 = (Switch) rootView.findViewById(R.id.notifications14a1630);
-        Switch notificationSwitch1630a19 = (Switch) rootView.findViewById(R.id.notifications1630a19);
-        Switch notificationSwitch19a00 = (Switch) rootView.findViewById(R.id.notifications19a00);
-        Switch notificationSwitchsamedi = (Switch) rootView.findViewById(R.id.notificationssamedi);
-        Switch notificationSwitchdimanche = (Switch) rootView.findViewById(R.id.notificationsdimanche);
+        final Switch notificationSwitch00a07 = (Switch) rootView.findViewById(R.id.notifications00a07);
+        final Switch notificationSwitch07a0930 = (Switch) rootView.findViewById(R.id.notifications07a0930);
+        final Switch notificationSwitch0930a1130 = (Switch) rootView.findViewById(R.id.notifications0930a1130);
+        final Switch notificationSwitch1130a14 = (Switch) rootView.findViewById(R.id.notifications1130a14);
+        final Switch notificationSwitch14a1630 = (Switch) rootView.findViewById(R.id.notifications14a1630);
+        final Switch notificationSwitch1630a19 = (Switch) rootView.findViewById(R.id.notifications1630a19);
+        final Switch notificationSwitch19a00 = (Switch) rootView.findViewById(R.id.notifications19a00);
+        final Switch notificationSwitchsamedi = (Switch) rootView.findViewById(R.id.notificationssamedi);
+        final Switch notificationSwitchdimanche = (Switch) rootView.findViewById(R.id.notificationsdimanche);
         final TextView notif_pref_ok00a07 = (TextView) rootView.findViewById(R.id.notif_pref_ok_00a07);
         final TextView notif_pref_ok07a0930 = (TextView) rootView.findViewById(R.id.notif_pref_ok_07a0930);
         final TextView notif_pref_ok0930a1130 = (TextView) rootView.findViewById(R.id.notif_pref_ok_0930a1130);
@@ -97,6 +111,42 @@ public class Preferences extends Fragment {
         final TextView notif_pref_no_19a00 = (TextView) rootView.findViewById(R.id.notif_pref_no_19a00);
         final TextView notif_pref_no_samedi = (TextView) rootView.findViewById(R.id.notif_pref_no_samedi);
         final TextView notif_pref_no_dimanche = (TextView) rootView.findViewById(R.id.notif_pref_no_dimanche);
+
+        //Définition fond fenetre principale
+        final LinearLayout linearLayout = rootView.findViewById(R.id.linearnotif);
+        final RelativeLayout recycler = rootView.findViewById(R.id.notifrelative);
+        final RelativeLayout recycler1 = rootView.findViewById(R.id.notifrelative1);
+        final RelativeLayout recycler2 = rootView.findViewById(R.id.notifrelative2);
+        final RelativeLayout recycler3 = rootView.findViewById(R.id.notifrelative3);
+        final RelativeLayout recycler4 = rootView.findViewById(R.id.notifrelative4);
+        final RelativeLayout recycler5 = rootView.findViewById(R.id.notifrelative5);
+        final RelativeLayout recycler6= rootView.findViewById(R.id.notifrelative6);
+        final RelativeLayout recycler7 = rootView.findViewById(R.id.notifrelative7);
+        final RelativeLayout recycler8= rootView.findViewById(R.id.notifrelative8);
+
+        final CardView card_view_07a0930 = rootView.findViewById(R.id.card_view_07a0930);
+        final CardView card_view_00a07 = rootView.findViewById(R.id.card_view_00a07);
+        final CardView card_view_0930a1130 = rootView.findViewById(R.id.card_view_0930a1130);
+        final CardView card_view_19a00 = rootView.findViewById(R.id.card_view_19a00);
+        final CardView card_view_1130a14 = rootView.findViewById(R.id.card_view_1130a14);
+        final CardView card_view_1630a19 = rootView.findViewById(R.id.card_view_1630a19);
+        final CardView card_view_14a1630 = rootView.findViewById(R.id.card_view_14a1630);
+        final CardView card_view_samedi = rootView.findViewById(R.id.card_view_samedi);
+        final CardView card_view_dimanche = rootView.findViewById(R.id.card_view_dimanche);
+
+        final TextView d00a07text = rootView.findViewById(R.id.d00a07text);
+        final TextView d07a0930text = rootView.findViewById(R.id.d07a0930text);
+        final TextView d14a1630text = rootView.findViewById(R.id.d14a1630text);
+        final TextView d19a00text = rootView.findViewById(R.id.d19a00text);
+        final TextView d0930a1130text = rootView.findViewById(R.id.d0930a1130text);
+        final TextView d1130a14text = rootView.findViewById(R.id.d1130a14text);
+        final TextView d1630a19text = rootView.findViewById(R.id.d1630a19text);
+        final TextView dimanchetext = rootView.findViewById(R.id.dimanchetext);
+        final TextView sameditext = rootView.findViewById(R.id.sameditext);
+
+
+
+
 
         //set the switch to ON 00h à 07H00
         if (check00a07) {
@@ -179,6 +229,62 @@ public class Preferences extends Fragment {
         else {
             notificationSwitchdimanche.setChecked(false);
             notif_pref_okdimanche.setVisibility(TextView.GONE);
+        }
+
+
+        //mode clair
+        if(!checkSombre) {
+            notif_pref_no_00a07.setTextColor(getResources().getColor(R.color.marronclair));
+            notif_pref_no_07a0930.setTextColor(getResources().getColor(R.color.marronclair));
+            notif_pref_no_0930a1130.setTextColor(getResources().getColor(R.color.marronclair));
+            notif_pref_no_19a00.setTextColor(getResources().getColor(R.color.marronclair));
+            notif_pref_no_1130a14.setTextColor(getResources().getColor(R.color.marronclair));
+            notif_pref_no_1630a19.setTextColor(getResources().getColor(R.color.marronclair));
+            notif_pref_no_14a1630.setTextColor(getResources().getColor(R.color.marronclair));
+            notif_pref_no_samedi.setTextColor(getResources().getColor(R.color.marronclair));
+            notif_pref_no_dimanche.setTextColor(getResources().getColor(R.color.marronclair));
+            notif_pref_ok00a07.setTextColor(getResources().getColor(R.color.marronclair));
+            notif_pref_ok07a0930.setTextColor(getResources().getColor(R.color.marronclair));
+            notif_pref_ok0930a1130.setTextColor(getResources().getColor(R.color.marronclair));
+            notif_pref_ok19a00.setTextColor(getResources().getColor(R.color.marronclair));
+            notif_pref_ok1130a14.setTextColor(getResources().getColor(R.color.marronclair));
+            notif_pref_ok1630a19.setTextColor(getResources().getColor(R.color.marronclair));
+            notif_pref_ok14a1630.setTextColor(getResources().getColor(R.color.marronclair));
+            notif_pref_oksamedi.setTextColor(getResources().getColor(R.color.marronclair));
+            notif_pref_okdimanche.setTextColor(getResources().getColor(R.color.marronclair));
+
+            linearLayout.setBackgroundColor(getResources().getColor(R.color.windowBackground));
+            recycler.setBackgroundColor(getResources().getColor(R.color.windowBackground));
+            recycler1.setBackgroundColor(getResources().getColor(R.color.windowBackground));
+            recycler2.setBackgroundColor(getResources().getColor(R.color.windowBackground));
+            recycler3.setBackgroundColor(getResources().getColor(R.color.windowBackground));
+            recycler4.setBackgroundColor(getResources().getColor(R.color.windowBackground));
+            recycler5.setBackgroundColor(getResources().getColor(R.color.windowBackground));
+            recycler6.setBackgroundColor(getResources().getColor(R.color.windowBackground));
+            recycler7.setBackgroundColor(getResources().getColor(R.color.windowBackground));
+            recycler8.setBackgroundColor(getResources().getColor(R.color.windowBackground));
+
+            card_view_00a07.setBackgroundColor(getResources().getColor(R.color.windowBackground));
+            card_view_07a0930.setBackgroundColor(getResources().getColor(R.color.windowBackground));
+            card_view_0930a1130.setBackgroundColor(getResources().getColor(R.color.windowBackground));
+            card_view_19a00.setBackgroundColor(getResources().getColor(R.color.windowBackground));
+            card_view_1130a14.setBackgroundColor(getResources().getColor(R.color.windowBackground));
+            card_view_1630a19.setBackgroundColor(getResources().getColor(R.color.windowBackground));
+            card_view_14a1630.setBackgroundColor(getResources().getColor(R.color.windowBackground));
+            card_view_samedi.setBackgroundColor(getResources().getColor(R.color.windowBackground));
+            card_view_dimanche.setBackgroundColor(getResources().getColor(R.color.windowBackground));
+
+            notificationSwitch00a07.setTextColor(getResources().getColor(R.color.marronclair));
+            notificationSwitch07a0930.setTextColor(getResources().getColor(R.color.marronclair));
+            notificationSwitch0930a1130.setTextColor(getResources().getColor(R.color.marronclair));
+            notificationSwitch19a00.setTextColor(getResources().getColor(R.color.marronclair));
+            notificationSwitch1130a14.setTextColor(getResources().getColor(R.color.marronclair));
+            notificationSwitch1630a19.setTextColor(getResources().getColor(R.color.marronclair));
+            notificationSwitch14a1630.setTextColor(getResources().getColor(R.color.marronclair));
+            notificationSwitchdimanche.setTextColor(getResources().getColor(R.color.marronclair));
+            notificationSwitchsamedi.setTextColor(getResources().getColor(R.color.marronclair));
+
+
         }
 
         //attach a listener to check for changes in state 00h à 07h00

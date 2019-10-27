@@ -60,6 +60,8 @@
     <string name="notif_pref_ok">Vous recevez les notifications la veille de la levée du pont, ainsi que toutes les modifications de dernière minute en temps réel.</string>
     <string name="notif_pref_no">Vous ne recevez pas les notifications.</string>
 
+
+
     //AlertDialog Rate
 
     <string name="my_own_title">Soutenez l\'Appli !</string>
@@ -101,6 +103,11 @@
     <string name="notif_pref_no_samedi">Vous ne recevez pas les notifications des levées du Samedi.</string>
     <string name="notif_pref_no_dimanche">Vous ne recevez pas les notifications des levées du Dimanche et des jour fériés.</string>
 
+
+    //Fenêtre changement thème
+    <string name="theme_pref_oksombre">Vous passez en mode sombre.</string>
+    <string name="theme_pref_nosombre">Vous passez en mode clair.</string>
+    <string name="themeChangement">Changer de thème</string>
 
 
 
